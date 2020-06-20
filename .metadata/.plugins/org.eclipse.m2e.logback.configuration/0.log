@@ -1,0 +1,10 @@
+2020-06-20 20:05:54,497 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-20 21:01:39,423 [Worker-20: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\AirLineReservationSystem\airlinereservationsystemcollections\pom.xml
+2020-06-20 21:01:51,516 [Worker-20: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.capgemini:airlinereservationsystemcollections:0.0.1-SNAPSHOT @ C:\AirLineReservationSystem\airlinereservationsystemcollections\pom.xml.
+2020-06-20 21:01:55,382 [Worker-20: Creating maven-archetype-quickstart] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /airlinereservationsystemcollections/src/main/java
+2020-06-20 21:01:55,398 [Worker-20: Creating maven-archetype-quickstart] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /airlinereservationsystemcollections/src/test/java
+2020-06-20 21:02:23,039 [Worker-20: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 43 sec
+2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
