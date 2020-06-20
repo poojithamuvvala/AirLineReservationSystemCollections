@@ -8,3 +8,31 @@
 2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
 2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-06-20 21:02:27,575 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:27:39,817 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:27:39,819 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:27:39,821 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:27:39,821 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:28:22,986 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:28:22,986 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:28:22,993 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:28:22,993 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:29:12,691 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:29:12,691 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:29:12,695 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:29:12,696 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:30:51,814 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:30:51,830 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:30:51,840 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:30:51,840 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:31:03,409 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:03,410 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:31:03,411 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:03,412 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:31:23,739 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:23,739 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:31:23,739 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:23,739 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
+2020-06-20 21:31:52,357 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:52,357 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\resources
+2020-06-20 21:31:52,360 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-20 21:31:52,360 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemcollections\src\test\resources
