@@ -1,0 +1,89 @@
+package com.capgemini.airlinereservationsystemcollections.dao;
+
+import java.util.List;
+
+import com.capgemini.airlinereservationsystemcollections.bean.AdminInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.BookingsInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.FlightsInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.UsersInfo;
+import com.capgemini.airlinereservationsystemcollections.exception.AirLineReservationSystemException;
+import com.capgemini.airlinereservationsystemcollections.repository.AirLineDataBase;
+
+public class AdminDAOImpl implements AdminDAO {
+
+	public AdminInfo authenticateAdmin(String email, String password) {
+		for (AdminInfo admin : AirLineDataBase.ADMININFOS) {
+			if ((admin.getEmailId().equals(email)) && (admin.getPassword().equals(password))) {
+				return admin;
+			}
+		}
+		throw new AirLineReservationSystemException("Invalid Credentials");
+	}
+
+	public boolean RegisterAdmin(AdminInfo newAdmin) {
+		for (AdminInfo a1 : AirLineDataBase.ADMININFOS) {
+			if ((a1.getEmailId()).equals(newAdmin.getEmailId())) {
+				return false;
+			}
+		}
+		AirLineDataBase.ADMININFOS.add(newAdmin);
+		return true;
+	}
+
+	public boolean addFlight(FlightsInfo flightInfo) {
+		for(FlightsInfo info: AirLineDataBase.FLIGHTSINFOS) {
+			if(info.getFlightId()==flightInfo.getFlightId()){
+			     return false;	
+			}
+			
+		}
+		AirLineDataBase.FLIGHTSINFOS.add(flightInfo);
+		return true;
+	}
+
+	public boolean cancelFlight(int id) {
+		boolean cancellationStatus = false;
+		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFOS.size() - 1; i++) {
+			FlightsInfo retrivedFlightInfo= AirLineDataBase.FLIGHTSINFOS.get(i);
+			int retrivedFlightId=retrivedFlightInfo.getFlightId();
+			if(id==retrivedFlightId) {
+				cancellationStatus=true;
+				AirLineDataBase.FLIGHTSINFOS.remove(i);
+				break;
+			}
+			
+		}
+		return cancellationStatus;
+	}
+
+	public List<FlightsInfo> searchFlightByName(String flightName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<FlightsInfo> searchFlightBySource(String source) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<FlightsInfo> searchFlightByDestination(String destination) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<FlightsInfo> viewAllFlights() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<UsersInfo> viewAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<BookingsInfo> viewAllBookings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

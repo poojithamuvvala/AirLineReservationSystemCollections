@@ -1,0 +1,66 @@
+package com.capgemini.airlinereservationsystemcollections.services;
+
+import java.util.List;
+
+import com.capgemini.airlinereservationsystemcollections.bean.AdminInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.BookingsInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.FlightsInfo;
+import com.capgemini.airlinereservationsystemcollections.bean.UsersInfo;
+import com.capgemini.airlinereservationsystemcollections.dao.AdminDAO;
+import com.capgemini.airlinereservationsystemcollections.dao.AdminDAOImpl;
+
+public class AdminServiceImpl implements AdminService {
+
+	AdminDAO dao=new AdminDAOImpl();
+	
+	public AdminInfo authenticateAdmin(String email, String password) {
+		
+		return dao.authenticateAdmin(email, password);
+	}
+
+	public boolean RegisterAdmin(AdminInfo adminInfo) {
+		
+		return fal;
+	}
+
+	public boolean addFlight(FlightsInfo flightInfo) {
+		
+		return false;
+	}
+
+	public boolean cancelFlight(int id) {
+		
+		return false;
+	}
+
+	public List<FlightsInfo> searchFlightByName(String flightName) {
+		
+		return null;
+	}
+
+	public List<FlightsInfo> searchFlightBySource(String source) {
+		
+		return null;
+	}
+
+	public List<FlightsInfo> searchFlightByDestination(String destination) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<FlightsInfo> viewAllFlights() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<UsersInfo> viewAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<BookingsInfo> viewAllBookings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

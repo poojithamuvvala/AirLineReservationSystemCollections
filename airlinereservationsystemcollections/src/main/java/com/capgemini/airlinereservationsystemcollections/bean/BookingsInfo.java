@@ -1,12 +1,14 @@
 package com.capgemini.airlinereservationsystemcollections.bean;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Data
-public class BookingsInfo {
+public class BookingsInfo implements Serializable {
 	private int bookingId;
 	private int userId;
 	private int flightId;

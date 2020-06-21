@@ -1,0 +1,27 @@
+package com.capgemini.airlinereservationsystemcollections.dao;
+
+import com.capgemini.airlinereservationsystemcollections.bean.AdminInfo;
+
+public interface AdminDAO {
+
+	public AdminInfo authenticateAdmin(String email, String password);
+
+	public boolean RegisterAdmin(AdminInfo adminInfo);
+
+	public boolean addFlight(FlightsInfo flightInfo);
+
+	public boolean removeFlight(int id);
+
+	public ArrayList<FlightInfo> searchFlightByName(String flightName);
+
+	public ArrayList<FlightInfo> searchFlightBySource(String source);
+
+	public ArrayList<FlightInfo> searchFlightByDestination(String destination);
+
+	public List<FlightInfo> viewAllFlights();
+
+	public List<UserInfo> viewAllUsers();
+
+	public List<BookingInfo> viewAllBookings();
+
+}
