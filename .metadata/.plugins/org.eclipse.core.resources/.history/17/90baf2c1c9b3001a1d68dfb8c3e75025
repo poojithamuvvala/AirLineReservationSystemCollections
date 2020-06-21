@@ -1,0 +1,46 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class BookingsInfo {
+	private String bookingId;
+	private String userId;
+	private int flightId;
+	private String flightName;
+	private int noOfSeatsBooked;
+	private List<Integer> seatNos;
+	private LocalDate dateOfBooking;
+	private LocalDate dateOfJourney;
+	private LocalTime arrivalTime;
+	private LocalTime departureTime;
+	private String source;
+	private String destination;
+
+	public BookingsInfo() {
+		super();
+	}
+
+	public BookingsInfo(String bookingId, String userId, int flightId, String flightName, int noOfSeatsBooked,
+			List<Integer> seatNos, LocalDate dateOfBooking, LocalDate dateOfJourney, LocalTime arrivalTime,
+			LocalTime departureTime, String source, String destination) {
+		super();
+		this.bookingId = bookingId;
+		this.userId = userId;
+		this.flightId = flightId;
+		this.flightName = flightName;
+		this.noOfSeatsBooked = noOfSeatsBooked;
+		this.seatNos = seatNos;
+		this.dateOfBooking = dateOfBooking;
+		this.dateOfJourney = dateOfJourney;
+		this.arrivalTime = arrivalTime;
+		this.departureTime = departureTime;
+		this.source = source;
+		this.destination = destination;
+	}
+
+}

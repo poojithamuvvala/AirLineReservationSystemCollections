@@ -1,0 +1,10 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+import lombok.Data;
+
+@Data
+public class TicketRequestInfo {
+	private UserInfo userInfo;
+    private FlightInfo flightInfo;
+    private int noOfSeatsToBeBooked;
+}

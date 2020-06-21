@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="com.sun.istack.internal.FinalArrayList"/>
+<fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.TicketRequestInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.AdminInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.UsersInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.BookingsInfo"/>
+<fullyQualifiedTypeName name="java.time.LocalTime"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.Array"/>
+<fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.FlightsInfo"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+import java.io.Serializable;
+
+import lombok.Data;
+@SuppressWarnings("serial")
+@Data
+public class AdminInfo implements Serializable{
+       private int Adminid;
+       private String emailId;
+       private String password;
+       private long phoneNumber;
+       
+       
+       
+       
+       
+}

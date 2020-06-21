@@ -1,0 +1,8 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+public class UserInfo {
+  private int userId;
+  private int emailId;
+  private String userName;
+  
+}

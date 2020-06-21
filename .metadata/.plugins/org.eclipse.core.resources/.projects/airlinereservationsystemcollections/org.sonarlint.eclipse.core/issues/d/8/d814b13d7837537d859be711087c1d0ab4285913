@@ -1,0 +1,12 @@
+
+c
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8íÈ‹º­.HÓRMINORZ
+CODE_SMELL
+t	java:S107"BConstructor has 12 parameters, which is greater than 7 authorized.(ê”İ»8³¥ƒµ­.H˜RMAJORZ
+CODE_SMELL
+g
+java:S1191"5Use classes from the Java API instead of Sun classes.(Å™”38À‹‹º­.HÎRMAJORZ
+CODE_SMELL
+“
+java:S1128"aRemove this unused import 'com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array'.(Å™”38¤İîº­.HRMINORZ
+CODE_SMELL

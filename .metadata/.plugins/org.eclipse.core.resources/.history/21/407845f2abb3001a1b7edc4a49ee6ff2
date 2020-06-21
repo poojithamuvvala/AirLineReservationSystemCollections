@@ -1,0 +1,13 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+import java.time.LocalDate;
+
+public class FlightInfo {
+   private int flightId;
+   private String flightName;
+   private String source;
+   private String destination;
+   private LocalDate dateOfDeparture;
+   private LocalDate dateOfArrival;
+   
+}

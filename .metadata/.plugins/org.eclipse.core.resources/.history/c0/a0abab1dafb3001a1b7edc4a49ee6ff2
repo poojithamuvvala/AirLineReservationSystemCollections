@@ -1,0 +1,12 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+public class BookingsInfo {
+	private String bookingId;
+	private String userId;
+	private int noOfSeatsBooked;
+	private List seatNo;
+	private LocalDateTime dateOfBooking;
+	private LocalDateTime dateOfJourney;
+	private String source;
+	private String destination;
+}

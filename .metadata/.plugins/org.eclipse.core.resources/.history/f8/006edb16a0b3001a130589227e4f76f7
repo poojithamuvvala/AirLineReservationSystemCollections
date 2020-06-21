@@ -1,0 +1,7 @@
+package com.capgemini.airlinereservationsystemcollections.bean;
+
+import java.io.Serializable;
+
+public class AdminInfo implements Serializable{
+
+}
