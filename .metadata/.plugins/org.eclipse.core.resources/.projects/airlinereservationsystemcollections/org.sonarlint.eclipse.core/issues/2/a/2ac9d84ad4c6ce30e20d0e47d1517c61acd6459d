@@ -1,0 +1,16 @@
+
+v
+java:S1155h">Use isEmpty() to check whether the collection is empty or not.(ò©ªýÿÿÿÿ8×÷Ù¾­.H¹RMINORZ
+CODE_SMELL
+v
+java:S1155W">Use isEmpty() to check whether the collection is empty or not.(úòäèÿÿÿÿÿ8êáÊ¾­.HÿRMINORZ
+CODE_SMELL
+ˆ
+java:S1192G"MDefine a constant instead of duplicating this literal "Flight with " 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.H—RCRITICALZ
+CODE_SMELL
+v
+java:S1155F">Use isEmpty() to check whether the collection is empty or not.(³ÒõÆúÿÿÿÿ8‡’Æ¾­.HëRMINORZ
+CODE_SMELL
+†
+java:S1192G"KDefine a constant instead of duplicating this literal " not found" 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.H˜RCRITICALZ
+CODE_SMELL

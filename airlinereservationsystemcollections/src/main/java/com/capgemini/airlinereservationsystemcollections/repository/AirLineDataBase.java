@@ -19,8 +19,8 @@ public class AirLineDataBase {
 	public static final List<TicketRequestInfo> TICKETREQUESTS =new ArrayList<TicketRequestInfo>();
 	public static final List<UsersInfo> USERSINFO=new ArrayList<UsersInfo>();
 	
-	public void defaultDatabse() {
-		ADMININFO.add(new AdminInfo(1,"admin@gmail.com","admin","9618435065"));
+	public static void defaultDatabase() {
+		ADMININFO.add(new AdminInfo(1,"admin@gmail.com","Admin@1","9618435065"));
 		
 		USERSINFO.add(new UsersInfo(101,"pooji@gmail.com","pooji","Pooji@1",LocalDate.of(1998, 6, 4),"Hyderabad","9553726160"));
 		USERSINFO.add(new UsersInfo(102,"ammu@gmail.com","ammu","Ammu@1",LocalDate.of(2001, 11, 1),"Vizag","6304341432"));

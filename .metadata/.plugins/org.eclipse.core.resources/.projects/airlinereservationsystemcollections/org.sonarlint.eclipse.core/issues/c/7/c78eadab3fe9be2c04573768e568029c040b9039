@@ -1,0 +1,138 @@
+
+n
+java:S1141¿"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.H€RMAJORZ
+CODE_SMELL
+~	java:S1287"LEnd this switch case with an unconditional break, return or throw statement.(ªëÅŞúÿÿÿÿHáRBLOCKERZ
+CODE_SMELL
+~
+java:S1192ä"IDefine a constant instead of duplicating this literal "FlightId" 9 times.(¾œÒ»ÿÿÿÿÿH×RCRITICALZ
+CODE_SMELL
+€	java:S128«"LEnd this switch case with an unconditional break, return or throw statement.(û¿48¸©Íè­.HìRBLOCKERZ
+CODE_SMELL
+n
+java:S1141‘"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¿ÆÃè­.H÷RMAJORZ
+CODE_SMELL
+‡
+java:S3776"SRefactor this method to reduce its Cognitive Complexity from 652 to the 15 allowed.(”ÑëÏøÿÿÿÿHçRCRITICALZ
+CODE_SMELL
+g
+java:S1141Ì"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHóRMAJORZ
+CODE_SMELL
+n
+java:S1141‰"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ì¼÷é­.HãRMAJORZ
+CODE_SMELL
+g
+java:S1141ª"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHæRMAJORZ
+CODE_SMELL
+f
+java:S1141V"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHöRMAJORZ
+CODE_SMELL
+…
+java:S1192ä"IDefine a constant instead of duplicating this literal "capacity" 8 times.(¾œÒ»ÿÿÿÿÿ8Òîè­.H‚RCRITICALZ
+CODE_SMELL
+n
+java:S1141‚"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HßRMAJORZ
+CODE_SMELL
+Z
+java:S1481¥"-Remove this unused "authBean" local variable.(®Ğ‰‡HñRMINORZ
+CODE_SMELL
+f
+java:S1481"-Remove this unused "userBean" local variable.(äğ¡ıÿÿÿÿ8¸©Íè­.HğRMINORZ
+CODE_SMELL
+U
+java:S1116˜"Remove this empty statement.(Åñ­õşÿÿÿÿ8Ì¼÷é­.HäRMINORZ
+CODE_SMELL
+n
+java:S1141£"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HÜRMAJORZ
+CODE_SMELL
+g
+java:S1141ø"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHúRMAJORZ
+CODE_SMELL
+v
+java:S13016"KReplace this "switch" statement by "if" statements to increase readability.(ìúÇVHåRMINORZ
+CODE_SMELL
+ƒ
+java:S1192å"LDefine a constant instead of duplicating this literal "ArrivalTime" 8 times.(Äƒáğ8Òîè­.HƒRCRITICALZ
+CODE_SMELL
+n
+java:S1141Í"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÉùØé­.HÉRMAJORZ
+CODE_SMELL
+n
+java:S1141¾"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HØRMAJORZ
+CODE_SMELL
+g
+java:S1141£"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHêRMAJORZ
+CODE_SMELL
+g
+java:S1141é"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHïRMAJORZ
+CODE_SMELL
+
+java:S1192ä"LDefine a constant instead of duplicating this literal "Destination" 9 times.(¾œÒ»ÿÿÿÿÿHèRCRITICALZ
+CODE_SMELL
+Ê
+java:S1192«"Define a constant instead of duplicating this literal "===========================================================================" 16 times.(˜õ©«ùÿÿÿÿ8Õ¢’é­.H¤RCRITICALZ
+CODE_SMELL
+…
+java:S1192å"NDefine a constant instead of duplicating this literal "DepartureTime" 8 times.(Äƒáğ8Òîè­.HRCRITICALZ
+CODE_SMELL
+g
+java:S1141Ü"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHİRMAJORZ
+CODE_SMELL
+f
+java:S1118":Add a private constructor to hide the implicit public one.(·ªÄæHàRMAJORZ
+CODE_SMELL
+€
+java:S1192ä"KDefine a constant instead of duplicating this literal "FlightName" 9 times.(¾œÒ»ÿÿÿÿÿHõRCRITICALZ
+CODE_SMELL
+f
+java:S1141d"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHşRMAJORZ
+CODE_SMELL
+f
+java:S1141:"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHùRMAJORZ
+CODE_SMELL
+n
+java:S1141Ú"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HîRMAJORZ
+CODE_SMELL
+ª
+java:S1192‹"sDefine a constant instead of duplicating this literal "Invalid entry please provide only positive integer" 5 times.(Š…éë8¸©Íè­.HÙRCRITICALZ
+CODE_SMELL
+n
+java:S1141°"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÉùØé­.HÊRMAJORZ
+CODE_SMELL
+˜
+java:S1192"iDefine a constant instead of duplicating this literal "%-10s %-10s %-13s %-15s  %-15s %-15s %s" 14 times.(éåîHÿRCRITICALZ
+CODE_SMELL
+†	java:S128ƒ"LEnd this switch case with an unconditional break, return or throw statement.(òï±êÿÿÿÿÿ8¸©Íè­.HûRBLOCKERZ
+CODE_SMELL
+n
+java:S1141ë"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HøRMAJORZ
+CODE_SMELL
+n
+java:S1141—"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HüRMAJORZ
+CODE_SMELL
+f
+java:S1141s"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHıRMAJORZ
+CODE_SMELL
+g
+java:S1141©"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHâRMAJORZ
+CODE_SMELL
+n
+java:S1141»"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸©Íè­.HíRMAJORZ
+CODE_SMELL
+f
+java:S1141G"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHéRMAJORZ
+CODE_SMELL
+O	java:S1316""Add a default case to this switch.(ìúÇVHãRCRITICALZ
+CODE_SMELL
+n
+java:S1141š"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÉùØé­.HÈRMAJORZ
+CODE_SMELL
+†
+java:S1192‡"ODefine a constant instead of duplicating this literal "Invalid Choice" 3 times.(ı™Ìê8¸©Íè­.HëRCRITICALZ
+CODE_SMELL
+ƒ
+java:S1192ä"GDefine a constant instead of duplicating this literal "Source" 9 times.(¾œÒ»ÿÿÿÿÿ8¸©Íè­.HÛRCRITICALZ
+CODE_SMELL
+g
+java:S1141Œ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHŞRMAJORZ
+CODE_SMELL
