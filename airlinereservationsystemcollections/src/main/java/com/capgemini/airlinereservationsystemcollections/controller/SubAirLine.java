@@ -177,7 +177,7 @@ public class SubAirLine {
 											System.out.println("PRESS 6, TO VIEW ALL FLIGHTS AND ITS DETAILS");
 											System.out.println("PRESS 7, TO VIEW ALL BOOKINGS");
 											System.out.println("PRESS 8, TO VIEW ALL USERS");
-											System.out.println("[9] LOGOUT");
+											System.out.println("PRESS 9, TO LOGOUT");
 											System.out.println(
 													"===========================================================================");
 											int choice1 = scanner.nextInt();
@@ -259,8 +259,10 @@ public class SubAirLine {
 												} while (!flag);
 												do {
 													System.out.println("Enter the departure Time : ");
-													departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
-															scanner.nextInt());
+													int k=scanner.nextInt();
+													int l=scanner.nextInt();
+													int m=scanner.nextInt();
+													departureTime = LocalTime.of(k,l,m);
 
 													try {
 
@@ -275,7 +277,9 @@ public class SubAirLine {
 													}
 												} while (!flag);
 												do {
+													
 													System.out.println("Enter the Arrival Time : ");
+													
 													departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
 															scanner.nextInt());
 
@@ -337,7 +341,7 @@ public class SubAirLine {
 												bean1.setDateOfDeparture(departureDate);
 												boolean check2 = service.addFlight(bean1);
 												if (check2) {
-													System.out.println("Flight added of id = " + flightId);
+													System.out.println("Flight added to repository with id : " + flightId);
 												} else {
 													System.out.println("Flight already exist of id = " + flightId);
 												}
@@ -794,14 +798,18 @@ public class SubAirLine {
 													System.out.println(
 															"<--------------------------------------------------------------------->");
 													System.out.println(String.format(
-															"%-10s %-10s %-10s %-10s",
-															"FlightId", "FlightName", "UserID", "UserName"));
+															"%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s",
+															"FlightId", "FlightName", "UserID", "UserName","ArrivalDate","DepartureDate","DepartureTime","ArrivalTime"));
 													System.out.println(String.format(
-															"%-10s %-10s %-10s %-10s",
+															"%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s",
 															request.getFlightInfo().getFlightId(),
 															request.getFlightInfo().getFlightName(),
 															request.getUserInfo().getUserId(),
-															request.getUserInfo().getUserName()
+															request.getUserInfo().getUserName(),
+															request.getFlightInfo().getDateOfArrival(),
+															request.getFlightInfo().getDateOfDeparture(),
+															request.getFlightInfo().getDepartureTime(),
+															request.getFlightInfo().getArrivalTime()
 															));
 
 												} catch (Exception e) {
@@ -828,8 +836,8 @@ public class SubAirLine {
 								break;
 
 							default:
-								System.out.println("Invalid Choice");
-								System.err.println("Choice must be 1 or 2");
+								System.err.println("Invalid Choice, Enter either 1 or 2 or 3");
+								
 								break;
 							}
 						} catch (InputMismatchException e) { // if we give string in 1 n 2 n 3
