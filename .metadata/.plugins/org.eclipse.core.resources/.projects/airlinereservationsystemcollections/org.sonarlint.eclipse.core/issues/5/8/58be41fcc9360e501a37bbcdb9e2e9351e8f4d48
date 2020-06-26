@@ -1,16 +1,37 @@
 
-v
-java:S1155;">Use isEmpty() to check whether the collection is empty or not.(³ÒõÆúÿÿÿÿ8Àó•¿­.Hğ	RMINORZ
+ˆ
+java:S1192+"MDefine a constant instead of duplicating this literal "Flight with " 3 times.(êêĞûÿÿÿÿ8Àó•¿­.H¼RCRITICALZ
 CODE_SMELL
-v
-java:S1155L">Use isEmpty() to check whether the collection is empty or not.(ò©ªıÿÿÿÿ8¸Ë”¿­.Hé	RMINORZ
-CODE_SMELL
-†
-java:S1192+"KDefine a constant instead of duplicating this literal " not found" 3 times.(êêĞûÿÿÿÿ8Àó•¿­.Hï	RCRITICALZ
+Œ
+java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãşüÛ8ÿû­.H½RMINORZ
 CODE_SMELL
 ˆ
-java:S1192+"MDefine a constant instead of duplicating this literal "Flight with " 3 times.(êêĞûÿÿÿÿ8Àó•¿­.Hî	RCRITICALZ
+java:S3776a"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(à­¹‰8½‚—ù­.H¾RCRITICALZ
 CODE_SMELL
 v
-java:S1155*">Use isEmpty() to check whether the collection is empty or not.(úòäèÿÿÿÿÿ8ÆĞ’¿­.HŞ	RMINORZ
+java:S1155*">Use isEmpty() to check whether the collection is empty or not.(úòäèÿÿÿÿÿ8ÆĞ’¿­.H¿RMINORZ
+CODE_SMELL
+v
+java:S1155;">Use isEmpty() to check whether the collection is empty or not.(³ÒõÆúÿÿÿÿ8Àó•¿­.HÀRMINORZ
+CODE_SMELL
+v
+java:S1155L">Use isEmpty() to check whether the collection is empty or not.(ò©ªıÿÿÿÿ8¸Ë”¿­.HÁRMINORZ
+CODE_SMELL
+e
+java:S1659c"-Declare "isRequestExists" on a separate line.(×™Ôşÿÿÿÿ8½‚—ù­.HÂRMINORZ
+CODE_SMELL
+‘
+java:S2293T"YReplace the type specification in this constructor call with the diamond operator ("<>").(„¶íışÿÿÿÿ8ÿû­.HÃRMINORZ
+CODE_SMELL
+‘
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(şï–ôüÿÿÿÿ8ÿû­.HÄRMINORZ
+CODE_SMELL
+†
+java:S1192+"KDefine a constant instead of duplicating this literal " not found" 3 times.(êêĞûÿÿÿÿ8Àó•¿­.HÅRCRITICALZ
+CODE_SMELL
+‘
+java:S2293C"YReplace the type specification in this constructor call with the diamond operator ("<>").(à‹×ùÿÿÿÿ8ÿû­.HÆRMINORZ
+CODE_SMELL
+[
+java:S1125x"(Remove the literal "true" boolean value.(«¸ş•8ˆ ú­.HÇRMINORZ
 CODE_SMELL

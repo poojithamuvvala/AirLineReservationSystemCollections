@@ -31,3 +31,28 @@
 1592882137328	Rename local variable 'studentBean'
 1592882337075	Rename local variable 'book1'
 1592882431291	Rename local variable 'bookInfo2'
+1593107992141	Rename local variable 'bookingsInfo1'
+1593108070190	Rename local variable 'bookingsInfo2'
+1593108242440	Rename local variable 'bookingsInfo3'
+1593108373220	Rename local variable 'bookingsInfo4'
+1593151563972	Rename local variable 'flightsInfo1'
+1593151660173	Rename local variable 'flightsInfo1'
+1593155059187	Rename package 'com.capgemini.airlinereservationsystemcollections'
+1593155082895	Rename package 'com.capgemini.airlinereservationsystemcollections.bean'
+1593155104205	Delete element
+1593155129517	Rename package 'com.capgemini.airlinereservationsystemcollections.services'
+1593155166040	Rename package 'com.capgemini.airlinereservationsystemcollections.validation'
+1593155184819	Rename package 'com.capgemini.airlinereservationsystemcollections.repository'
+1593155209570	Rename package 'com.capgemini.airlinereservationsystemcollections.exception'
+1593155243676	Rename package 'com.capgemini.airlinereservationsystemcollections.dao'
+1593155263741	Rename package 'com.capgemini.airlinereservationsystemcollections.controller'
+1593155475292	Delete element
+1593155494365	Delete element
+1593155503251	Delete element
+1593155507893	Delete element
+1593155511539	Delete element
+1593155514703	Delete element
+1593155520080	Delete element
+1593155524598	Delete element
+1593155992906	Rename package 'com.javafullstack.airlinereservationsystemcollections.services'
+1593156011265	Rename package 'com.javafullstack.airlinereservationsystemcollections.validation'

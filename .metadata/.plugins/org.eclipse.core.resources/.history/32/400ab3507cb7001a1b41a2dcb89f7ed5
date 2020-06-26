@@ -1,0 +1,5 @@
+package com.capgemini.airlinereservationsystemcollections.exception;
+
+public class AirLineReservationSystemException extends RuntimeException{
+
+}

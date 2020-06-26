@@ -1,16 +1,34 @@
 
 v
-java:S1155h">Use isEmpty() to check whether the collection is empty or not.(ò©ªıÿÿÿÿ8×÷Ù¾­.H¹RMINORZ
+java:S1155W">Use isEmpty() to check whether the collection is empty or not.(úòäèÿÿÿÿÿ8êáÊ¾­.H±RMINORZ
 CODE_SMELL
-v
-java:S1155W">Use isEmpty() to check whether the collection is empty or not.(úòäèÿÿÿÿÿ8êáÊ¾­.HÿRMINORZ
-CODE_SMELL
-ˆ
-java:S1192G"MDefine a constant instead of duplicating this literal "Flight with " 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.H—RCRITICALZ
-CODE_SMELL
-v
-java:S1155F">Use isEmpty() to check whether the collection is empty or not.(³ÒõÆúÿÿÿÿ8‡’Æ¾­.HëRMINORZ
+Œ
+java:S2293~"YReplace the type specification in this constructor call with the diamond operator ("<>").(ùÅ÷–8Ø¾‚û­.H²RMINORZ
 CODE_SMELL
 †
-java:S1192G"KDefine a constant instead of duplicating this literal " not found" 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.H˜RCRITICALZ
+java:S1192G"KDefine a constant instead of duplicating this literal " not found" 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.H³RCRITICALZ
+CODE_SMELL
+Œ
+java:S2293N"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãşüÛ8Ø¾‚û­.H´RMINORZ
+CODE_SMELL
+ˆ
+java:S1192G"MDefine a constant instead of duplicating this literal "Flight with " 3 times.(Àôñ¢ûÿÿÿÿ8°ÆÓ¾­.HµRCRITICALZ
+CODE_SMELL
+‘
+java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(şï–ôüÿÿÿÿ8Ø¾‚û­.H¶RMINORZ
+CODE_SMELL
+
+java:S2293‹"YReplace the type specification in this constructor call with the diamond operator ("<>").(æôÄı8Ø¾‚û­.H·RMINORZ
+CODE_SMELL
+v
+java:S1155h">Use isEmpty() to check whether the collection is empty or not.(ò©ªıÿÿÿÿ8×÷Ù¾­.H¸RMINORZ
+CODE_SMELL
+‘
+java:S2293p"YReplace the type specification in this constructor call with the diamond operator ("<>").(úƒñıÿÿÿÿ8Ø¾‚û­.H¹RMINORZ
+CODE_SMELL
+‘
+java:S2293_"YReplace the type specification in this constructor call with the diamond operator ("<>").(à‹×ùÿÿÿÿ8Ø¾‚û­.HºRMINORZ
+CODE_SMELL
+v
+java:S1155F">Use isEmpty() to check whether the collection is empty or not.(³ÒõÆúÿÿÿÿ8‡’Æ¾­.H»RMINORZ
 CODE_SMELL

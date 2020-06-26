@@ -1,0 +1,56 @@
+
+k
+java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿH‹(RMAJORZ
+CODE_SMELL
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßıHŒ(RMINORZ
+CODE_SMELL
+h	java:S125¼"<This block of commented-out lines of code should be removed.( ø¾¿H“(RMAJORZ
+CODE_SMELL
+l	java:S125h"<This block of commented-out lines of code should be removed.(Îï’ÁùÿÿÿÿH’(RMAJORZ
+CODE_SMELL
+h	java:S125ø"<This block of commented-out lines of code should be removed.(¹­«àH•(RMAJORZ
+CODE_SMELL
+y
+java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜHˆ(RCRITICALZ
+CODE_SMELL
+v
+java:S1192t"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™H‰(RCRITICALZ
+CODE_SMELL
+Š
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿH(RMINORZ
+CODE_SMELL
+Š
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿH(RMINORZ
+CODE_SMELL
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃH(RMINORZ
+CODE_SMELL
+m	java:S125é"<This block of commented-out lines of code should be removed.(’ÊÜıûÿÿÿÿH”(RMAJORZ
+CODE_SMELL
+h	java:S125û"<This block of commented-out lines of code should be removed.(íÿ£„H–(RMAJORZ
+CODE_SMELL
+u
+java:S1192/"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞH†(RCRITICALZ
+CODE_SMELL
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖH(RMINORZ
+CODE_SMELL
+g	java:S125f"<This block of commented-out lines of code should be removed.(âğ¤ H‘(RMAJORZ
+CODE_SMELL
+}
+java:S11929"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿHŠ(RCRITICALZ
+CODE_SMELL
+w
+java:S1192X"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦èH‡(RCRITICALZ
+CODE_SMELL
+S
+java:S2386"Make this member "protected".(ĞÑßı8üŠºü®.H‘*RMINORZVULNERABILITY
+X
+java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8üŠºü®.H’*RMINORZVULNERABILITY
+X
+java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8üŠºü®.H“*RMINORZVULNERABILITY
+S
+java:S2386"Make this member "protected".(²”ÈÃ8üŠºü®.H”*RMINORZVULNERABILITY
+S
+java:S2386"Make this member "protected".(²›úÖ8üŠºü®.H•*RMINORZVULNERABILITY

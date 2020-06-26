@@ -1,5 +1,0 @@
-package com.capgemini.airlinereservationsystemcollections.dao;
-
-public class UserDAOImpl implements UserDAO{
-
-}
