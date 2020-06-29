@@ -1,14 +1,15 @@
-package com.javafullstackfeb.airlinereservationsystemcollections.services;
+package com.javafullstackfeb.airlinereservationsystemjdbc.services;
 
 import java.util.List;
-import com.javafullstack.airlinereservationsystemcollections.factory.AirLineFactory;
-import com.javafullstackfeb.airlinereservationsystemcollections.bean.AdminInfo;
-import com.javafullstackfeb.airlinereservationsystemcollections.bean.BookingsInfo;
-import com.javafullstackfeb.airlinereservationsystemcollections.bean.FlightsInfo;
-import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
-import com.javafullstackfeb.airlinereservationsystemcollections.dao.AdminDAO;
-import com.javafullstackfeb.airlinereservationsystemcollections.exception.AirLineReservationSystemException;
-import com.javafullstackfeb.airlinereservationsystemcollections.validation.Validation;
+
+import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.AdminInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.BookingsInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UsersInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
+import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
 
 public class AdminServiceImpl implements AdminService {
 
