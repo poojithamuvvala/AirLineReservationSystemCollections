@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\java\com\javafullstackfeb\airlinereservationsystemcollections\validation"/>
+			<item value="C:\AirLineReservationSystem\airlinereservationsystemcollections\src\main\java\com\javafullstackfeb\airlinereservationsystemcollections\bean\UsersInfo.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,13 +27,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.capgemini.airlinereservationsystemcollections"/>
 		</list>
 		<list key="groupId">
-			<item value="com.capgemini"/>
 		</list>
 		<list key="artifactId">
-			<item value="airlinereservationsystemcollections"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

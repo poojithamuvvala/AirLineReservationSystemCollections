@@ -3,7 +3,6 @@ package com.javafullstackfeb.airlinereservationsystemcollections.bean;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 import lombok.Data;
 
 @SuppressWarnings("serial")

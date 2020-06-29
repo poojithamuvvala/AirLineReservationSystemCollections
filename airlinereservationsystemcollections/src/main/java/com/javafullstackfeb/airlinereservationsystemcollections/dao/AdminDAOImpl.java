@@ -62,7 +62,7 @@ public class AdminDAOImpl implements AdminDAO {
 		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
 			FlightsInfo retrievedFlightInfo = AirLineDataBase.FLIGHTSINFO.get(i);
 			String retrievedFname = retrievedFlightInfo.getFlightName();
-			if (flightName.equals(retrievedFname)) {
+			if (flightName.equalsIgnoreCase(retrievedFname)) {
 				searchListByName.add(retrievedFlightInfo);
 				return searchListByName;
 			}
@@ -79,7 +79,7 @@ public class AdminDAOImpl implements AdminDAO {
 		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
 			FlightsInfo retrievedFlight = AirLineDataBase.FLIGHTSINFO.get(i);
 			String retrievedSourcename = retrievedFlight.getSource();
-			if (source.equals(retrievedSourcename)) {
+			if (source.equalsIgnoreCase(retrievedSourcename)) {
 				searchListBySource.add(retrievedFlight);
 				return searchListBySource;
 			}
@@ -96,7 +96,7 @@ public class AdminDAOImpl implements AdminDAO {
 		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
 			FlightsInfo retrievedFlightInfo = AirLineDataBase.FLIGHTSINFO.get(i);
 			String retrievedDestinationName = retrievedFlightInfo.getDestination();
-			if (destination.equals(retrievedDestinationName)) {
+			if (destination.equalsIgnoreCase(retrievedDestinationName)) {
 				searchListByDestination.add(retrievedFlightInfo);
 				return searchListByDestination;
 			}

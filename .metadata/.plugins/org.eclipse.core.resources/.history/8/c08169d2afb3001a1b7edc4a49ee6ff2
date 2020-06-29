@@ -1,7 +1,0 @@
-package com.capgemini.airlinereservationsystemcollections.bean;
-
-public class TicketRequestInfo {
-	private UserInfo userInfo;
-    private FlightInfo flightInfo;
-    private int noOfSeatsBooked;
-}

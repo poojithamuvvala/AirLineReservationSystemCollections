@@ -7,29 +7,55 @@ import com.javafullstackfeb.airlinereservationsystemcollections.bean.TicketReque
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.dao.UserDAO;
 import com.javafullstackfeb.airlinereservationsystemcollections.dao.UserDAOImpl;
+import com.javafullstackfeb.airlinereservationsystemcollections.validation.Validation;
 
 public class UserServiceImpl implements UserService {
 
 	UserDAO dao = new UserDAOImpl();
-
+    Validation validation=new Validation();
 	public boolean registerUser(UsersInfo usersInfo) {
-
-		return dao.registerUser(usersInfo);
+		if(validation.validateId(usersInfo.getUserId())) {
+			if(validation.validateName(usersInfo.getUserName())) {
+				if(validation.validateMobile(usersInfo.getPhoneNumber())) {
+			       if(validation.validateEmail(usersInfo.getEmailId())) {
+				      if(validation.validatePassword(usersInfo.getPassword())) {  
+					return dao.registerUser(usersInfo);
+				}
+			}
+		}
+	}
+	}
+		return false;
 	}
 
 	public List<FlightsInfo> searchBySource(String source) {
-
-		return dao.searchBySource(source);
+		if (validation.validateName(source)) {
+			return dao.searchBySource(source);
+		} else {
+			System.out.println("Invalid Source");
+		}
+		return null;
 	}
 
 	public List<FlightsInfo> searchByName(String flightName) {
-
-		return dao.searchByName(flightName);
+		if (validation.validateName(flightName)) {
+			System.out.println(flightName);
+			return dao.searchByName(flightName);
+		} else {
+			System.out.println("Invalid Name");
+		}
+		return null;
 	}
 
 	public List<FlightsInfo> searchByDestination(String destination) {
-
-		return dao.searchByDestination(destination);
+		if (validation.validateName(destination)) {
+			return dao.searchByDestination(destination);
+			} else {
+				System.out.println("Invalid Destination");
+			}
+			
+			return null;
+		
 	}
 
 	public List<FlightsInfo> getAllFlightDetails() {
@@ -38,8 +64,14 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public UsersInfo authenticateUser(String email, String password) {
-
-		return dao.authenticateUser(email, password);
+		if(validation.validateEmail(email)) {
+			if(validation.validatePassword(password)){
+				return dao.authenticateUser(email, password);
+			}
+		
+	}
+	return null;
+		
 	}
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo) {

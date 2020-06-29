@@ -1,7 +1,0 @@
-package com.capgemini.airlinereservationsystemcollections.bean;
-
-public class FlightInfo {
-   private int flightId;
-   private String flightName;
-   private String 
-}

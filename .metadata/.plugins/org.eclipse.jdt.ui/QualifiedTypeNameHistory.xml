@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.controller.SubAirLine"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.validation.Validation"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.services.AdminService"/>
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.services.AdminServiceImpl"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
@@ -33,5 +32,13 @@
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.BookingsInfo"/>
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.FlightsInfo"/>
 <fullyQualifiedTypeName name="com.capgemini.airlinereservationsystemcollections.bean.TicketRequestInfo"/>
+<fullyQualifiedTypeName name="lombok.ToString"/>
+<fullyQualifiedTypeName name="lombok.ToString.Exclude"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.bean.AdminInfo"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.exception.AirLineReservationSystemException"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.validation.Validation"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

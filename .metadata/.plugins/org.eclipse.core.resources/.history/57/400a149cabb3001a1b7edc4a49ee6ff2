@@ -1,5 +1,0 @@
-package com.capgemini.airlinereservationsystemcollections.bean;
-
-public class FlightInfo {
-
-}

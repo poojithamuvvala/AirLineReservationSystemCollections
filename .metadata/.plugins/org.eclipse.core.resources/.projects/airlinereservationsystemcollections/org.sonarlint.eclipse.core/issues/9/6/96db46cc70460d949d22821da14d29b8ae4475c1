@@ -1,4 +1,25 @@
 
-¡
-java:S1845"sRename method "registerAdmin" to prevent any misunderstanding/clash with method "RegisterAdmin" defined on line 67.(¡åÓÕH„*RBLOCKERZ
+g
+java:S1066!"/Merge this if statement with the enclosing one.(åı øûÿÿÿÿ8ËÄï¯.Hã6RMAJORZ
+CODE_SMELL
+g
+java:S1066"/Merge this if statement with the enclosing one.( ³ô´şÿÿÿÿ8ÙÎêŞ¯.Hä6RMAJORZ
+CODE_SMELL
+^
+java:S1168S"+Return an empty collection instead of null.(¥¹ï8®•§Ü¯.Hå6RMAJORZ
+CODE_SMELL
+b
+java:S1066$"/Merge this if statement with the enclosing one.(şğÓì8ËÄï¯.Hæ6RMAJORZ
+CODE_SMELL
+g
+java:S1066""/Merge this if statement with the enclosing one.(Øö€ˆøÿÿÿÿ8ËÄï¯.Hç6RMAJORZ
+CODE_SMELL
+^
+java:S1168I"+Return an empty collection instead of null.(¥¹ï8¡ø‹ß¯.Hè6RMAJORZ
+CODE_SMELL
+^
+java:S1168]"+Return an empty collection instead of null.(¥¹ï8Ê®Ş¯.Hé6RMAJORZ
+CODE_SMELL
+g
+java:S1066#"/Merge this if statement with the enclosing one.(ÁùÜ¯ûÿÿÿÿ8ËÄï¯.Hê6RMAJORZ
 CODE_SMELL

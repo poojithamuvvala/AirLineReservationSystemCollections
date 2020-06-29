@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import com.javafullstackfeb.airlinereservationsystemcollections.exception.AirLineReservationSystemException;
 
 public class Validation {
-	public boolean validatedId1(int id) throws AirLineReservationSystemException {
+	public boolean validateId(int id) throws AirLineReservationSystemException {
 		String idRegEx = "[0-9]{1}[0-9]{2}";
 		boolean result = false;
 		if (Pattern.matches(idRegEx, String.valueOf(id))) {
@@ -17,7 +17,7 @@ public class Validation {
 		return result;
 	}
 	
-	public boolean validateId2(int id) throws AirLineReservationSystemException {
+	public boolean validateFlightId(int id) throws AirLineReservationSystemException {
 		String idRegEx = "[0-9]{1}[0-9]{3}";
 		boolean result = false;
 		if (Pattern.matches(idRegEx, String.valueOf(id))) {
@@ -30,7 +30,7 @@ public class Validation {
 	
 	
 
-	public boolean validatedName(String name) throws AirLineReservationSystemException {
+	public boolean validateName(String name) throws AirLineReservationSystemException {
 		String nameRegEx = "^(?=.{4,20}$)(?![_.-])(?!.*[.]{2})[a-zA-Z._-]+(?<![_.-])";
 		boolean result = false;
 		Pattern pattern = Pattern.compile(nameRegEx);
@@ -43,19 +43,18 @@ public class Validation {
 		return result;
 	}
 
-	public boolean validatedMobile(String checkMobileno) throws AirLineReservationSystemException {
+	public boolean validateMobile(String checkMobileno) throws AirLineReservationSystemException {
 		String mobileRegEx = "(0/91)?[6-9][0-9]{9}";
 		boolean result = false;
 		if (Pattern.matches(mobileRegEx, String.valueOf(checkMobileno))) {
 			result = true;
 		} else {
-			throw new AirLineReservationSystemException(
-					"Inalid Mobile Number! Enter a mobile number whose length should be exactly 10 digits and should start with 6,7,8,9 digits only");
+			throw new AirLineReservationSystemException("Inalid Mobile Number! Enter a mobile number whose length should be exactly 10 digits and should start with 6,7,8,9 digits only");
 		}
 		return result;
 	}
 
-	public boolean validatedEmail(String email) throws AirLineReservationSystemException {
+	public boolean validateEmail(String email) throws AirLineReservationSystemException {
 		String emailRegEx = "^[a-z0-9](\\.?[a-z0-9]){5,}@g(oogle)?mail\\.(com|org)";
 		boolean result = false;
 		Pattern pattern = Pattern.compile(emailRegEx);
@@ -68,7 +67,7 @@ public class Validation {
 		return result;
 	}
 
-	public boolean validatedPassword(String password) throws AirLineReservationSystemException {
+	public boolean validatePassword(String password) throws AirLineReservationSystemException {
 		String passwordRegEx = "((?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%]).{5,20})";
 		boolean result = false;
 		if (Pattern.matches(passwordRegEx, String.valueOf(password))) {

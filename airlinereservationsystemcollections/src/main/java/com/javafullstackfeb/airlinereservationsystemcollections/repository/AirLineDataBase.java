@@ -23,16 +23,16 @@ public class AirLineDataBase {
 		
 		AdminInfo adminInfo=new AdminInfo();
 		adminInfo.setAdminid(1);
-		adminInfo.setEmailId("admin@gmail.com");
+		adminInfo.setEmailId("admin1@gmail.com");
 		adminInfo.setPassword("Admin@1");
 		adminInfo.setPhoneNumber("9618435065");
 		ADMININFO.add(adminInfo);
 		
 		UsersInfo usersInfo1 =new UsersInfo();
 		usersInfo1.setUserId(101);
-		usersInfo1.setEmailId("pooji@gmail.com");
+		usersInfo1.setEmailId("pooji1@gmail.com");
 		usersInfo1.setUserName("pooji");
-		usersInfo1.setPassword("Pooji@1");
+		usersInfo1.setPassword("Pooji@123");
 		usersInfo1.setDateOfBirth(LocalDate.of(1998, 6, 4));
 		usersInfo1.setAddress("Hyderabad");
 		usersInfo1.setPhoneNumber("9553726160");
@@ -99,15 +99,6 @@ public class AirLineDataBase {
 		usersInfo7.setPhoneNumber("9295452346");
 		USERSINFO.add(usersInfo7);
 		
-		//ADMININFO.add(new AdminInfo(1,"admin@gmail.com","Admin@1","9618435065"));
-		
-		//USERSINFO.add(new UsersInfo(101,"pooji@gmail.com","pooji","Pooji@1",LocalDate.of(1998, 6, 4),"Hyderabad","9553726160"));
-		//USERSINFO.add(new UsersInfo(102,"ammu@gmail.com","ammu","Ammu@1",LocalDate.of(2001, 11, 1),"Vizag","6304341432"));
-		//USERSINFO.add(new UsersInfo(103,"suji@gmail.com","suji","Suji@1",LocalDate.of(1995, 1, 24),"Banglore", "8919305263"));
-		//USERSINFO.add(new UsersInfo(104,"kushal@gmail.com","kushal","Kush@1",LocalDate.of(1994, 6, 14),"Vizaywada","7075331919"));
-		//USERSINFO.add(new UsersInfo(105,"kiran@gmail.com","kiran","Kiran@1",LocalDate.of(1997, 11, 18),"Karimnagar","9059848762"));
-	  	//USERSINFO.add(new UsersInfo(106,"lucky@gmail.com","lucky","Lucky@1",LocalDate.of(2000, 4, 13),"Chennai","9491680796"));
-		//USERSINFO.add(new UsersInfo(107,"vital@gmail.com","vital","Vita@1",LocalDate.of(1990, 8, 12),"Mumbai","9295452346"));
 	
 		BookingsInfo bookingsInfo1=new BookingsInfo();
 		bookingsInfo1.setBookingId(1001);
@@ -183,13 +174,7 @@ public class AirLineDataBase {
 		bookingsInfo5.setSource("Chennai");
 		bookingsInfo5.setDestination("Hyderabad");
 		BOOKINGSINFO.add(bookingsInfo5);
-		
-		
-		//BOOKINGSINFO.add(new BookingsInfo(1001,101,2001,"Indigo",3,"23,24,25",LocalDate.of(2020, 01, 12),LocalDate.of(2020, 02, 01), LocalTime.of(12, 30, 00),LocalTime.of(3, 30, 00),"Vizag","Hyderabad"));
-		//BOOKINGSINFO.add(new BookingsInfo(1002,102,2001,"Indigo",1,"21",LocalDate.of(2020, 01, 10),LocalDate.of(2020, 02, 01), LocalTime.of(12, 30, 00),LocalTime.of(3, 30, 00),"Vizag","Hyderabad"));
-		//BOOKINGSINFO.add(new BookingsInfo(1003,103,2021,"SpiceJet",3,"23,24,25",LocalDate.of(2020, 01, 1),LocalDate.of(2020, 01, 05), LocalTime.of(6, 30, 00),LocalTime.of(8, 00, 00),"Bangore","Hyderabad"));
-		//BOOKINGSINFO.add(new BookingsInfo(1004,104,2022,"Indigo",2,"3,4",LocalDate.of(2019, 12, 1),LocalDate.of(2020, 01, 05), LocalTime.of(3, 30, 00),LocalTime.of(8, 30, 00),"Chennai","Hyderabad"));
-		//BOOKINGSINFO.add(new BookingsInfo(1005,105,2022,"Indigo",3,"23,24,26",LocalDate.of(2020, 01, 12),LocalDate.of(2020, 02, 01), LocalTime.of(3, 30, 00),LocalTime.of(8, 30, 00),"Chennai","Hyderabad"));
+	
 
 		FlightsInfo flightsInfo1=new FlightsInfo();
 		flightsInfo1.setFlightId(2001);
@@ -230,9 +215,7 @@ public class AirLineDataBase {
 		flightsInfo3.setNoOfSeatsBooked(40);
 		FLIGHTSINFO.add(flightsInfo3);
 		
-//		FLIGHTSINFO.add(new FlightsInfo(2001, "Indigo", "Vizag", "Hyderabad", LocalDate.of(2020, 01, 30), LocalDate.of(2020, 02, 01), LocalTime.of(12, 30, 00),LocalTime.of(3, 30, 00), 200, 52));
-//		FLIGHTSINFO.add(new FlightsInfo(2021, "SpiceJet", "Banglore", "Hyderabad", LocalDate.of(2020, 01, 1),LocalDate.of(2020, 01, 05), LocalTime.of(6, 30, 00),LocalTime.of(8, 00, 00), 250, 212));
-//		FLIGHTSINFO.add(new FlightsInfo(2022, "Indigo", "Chennai","Hyderabad", LocalDate.of(2020, 01, 30),LocalDate.of(2020, 02, 01), LocalTime.of(3, 30, 00),LocalTime.of(8, 30, 00), 150, 40));
+
 
 		TicketRequestInfo requestInfo1=new TicketRequestInfo();
 		requestInfo1.setUserInfo(usersInfo7);
@@ -244,10 +227,6 @@ public class AirLineDataBase {
 		requestInfo2.setUserInfo(usersInfo6);
 		requestInfo2.setFlightInfo(flightsInfo1);
 		TICKETREQUESTS.add(requestInfo2);
-//		TICKETREQUESTS.add(new TicketRequestInfo(new UsersInfo(107,"vital@gmail.com","vital","Vita@1",LocalDate.of(1990, 8, 12),"Mumbai","9295452346"), 
-//				                 new FlightsInfo(2001, "Indigo", "Vizag", "Hyderabad", LocalDate.of(2020, 01, 30), LocalDate.of(2020, 02, 01), LocalTime.of(12, 30, 00),LocalTime.of(3, 30, 00), 200, 52), 5));
-//	    
-//	    TICKETREQUESTS.add(new TicketRequestInfo(new UsersInfo(106,"lucky@gmail.com","lucky","Lucky@1",LocalDate.of(2000, 4, 13),"Chennai","9491680796"), 
-//                new FlightsInfo(2001, "Indigo", "Vizag", "Hyderabad", LocalDate.of(2020, 01, 30), LocalDate.of(2020, 02, 01), LocalTime.of(12, 30, 00),LocalTime.of(3, 30, 00), 200, 52), 2));
+
 	}
 }

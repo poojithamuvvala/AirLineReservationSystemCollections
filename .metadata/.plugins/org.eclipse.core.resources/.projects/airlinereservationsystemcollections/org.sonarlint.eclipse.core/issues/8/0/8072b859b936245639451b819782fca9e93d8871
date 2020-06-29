@@ -1,56 +1,0 @@
-
-X
-java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8Ì«ß½­.HãRMINORZVULNERABILITY
-S
-java:S2386"Make this member "protected".(²”ÈÃ8Ì«ß½­.HåRMINORZVULNERABILITY
-Œ
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßı8üÄÌú­.HìRMINORZ
-CODE_SMELL
-Œ
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃ8üÄÌú­.HèRMINORZ
-CODE_SMELL
-o	java:S125û"<This block of commented-out lines of code should be removed.(íÿ£„8¸®ˆú®.HØRMAJORZ
-CODE_SMELL
-}
-java:S1192t"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™8¯ş»­.HñRCRITICALZ
-CODE_SMELL
-Œ
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖ8üÄÌú­.HîRMINORZ
-CODE_SMELL
-‘
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿ8üÄÌú­.HğRMINORZ
-CODE_SMELL
-s	java:S125h"<This block of commented-out lines of code should be removed.(Îï’Áùÿÿÿÿ8ööƒä®.HæRMAJORZ
-CODE_SMELL
-€
-java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜ8¯ş»­.HçRCRITICALZ
-CODE_SMELL
-n	java:S125f"<This block of commented-out lines of code should be removed.(âğ¤ 8ˆÙğã®.HéRMAJORZ
-CODE_SMELL
-S
-java:S2386"Make this member "protected".(ĞÑßı8Ì«ß½­.HáRMINORZVULNERABILITY
-X
-java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8Ì«ß½­.HâRMINORZVULNERABILITY
-‘
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿ8üÄÌú­.HäRMINORZ
-CODE_SMELL
-o	java:S125¼"<This block of commented-out lines of code should be removed.( ø¾¿8©ïˆå®.HêRMAJORZ
-CODE_SMELL
-t	java:S125é"<This block of commented-out lines of code should be removed.(’ÊÜıûÿÿÿÿ8‹Ùùù®.HÑRMAJORZ
-CODE_SMELL
-S
-java:S2386"Make this member "protected".(²›úÖ8Ì«ß½­.HëRMINORZVULNERABILITY
-~
-java:S1192X"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦è8ßŸ»­.HïRCRITICALZ
-CODE_SMELL
-o	java:S125ø"<This block of commented-out lines of code should be removed.(¹­«à8¸®ˆú®.H×RMAJORZ
-CODE_SMELL
-r
-java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿ8Ò‚…ç­.HßRMAJORZ
-CODE_SMELL
-„
-java:S11929"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿ8Ò¶ å®.HíRCRITICALZ
-CODE_SMELL
-|
-java:S1192/"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞ8¯ş»­.HàRCRITICALZ
-CODE_SMELL

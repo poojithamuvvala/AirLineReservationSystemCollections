@@ -30,3 +30,4 @@ public interface AdminDAO {
 	public List<BookingsInfo> viewAllBookings();
 
 }
+
