@@ -56,16 +56,17 @@ public class SubAirlineController {
 					do {
 						try {
 							LOGGER.info(
-									"===================================================================================");
+									"********************** WELCOME TO AIRLINE RESERVATION SYSTEMS ADMIN PAGE********************");
 							LOGGER.info("PRESS 1, TO ADMIN REGISTERATION");
 							LOGGER.info("PRESS 2, TO ADMIN LOGIN");
 							LOGGER.info("PRESS 3, TO EXIT");
-							LOGGER.info(
-									"========================================================================================");
+							
 							int choice = scanner.nextInt();
 							switch (choice) {
 
 							case 1:
+								LOGGER.info(
+										"********************** WELCOME TO ADMIN REGISTRATION FORM ********************");
                                 try {
                                 	LOGGER.info("Enter ID to Register as ADMIN : ");
     								checkId = scanner.nextInt();
@@ -110,6 +111,8 @@ public class SubAirlineController {
 								break;
 
 							case 2:
+								LOGGER.info(
+										"********************** WELCOME TO ADMIN LOGIN FORM ********************");
 								try {
 								LOGGER.info("Enter registered email to login : ");
 								String email = scanner.next();
@@ -120,6 +123,7 @@ public class SubAirlineController {
 									AdminInfo authBean = service.authenticateAdmin(email, password);
 									if (authBean != null) {
 										LOGGER.info("You have logged in successfully");
+										
 										LOGGER.info("Now you can perform the following operations:-");
 										do {
 											try {
@@ -139,6 +143,8 @@ public class SubAirlineController {
 												int choice1 = scanner.nextInt();
 												switch (choice1) {
 												case 1:
+													LOGGER.info(
+															"********************** ADD FLIGHT ********************");
                                                     try {
 													LOGGER.info("Enter FlightID to add : ");
 													flightId = scanner.nextInt();
@@ -198,6 +204,8 @@ public class SubAirlineController {
 													}
 													break;
 												case 2:
+													LOGGER.info(
+															"********************** SEARCH FLIGHT BY SOURCE ********************");
 													try {
 													LOGGER.info("Search Flight Details by Source : ");
 													String source = scanner.next();
@@ -224,6 +232,8 @@ public class SubAirlineController {
 													}
 													break;
 												case 3:
+													LOGGER.info(
+															"********************** SEARCH FLIGHT BY DESTINATION ********************");
 													try {
 													LOGGER.info("Search flight by Destination : ");
 													String destination = scanner.next();
@@ -250,6 +260,8 @@ public class SubAirlineController {
 													}
 													break;
 												case 4:
+													LOGGER.info(
+															"********************** SEARCH FLIGHT BY NAME ********************");
 													try {
 													LOGGER.info(" SEARCH FLIGHT BY NAME : ");
 													String name = scanner.next();
@@ -296,7 +308,8 @@ public class SubAirlineController {
 														 LOGGER.info(e.getMessage());
 													}
 													break;
-												case 6:
+												case 6:LOGGER.info(
+														"********************** VIEW ALL FLIGHTS ********************");
 													try {
 													List<FlightsInfo> info = service.viewAllFlights();
 													LOGGER.info(
@@ -359,7 +372,7 @@ public class SubAirlineController {
 													break;
 												}
 											} catch (InputMismatchException e) {
-												LOGGER.info("Invalid entry please provide only positive integer555");
+												LOGGER.info("Invalid entry please provide only integers");
 												scanner.nextLine();
 											}
 										} while (true);
@@ -381,7 +394,7 @@ public class SubAirlineController {
 							}
 
 						} catch (InputMismatchException e) {
-							LOGGER.info("Invalid entry please provide only positive integer444");
+							LOGGER.info("Invalid entry please provide only  Integer");
 							scanner.nextLine();
 						} catch (Exception e) {
 							LOGGER.info(e.getMessage());
@@ -587,7 +600,7 @@ public class SubAirlineController {
 												break;
 											}
 										} catch (InputMismatchException e) {
-											LOGGER.info("Invalid entry please provide only positive integer333");
+											LOGGER.info("Invalid entry please provide only integer");
 											scanner.nextLine();
 										}
 									} while (true);
@@ -608,7 +621,7 @@ public class SubAirlineController {
 								break;
 							}
 						} catch (InputMismatchException e) {
-							LOGGER.info("Invalid entry please provide only positive integer222");
+							LOGGER.info("Invalid entry please provide only integer");
 							scanner.nextLine();
 						}
 
@@ -616,7 +629,7 @@ public class SubAirlineController {
 
 				}
 			} catch (InputMismatchException e) {
-				LOGGER.info("Invalid entry please provide only positive integer111");
+				LOGGER.info("Invalid entry please provide only integer");
 				scanner.nextLine();
 			}
 		} while (true);

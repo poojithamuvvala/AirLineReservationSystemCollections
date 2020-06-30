@@ -4,11 +4,10 @@ import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UsersInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 
 public interface UserService {
-	
-	public boolean registerUser(UsersInfo usersInfo);
+	public boolean registerUser(UserInfo usersInfo);
 
 	public List<FlightsInfo> searchBySource(String source);
 
@@ -18,9 +17,7 @@ public interface UserService {
 
 	public List<FlightsInfo> getAllFlightDetails();
 
-	public UsersInfo authenticateUser(String email, String password);
+	public UserInfo authenticateUser(String email, String password);
 
-	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo);
-	
-	public boolean updateUserInfo(UsersInfo usersInfo);
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo);
 }

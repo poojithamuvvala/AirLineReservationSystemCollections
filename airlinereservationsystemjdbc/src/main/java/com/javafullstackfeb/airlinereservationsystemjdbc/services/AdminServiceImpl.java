@@ -3,10 +3,10 @@ package com.javafullstackfeb.airlinereservationsystemjdbc.services;
 import java.util.List;
 
 import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.AdminInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.BookingsInfo;
+
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UsersInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
+
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
@@ -16,7 +16,7 @@ public class AdminServiceImpl implements AdminService {
 	AdminDAO dao = AirLineFactory.getAdminDAOimplInstance();
 	Validation validation = new Validation();
 
-	public AdminInfo authenticateAdmin(String email, String password) {
+	public UserInfo authenticateAdmin(String email, String password) {
 		if (validation.validateEmail(email)) {
 			if (validation.validatePassword(password)) {
 				return dao.authenticateAdmin(email, password);
@@ -28,10 +28,10 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	public boolean registerAdmin(AdminInfo adminInfo) {
+	public boolean registerAdmin(UserInfo adminInfo) {
 
-		if (validation.validateId(adminInfo.getAdminid())) {
-			if (validation.validateName(adminInfo.getAdminName())) {
+		if (validation.validateId(adminInfo.getId())) {
+			if (validation.validateName(adminInfo.getUsername())) {
 				if (validation.validateMobile(adminInfo.getPhoneNumber())) {
 					if (validation.validateEmail(adminInfo.getEmailId())) {
 						if (validation.validatePassword(adminInfo.getPassword())) {
@@ -72,49 +72,13 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	public List<FlightsInfo> searchFlightByName(String flightName) {
-		if (validation.validateName(flightName)) {
-			System.out.println(flightName);
-			return dao.searchFlightByName(flightName);
-		} else {
-			System.out.println("Invalid Name");
-		}
-		return null;
-	}
-
-	public List<FlightsInfo> searchFlightBySource(String source) {
-		if (validation.validateName(source)) {
-			return dao.searchFlightBySource(source);
-		} else {
-			System.out.println("Invalid Source");
-		}
-
-		return null;
-	}
-
-	public List<FlightsInfo> searchFlightByDestination(String destination) {
-		if (validation.validateName(destination)) {
-			return dao.searchFlightByDestination(destination);
-		} else {
-			System.out.println("Invalid Destination");
-		}
-
-		return null;
-	}
-
-	public List<FlightsInfo> viewAllFlights() {
-
-		return dao.viewAllFlights();
-	}
-
-	public List<UsersInfo> viewAllUsers() {
-
+	@Override
+	public List<UserInfo> viewAllUsers() {
 		return dao.viewAllUsers();
 	}
 
-	public List<BookingsInfo> viewAllBookings() {
+	
+	
 
-		return dao.viewAllBookings();
-	}
-
+	
 }

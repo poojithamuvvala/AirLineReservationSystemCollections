@@ -1,56 +1,44 @@
 
-m	java:S125é"<This block of commented-out lines of code should be removed.(’ÊÜıûÿÿÿÿHì5RMAJORZ
-CODE_SMELL
-S
-java:S2386"Make this member "protected".(ĞÑßı8üŠºü®.Hí5RMINORZVULNERABILITY
-h	java:S125ø"<This block of commented-out lines of code should be removed.(¹­«àHî5RMAJORZ
-CODE_SMELL
 X
-java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8üŠºü®.Hï5RMINORZVULNERABILITY
-u
-java:S1192/"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞHğ5RCRITICALZ
-CODE_SMELL
+java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8üŠºü®.HÁNRMINORZVULNERABILITY
 Š
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿHñ5RMINORZ
-CODE_SMELL
-S
-java:S2386"Make this member "protected".(²”ÈÃ8üŠºü®.Hò5RMINORZVULNERABILITY
-Š
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿHó5RMINORZ
-CODE_SMELL
-g	java:S125f"<This block of commented-out lines of code should be removed.(âğ¤ Hô5RMAJORZ
-CODE_SMELL
-…
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃHõ5RMINORZ
-CODE_SMELL
-…
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßıHö5RMINORZ
-CODE_SMELL
-y
-java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜH÷5RCRITICALZ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿHÎNRMINORZ
 CODE_SMELL
 w
-java:S1192X"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦èHø5RCRITICALZ
-CODE_SMELL
-k
-java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿHù5RMAJORZ
+java:S1192X"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦èHÌNRCRITICALZ
 CODE_SMELL
 …
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖHú5RMINORZ
-CODE_SMELL
-l	java:S125h"<This block of commented-out lines of code should be removed.(Îï’ÁùÿÿÿÿHû5RMAJORZ
-CODE_SMELL
-h	java:S125¼"<This block of commented-out lines of code should be removed.( ø¾¿Hü5RMAJORZ
-CODE_SMELL
-h	java:S125û"<This block of commented-out lines of code should be removed.(íÿ£„Hı5RMAJORZ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃHÃNRMINORZ
 CODE_SMELL
 S
-java:S2386"Make this member "protected".(²›úÖ8üŠºü®.Hş5RMINORZVULNERABILITY
-v
-java:S1192t"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™Hÿ5RCRITICALZ
-CODE_SMELL
+java:S2386"Make this member "protected".(²”ÈÃ8üŠºü®.HÈNRMINORZVULNERABILITY
+S
+java:S2386"Make this member "protected".(²›úÖ8üŠºü®.HÂNRMINORZVULNERABILITY
 X
-java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8üŠºü®.H€6RMINORZVULNERABILITY
+java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8üŠºü®.HÇNRMINORZVULNERABILITY
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßıHÄNRMINORZ
+CODE_SMELL
 }
-java:S11929"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿH6RCRITICALZ
+java:S11929"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿHÊNRCRITICALZ
+CODE_SMELL
+k
+java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿHÅNRMAJORZ
+CODE_SMELL
+Š
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿHÆNRMINORZ
+CODE_SMELL
+S
+java:S2386"Make this member "protected".(ĞÑßı8üŠºü®.HÉNRMINORZVULNERABILITY
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖHÀNRMINORZ
+CODE_SMELL
+y
+java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜHÍNRCRITICALZ
+CODE_SMELL
+v
+java:S1192k"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™HËNRCRITICALZ
+CODE_SMELL
+u
+java:S1192/"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞHÏNRCRITICALZ
 CODE_SMELL

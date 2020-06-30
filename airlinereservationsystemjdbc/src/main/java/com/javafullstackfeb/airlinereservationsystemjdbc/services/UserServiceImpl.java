@@ -2,86 +2,61 @@ package com.javafullstackfeb.airlinereservationsystemjdbc.services;
 
 import java.util.List;
 
-import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UsersInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAO;
+import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
 
 public class UserServiceImpl implements UserService {
 
-	UserDAO dao = AirLineFactory.getUserDAOImplInstance();
-    Validation validation=new Validation();
-	public boolean registerUser(UsersInfo usersInfo) {
-		if(validation.validateId(usersInfo.getUserId())) {
-			if(validation.validateName(usersInfo.getUserName())) {
-				if(validation.validateMobile(usersInfo.getPhoneNumber())) {
-			       if(validation.validateEmail(usersInfo.getEmailId())) {
-				      if(validation.validatePassword(usersInfo.getPassword())) {  
-					return dao.registerUser(usersInfo);
-				}
-			}
-		}
-	}
-	}
+	UserDAO dao=new  UserDAOImpl();
+	Validation validation=new Validation();
+	@Override
+	public boolean registerUser(UserInfo usersInfo) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
+	@Override
 	public List<FlightsInfo> searchBySource(String source) {
 		if (validation.validateName(source)) {
-			return dao.searchBySource(source);
+			return dao.searchFlightBySource(source);
 		} else {
 			System.out.println("Invalid Source");
 		}
 		return null;
 	}
 
+	@Override
 	public List<FlightsInfo> searchByName(String flightName) {
-		if (validation.validateName(flightName)) {
-			System.out.println(flightName);
-			return dao.searchByName(flightName);
-		} else {
-			System.out.println("Invalid Name");
-		}
+		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public List<FlightsInfo> searchByDestination(String destination) {
-		if (validation.validateName(destination)) {
-			return dao.searchByDestination(destination);
-			} else {
-				System.out.println("Invalid Destination");
-			}
-			
-			return null;
-		
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
-
-		return dao.getAllFlightDetails();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public UsersInfo authenticateUser(String email, String password) {
-		if(validation.validateEmail(email)) {
-			if(validation.validatePassword(password)){
-				return dao.authenticateUser(email, password);
-			}
-		
-	}
-	return null;
-		
+	@Override
+	public UserInfo authenticateUser(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo) {
-
-		return dao.booktTicket(usersInfo, flightsInfo);
-	}
-
-	public boolean updateUserInfo(UsersInfo usersInfo) {
-
-		return dao.updateUserInfo(usersInfo);
+	@Override
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -7,7 +7,7 @@ import lombok.Data;
 @SuppressWarnings("serial")
 @Data
 public class TicketRequestInfo implements Serializable{
-	private UsersInfo userInfo;
+	private UserInfo userInfo;
 	private FlightsInfo flightInfo;
 	private int noOfSeatsToBeBooked;
 

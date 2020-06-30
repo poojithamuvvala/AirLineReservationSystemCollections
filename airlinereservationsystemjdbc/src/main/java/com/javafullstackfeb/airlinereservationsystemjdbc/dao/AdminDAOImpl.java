@@ -1,179 +1,155 @@
 package com.javafullstackfeb.airlinereservationsystemjdbc.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.AdminInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.BookingsInfo;
+import com.javafullstack.airlinereservationsystemjdbc.utility.JDBCUtility;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UsersInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 
-
 public class AdminDAOImpl implements AdminDAO {
-	String url = "jdbc:mysql://localhost:3307?user=root&password=root";
-	public AdminInfo authenticateAdmin(String email, String password) {
-//		for (AdminInfo admin : AirLineDataBase.ADMININFO) {
-//			if ((admin.getEmailId().equals(email)) && (admin.getPassword().equals(password))) {
-//				return admin;
-//			}
-//		}
-		throw new AirLineReservationSystemException("Invalid Credentials");
+	
+	public UserInfo authenticateAdmin(String email, String password) {
+		String query = "select * from userinfo where emailid=? and password=? and role='admin'";
+
+		try (Connection connection = JDBCUtility.getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, password);
+		ResultSet resultSet = preparedStatement.executeQuery();
+		if (resultSet.next()) {
+			UserInfo bean = new UserInfo();
+			bean.setId(resultSet.getInt("id"));
+			bean.setUsername(resultSet.getString("name"));
+			bean.setEmailId(resultSet.getString("emailid"));
+			bean.setPassword(resultSet.getString("password"));
+			bean.setPhoneNumber(resultSet.getString("phonenumber"));
+			return bean;
+		} else {
+			return null;
+		}
+
+	} catch (Exception e) {
+		e.printStackTrace();
+		return null;
 	}
 
-	public boolean registerAdmin(AdminInfo newAdmin) {
-		String query = "insert into airlinedb.admininfo values(?,?,?,?,?)";
+	}
 
-		try (Connection connection = DriverManager.getConnection(url);
+	public boolean registerAdmin(UserInfo newAdmin) {
+		String query = "insert into userinfo values(?,?,?,?,?,?)";
+
+		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 
-			Class.forName("com.mysql.jdbc.Driver");
-			preparedStatement.setInt(1, newAdmin.getAdminid());
-			preparedStatement.setString(2, newAdmin.getAdminName());
+			
+			preparedStatement.setInt(1, newAdmin.getId());
+			preparedStatement.setString(2, newAdmin.getUsername());
 			preparedStatement.setString(3, newAdmin.getEmailId());
 			preparedStatement.setString(4, newAdmin.getPassword());
 			preparedStatement.setString(5, newAdmin.getPhoneNumber());
-			
-			int n = preparedStatement.executeUpdate();
-			if (n != 0) {
-				System.out.println("Successfully inserted!!!");
+			preparedStatement.setString(6, newAdmin.getRole());
+			int n=preparedStatement.executeUpdate(); 
+			if(n!=0) {
 				return true;
 			} else {
-				System.out.println("Data already exists");
 				return false;
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		return true;
+		return false;
 	}
 
 	public boolean addFlight(FlightsInfo flightInfo) {
-//		for(FlightsInfo info: AirLineDataBase.FLIGHTSINFO) {
-//			if(info.getFlightId()==flightInfo.getFlightId()){
-//			     return false;	
-//			}
-//			
-//		}
-//		AirLineDataBase.FLIGHTSINFO.add(flightInfo);
-		return true;
-	}
+		String query = "insert into flightsinfo values(?,?,?,?,?,?,?,?,?,?)";
 
+		try (Connection connection = JDBCUtility.getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+			
+			preparedStatement.setInt(1, flightInfo.getFlightId());
+			preparedStatement.setString(2, flightInfo.getFlightName());
+			preparedStatement.setString(3,flightInfo.getSource());
+			preparedStatement.setString(4, flightInfo.getDestination());
+			preparedStatement.setDate(5, java.sql.Date.valueOf(flightInfo.getDateOfDeparture()));
+			preparedStatement.setDate(6, java.sql.Date.valueOf(flightInfo.getDateOfArrival()));
+			preparedStatement.setTime(7, java.sql.Time.valueOf(flightInfo.getDepartureTime()));
+			preparedStatement.setTime(8, java.sql.Time.valueOf(flightInfo.getArrivalTime()));
+			preparedStatement.setInt(9, flightInfo.getCapacity());
+			preparedStatement.setInt(10, flightInfo.getNoOfSeatsBooked());
+			preparedStatement.executeUpdate();
+		
+			return true;
+
+		
+
+	} catch (Exception e) {
+		//throw new AirLineReservationSystemException("Can't Add New Flight, as Flight Already Exists");
+		e.printStackTrace();
+		return false;
+	}
+	}
 	public boolean cancelFlight(int id) {
 		boolean cancellationStatus = false;
-//		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
-//			FlightsInfo retrivedFlightInfo= AirLineDataBase.FLIGHTSINFO.get(i);
-//			int retrivedFlightId=retrivedFlightInfo.getFlightId();
-//			if(id==retrivedFlightId) {
-//				cancellationStatus=true;
-//				AirLineDataBase.FLIGHTSINFO.remove(i);
-//				break;
-//			}
-//			
-//		}
+	
 		return cancellationStatus;
 	}
 
-	public List<FlightsInfo> searchFlightByName(String flightName) {
-//		List<FlightsInfo> searchListByName = new ArrayList<FlightsInfo>();
-//		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
-//			FlightsInfo retrievedFlightInfo = AirLineDataBase.FLIGHTSINFO.get(i);
-//			String retrievedFname = retrievedFlightInfo.getFlightName();
-//			if (flightName.equalsIgnoreCase(retrievedFname)) {
-//				searchListByName.add(retrievedFlightInfo);
-//				return searchListByName;
-//			}
-//		}
-//		if (searchListByName.size() == 0) {
-//			throw new AirLineReservationSystemException("Flight with "+flightName+" not found");
-//		} else {
-//			return searchListByName;
-//		}
-		return null;
+	
+
+	@Override
+	public List<UserInfo> viewAllUsers() {
+		ResultSet resultSet = null;
+		String query = "select * from userinfo where role='user'";
+		try (Connection connection = JDBCUtility.getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+
+		resultSet = preparedStatement.executeQuery();
+		List<UserInfo> l = new ArrayList<UserInfo>();
+		while (resultSet.next()) {
+			UserInfo bean = new UserInfo();
+			bean.setId(resultSet.getInt("id"));
+			bean.setUsername(resultSet.getString("name"));
+			bean.setEmailId(resultSet.getString("emailid"));
+			bean.setPassword(resultSet.getString("password"));
+			bean.setPhoneNumber(resultSet.getString("phonenumber"));
+			bean.setRole(resultSet.getString("role"));
+			l.add(bean);
+		}
+		if(l.isEmpty()) {
+			return null;
+		}
+		else {
+		return l;
+		}
+		
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 
-	public List<FlightsInfo> searchFlightBySource(String source) {
-//		List<FlightsInfo> searchListBySource = new ArrayList<FlightsInfo>();
-//		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
-//			FlightsInfo retrievedFlight = AirLineDataBase.FLIGHTSINFO.get(i);
-//			String retrievedSourcename = retrievedFlight.getSource();
-//			if (source.equalsIgnoreCase(retrievedSourcename)) {
-//				searchListBySource.add(retrievedFlight);
-//				return searchListBySource;
-//			}
-//		}
-//		if (searchListBySource.size() == 0) {
-//			throw new AirLineReservationSystemException("Flight with "+source+" not found");
-//		} else {
-//			return searchListBySource;
-//		}
-		return null;
+	finally {
+
+		try {
+			if (resultSet != null) {
+				resultSet.close();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
-	public List<FlightsInfo> searchFlightByDestination(String destination) {
-//		List<FlightsInfo> searchListByDestination = new ArrayList<FlightsInfo>();
-//		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
-//			FlightsInfo retrievedFlightInfo = AirLineDataBase.FLIGHTSINFO.get(i);
-//			String retrievedDestinationName = retrievedFlightInfo.getDestination();
-//			if (destination.equalsIgnoreCase(retrievedDestinationName)) {
-//				searchListByDestination.add(retrievedFlightInfo);
-//				return searchListByDestination;
-//			}
-//		}
-//		if (searchListByDestination.size() == 0) {
-//			throw new AirLineReservationSystemException("Flight with "+destination+" not found");
-//		} else {
-//			return searchListByDestination;
-//		}
-		return null;
-	}
-
-	public List<FlightsInfo> viewAllFlights() {
-		List<FlightsInfo> flightsList = new ArrayList<FlightsInfo>();
-//		for (FlightsInfo flight : AirLineDataBase.FLIGHTSINFO) {
-//			flight.getFlightId();
-//			flight.getFlightName();
-//			flight.getSource();
-//			flight.getDestination();
-//			flight.getArrivalTime();
-//			flight.getDepartureTime();
-//			flightsList.add(flight);
-//		}
-		return flightsList;
-	}
-
-	public List<UsersInfo> viewAllUsers() {
-		List<UsersInfo> userList = new ArrayList<UsersInfo>();
-//		for (UsersInfo users : AirLineDataBase.USERSINFO) {
-//			users.getUserId();
-//			users.getUserName();
-//			users.getEmailId();
-//			users.getPhoneNumber();
-//			
-//			userList.add(users);
-//		}
-		return  userList;
-	}
-
-	public List<BookingsInfo> viewAllBookings() {
-		List<BookingsInfo> bookingsList = new ArrayList<BookingsInfo>();
-//		for (BookingsInfo booking : AirLineDataBase.BOOKINGSINFO) {
-//			booking.getBookingId();
-//			booking.getUserId();
-//			booking.getNoOfSeatsBooked();
-//			booking.getSeatNos();
-//			booking.getDateOfBooking();
-//			booking.getDateOfJourney();
-//			booking.getSource();
-//			booking.getDestination();
-//			bookingsList.add(booking);
-//		}
-		return  bookingsList;
-	}
-
+	return null;
+}	
 }

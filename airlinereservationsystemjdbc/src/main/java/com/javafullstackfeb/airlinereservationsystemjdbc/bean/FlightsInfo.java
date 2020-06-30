@@ -8,6 +8,7 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
+
 public class FlightsInfo implements Serializable {
 	private int flightId;
 	private String flightName;
