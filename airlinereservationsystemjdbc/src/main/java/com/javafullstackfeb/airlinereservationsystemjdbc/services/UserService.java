@@ -7,7 +7,6 @@ import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 
 public interface UserService {
-	public boolean registerUser(UserInfo usersInfo);
 
 	public List<FlightsInfo> searchBySource(String source);
 
@@ -17,7 +16,5 @@ public interface UserService {
 
 	public List<FlightsInfo> getAllFlightDetails();
 
-	public UserInfo authenticateUser(String email, String password);
-
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo);
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
 }

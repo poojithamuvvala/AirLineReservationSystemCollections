@@ -2,7 +2,6 @@ package com.javafullstackfeb.airlinereservationsystemjdbc.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,12 +17,12 @@ import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReserv
 public class AdminDAOImpl implements AdminDAO {
 	
 	public UserInfo authenticateAdmin(String email, String password) {
-		//String query = "select * from userinfo where emailid=? and password=? and role='admin'";
-
+		
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("loginCheckAdmin"));) {
 			preparedStatement.setString(1, email);
 			preparedStatement.setString(2, password);
+			
 		ResultSet resultSet = preparedStatement.executeQuery();
 		if (resultSet.next()) {
 			UserInfo bean = new UserInfo();
@@ -32,6 +31,7 @@ public class AdminDAOImpl implements AdminDAO {
 			bean.setEmailId(resultSet.getString("emailid"));
 			bean.setPassword(resultSet.getString("password"));
 			bean.setPhoneNumber(resultSet.getString("phonenumber"));
+			bean.setRole(resultSet.getString("role"));
 			return bean;
 		} else {
 			return null;
@@ -45,8 +45,7 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public boolean registerAdmin(UserInfo newAdmin) {
-		//String query = "insert into userinfo values(?,?,?,?,?,?)";
-
+		
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("addUser"));) {
 
@@ -72,34 +71,32 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public boolean addFlight(FlightsInfo flightInfo) {
-		//String query = "insert into flightsinfo values(?,?,?,?)";
+	
 
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("addFlight"));)  {
+			   
+			    preparedStatement.setInt(1, flightInfo.getFlightId());
+			    preparedStatement.setString(2, flightInfo.getFlightName());
+			    preparedStatement.setString(3, flightInfo.getSource());
+			    preparedStatement.setString(4, flightInfo.getDestination());
+			    preparedStatement.setDate(5, java.sql.Date.valueOf(flightInfo.getDateOfDeparture()));
+			    preparedStatement.setDate(6, java.sql.Date.valueOf(flightInfo.getDateOfArrival()));
+			    preparedStatement.setTime(7, java.sql.Time.valueOf(flightInfo.getDepartureTime()));
+			    preparedStatement.setTime(8, java.sql.Time.valueOf(flightInfo.getArrivalTime()));
+			    preparedStatement.setInt(9, flightInfo.getCapacity());
+			    preparedStatement.setInt(10, flightInfo.getNoOfSeatsBooked());
 			
-			preparedStatement.setInt(1, flightInfo.getFlightId());
-			preparedStatement.setString(2, flightInfo.getFlightName());
-			preparedStatement.setString(3,flightInfo.getSource());
-			preparedStatement.setString(4, flightInfo.getDestination());
-			preparedStatement.setDate(5, Date.valueOf(flightInfo.getDateOfDeparture()));
-			preparedStatement.setDate(6, Date.valueOf(flightInfo.getDateOfArrival()));
-			preparedStatement.setTime(7, Time.valueOf(flightInfo.getDepartureTime()));
-			preparedStatement.setTime(8, Time.valueOf(flightInfo.getArrivalTime()));
-			preparedStatement.setInt(9, flightInfo.getCapacity());
-			preparedStatement.setInt(10, flightInfo.getNoOfSeatsBooked());
-			int n=preparedStatement.executeUpdate();
-			if(n!=0) {
-				return true;
-			} else {
-				return false;
-			}
-		
+			preparedStatement.executeUpdate();
 
-	} catch (Exception e) {
-		//throw new AirLineReservationSystemException("Can't Add New Flight, as Flight Already Exists");
+	} catch (SQLException e) {
+		
 		e.printStackTrace();
-		return false;
-	}
+	}catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		return true;
 	}
 	public boolean cancelFlight(int id) {
 		
@@ -129,7 +126,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public List<UserInfo> viewAllUsers() {
 		ResultSet resultSet = null;
-		String query = "select * from userinfo where role='user'";
+		
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("allUsers"));) {
 
@@ -153,7 +150,7 @@ public class AdminDAOImpl implements AdminDAO {
 		}
 		
 	} catch (Exception e) {
-		// TODO Auto-generated catch block
+		
 		e.printStackTrace();
 	}
 

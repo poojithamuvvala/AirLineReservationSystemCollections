@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo) {
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats) {
 		// TODO Auto-generated method stub
 		return null;
 	}

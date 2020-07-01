@@ -14,13 +14,13 @@ public interface UserDAO {
 
 	public List<FlightsInfo> searchFlightByDestination(String destination);
 
-	public boolean registerUser(UserInfo usersInfo);
+
 	
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo);
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
 	
 	public List<FlightsInfo> getAllFlightDetails();
 
-	public UserInfo authenticateUser(String email, String password);
+	
 
 	
 	

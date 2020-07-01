@@ -1,12 +1,5 @@
 package com.javafullstackfeb.airlinereservationsystemhibernate.dao;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Time;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,10 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import com.javafullstack.airlinereservationsystemhibernate.utility.JDBCUtility;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
-import com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException;
 
 public class AdminDAOImpl implements AdminDAO {
 	
@@ -29,7 +20,7 @@ public class AdminDAOImpl implements AdminDAO {
 		try {
 		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
 		manager = entityManagerFactory.createEntityManager();
-	    String jpql="select u from UserInfo  u where  u.emailId=:email and u.password=:password";
+	    String jpql="select u from UserInfo  u where  u.emailId=:email and u.password=:password ";
 	       Query query =manager.createQuery(jpql);
 	       query.setParameter("email", email);
 			query.setParameter("password", password);
@@ -122,7 +113,7 @@ public class AdminDAOImpl implements AdminDAO {
 	public List<UserInfo> viewAllUsers() {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
-		EntityTransaction transaction = null;
+		
 
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
@@ -140,7 +131,7 @@ public class AdminDAOImpl implements AdminDAO {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
-			transaction.rollback();
+		
 			
 		}
 

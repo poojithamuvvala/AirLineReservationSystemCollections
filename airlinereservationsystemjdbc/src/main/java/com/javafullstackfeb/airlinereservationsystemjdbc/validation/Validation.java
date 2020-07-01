@@ -11,8 +11,6 @@ public class Validation {
 		boolean result = false;
 		if (Pattern.matches(idRegEx, String.valueOf(id))) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException("Invalid Id! Id should exactly contain 3 digits");
 		}
 		return result;
 	}
@@ -22,8 +20,6 @@ public class Validation {
 		boolean result = false;
 		if (Pattern.matches(idRegEx, String.valueOf(id))) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException("Invalid Id! Id should exactly contain 4 digits");
 		}
 		return result;
 	}
@@ -37,8 +33,6 @@ public class Validation {
 		Matcher matcher = pattern.matcher(name);
 		if (matcher.matches()) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException("Invalid Name! Name should have atleast 4 characters or more than 4 characters");
 		}
 		return result;
 	}
@@ -48,9 +42,7 @@ public class Validation {
 		boolean result = false;
 		if (Pattern.matches(mobileRegEx, String.valueOf(checkMobileno))) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException("Inalid Mobile Number! Enter a mobile number whose length should be exactly 10 digits and should start with 6,7,8,9 digits only");
-		}
+		} 
 		return result;
 	}
 
@@ -61,9 +53,7 @@ public class Validation {
 		Matcher matcher = pattern.matcher(email);
 		if (matcher.matches()) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException("Enter proper email such that it should consist of numbers and alphabets and @ symbol");
-		}
+		} 
 		return result;
 	}
 
@@ -72,10 +62,7 @@ public class Validation {
 		boolean result = false;
 		if (Pattern.matches(passwordRegEx, String.valueOf(password))) {
 			result = true;
-		} else {
-			throw new AirLineReservationSystemException(
-					"Password should contain atleast 5 characters ,one uppercase,one lowercase,one number,one special symbol(@#$%) ");
-		}
+		} 
 		return result;
 	}
 }

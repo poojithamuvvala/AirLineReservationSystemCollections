@@ -2,33 +2,18 @@ package com.javafullstackfeb.airlinereservationsystemjdbc.services;
 
 import java.util.List;
 
+import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAO;
-import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
 
 public class UserServiceImpl implements UserService {
 
-	UserDAO dao=new  UserDAOImpl();
+	UserDAO dao=AirLineFactory.getUserDAOImplInstance();
 	Validation validation=new Validation();
-	@Override
-	public boolean registerUser(UserInfo usersInfo) {
-
-		if (validation.validateId(usersInfo.getId())) {
-			if (validation.validateName(usersInfo.getUsername())) {
-				if (validation.validateMobile(usersInfo.getPhoneNumber())) {
-					if (validation.validateEmail(usersInfo.getEmailId())) {
-						if (validation.validatePassword(usersInfo.getPassword())) {
-							return dao.registerUser(usersInfo);
-						}
-					}
-				}
-			}
-		}
-             return false;
-		}
+	
+	
 
 
 	@Override
@@ -44,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<FlightsInfo> searchByName(String flightName) {
 		if (validation.validateName(flightName)) {
-			return dao.searchFlightBySource(flightName);
+			return dao.searchFlightByName(flightName);
 		} else {
 			System.out.println("Invalid Source");
 		}
@@ -68,23 +53,13 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-	@Override
-	public UserInfo authenticateUser(String email, String password) {
-		if (validation.validateEmail(email)) {
-			if (validation.validatePassword(password)) {
-				return dao.authenticateUser(email, password);
-			}
-
-		}
-
-		return null;
-
-	}
+	
 
 	@Override
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo) {
-		// TODO Auto-generated method stub
-		return null;
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo) {
+		
+		return dao.bookTicket(requestInfo);
 	}
 
+	
 }

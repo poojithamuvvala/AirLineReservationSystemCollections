@@ -125,6 +125,8 @@ public class SubAirlineController {
 					String email = scanner.next();
 					LOGGER.info("Enter registered Password to login : ");
 					String password = scanner.next();
+					LOGGER.info("Enter role to login : ");
+					String roleOfUser = scanner.next();
 					try {
 						AdminService service1 = new AdminServiceImpl();
 						UserInfo authBean = service1.authenticateAdmin(email, password);
@@ -392,7 +394,7 @@ public class SubAirlineController {
 												int seats = scanner.nextInt();
 												
                                                 try {
-												TicketRequestInfo request = service1.bookTicket(user, flight);
+												TicketRequestInfo request = service1.bookTicket(user, flight, seats);
 												LOGGER.info("Request placed to admin for booking a ticket");
 												LOGGER.info(
 														"<--------------------------------------------------------------------->");

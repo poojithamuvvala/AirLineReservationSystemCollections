@@ -2,6 +2,8 @@ package com.javafullstack.airlinereservationsystemjdbc.factory;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAOImpl;
+import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAO;
+import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminService;
@@ -19,8 +21,8 @@ public class AirLineFactory {
 		return dao;
 	}
 	
-	public static AdminDAO getUserDAOImplInstance() {
-	      AdminDAO dao=new  AdminDAOImpl();
+	public static UserDAO getUserDAOImplInstance() {
+	      UserDAO dao=new  UserDAOImpl();
 	      return dao;
 	}
 	

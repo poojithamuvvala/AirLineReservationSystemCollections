@@ -16,7 +16,7 @@ public interface UserDAO {
 
 	public boolean registerUser(UserInfo usersInfo);
 	
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo);
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats);
 	
 	public List<FlightsInfo> getAllFlightDetails();
 

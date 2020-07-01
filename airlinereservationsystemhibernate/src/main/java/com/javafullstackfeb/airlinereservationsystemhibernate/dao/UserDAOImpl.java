@@ -25,7 +25,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<FlightsInfo> searchFlightByName(String flightName) {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
-		EntityTransaction transaction = null;
+		
 
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
@@ -44,7 +44,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
-			transaction.rollback();
+		
 			
 		}
 
@@ -55,7 +55,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<FlightsInfo> searchFlightBySource(String source) {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
-		EntityTransaction transaction = null;
+		
 
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
@@ -74,7 +74,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
-			transaction.rollback();
+			
 			
 		}
 
@@ -85,7 +85,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<FlightsInfo> searchFlightByDestination(String destination) {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
-		EntityTransaction transaction = null;
+		
 
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
@@ -104,7 +104,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
-			transaction.rollback();
+			
 			
 		}
 
@@ -137,7 +137,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo) {
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -146,7 +146,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<FlightsInfo> getAllFlightDetails() {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
-		EntityTransaction transaction = null;
+		
 
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
@@ -164,7 +164,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
-			transaction.rollback();
+			
 			
 		}
 

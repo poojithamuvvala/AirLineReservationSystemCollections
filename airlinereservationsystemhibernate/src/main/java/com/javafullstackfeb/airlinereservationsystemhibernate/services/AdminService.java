@@ -1,7 +1,5 @@
 package com.javafullstackfeb.airlinereservationsystemhibernate.services;
 
-
-
 import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;

@@ -11,6 +11,7 @@ import com.javafullstack.airlinereservationsystemjdbc.utility.JDBCUtility;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 
 
 public class UserDAOImpl implements UserDAO {
@@ -18,13 +19,13 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public List<FlightsInfo> searchFlightByName(String flightName) {
 		ResultSet resultSet = null;
-		String query = "select * from flightsinfo where flightName=?";
+		
 
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("searchFlightByName"));){
         preparedStatement.setString(1, flightName);
 		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
+		List<FlightsInfo> listOfFlights = new ArrayList<FlightsInfo>();
 		while (resultSet.next()) {
 			FlightsInfo bean = new FlightsInfo();
 			bean.setFlightId(resultSet.getInt("flightid"));
@@ -32,20 +33,20 @@ public class UserDAOImpl implements UserDAO {
 			bean.setSource(resultSet.getString("source"));
 			bean.setDestination(resultSet.getString("destination"));
 		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatsbooked"));
-			//bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			//bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
-			//bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			//bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
-         	l.add(bean);
-         	return l;
+			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
+			bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
+			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
+			bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
+         	listOfFlights.add(bean);
+         	return listOfFlights;
          
 			
 		}
-		if(l.isEmpty()) {
+		if(listOfFlights.isEmpty()) {
 			return null;
 		}
 		else {
-		return l;
+		return listOfFlights;
 		}
 		
 	} catch (Exception e) {
@@ -70,7 +71,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public List<FlightsInfo> searchFlightBySource(String source) {
 		ResultSet resultSet = null;
-		String query = "select * from flightsinfo where source=?";
+		
 		try (Connection connection = JDBCUtility.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(JDBCUtility.getQuery("searchFlightBySource"));) {
         preparedStatement.setString(1, source);
@@ -83,10 +84,10 @@ public class UserDAOImpl implements UserDAO {
 			bean.setSource(resultSet.getString("source"));
 			bean.setDestination(resultSet.getString("destination"));
 		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatsbooked"));
-			//bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			//bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
-			//bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			//bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
+			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
+			bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
+			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
+			bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
          	l.add(bean);
          	return l;
 		}
@@ -109,7 +110,7 @@ public class UserDAOImpl implements UserDAO {
 				resultSet.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
@@ -132,10 +133,10 @@ public class UserDAOImpl implements UserDAO {
 			bean.setSource(resultSet.getString("source"));
 			bean.setDestination(resultSet.getString("destination"));
 		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatsbooked"));
-			//bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			//bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
-			//bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			//bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
+			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
+			bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
+			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
+			bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
          	l.add(bean);
          	return l;
 			
@@ -160,46 +161,15 @@ public class UserDAOImpl implements UserDAO {
 				resultSet.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	}
 		return null;
 	}
 
-	@Override
-	public boolean registerUser(UserInfo usersInfo) {
-		String query = "insert into userinfo values(?,?,?,?,?,?)";
-
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-			
-			preparedStatement.setInt(1, usersInfo.getId());
-			preparedStatement.setString(2, usersInfo.getUsername());
-			preparedStatement.setString(3, usersInfo.getEmailId());
-			preparedStatement.setString(4, usersInfo.getPassword());
-			preparedStatement.setString(5, usersInfo.getPhoneNumber());
-			preparedStatement.setString(6, usersInfo.getRole());
-			int n=preparedStatement.executeUpdate(); 
-			if(n!=0) {
-				return true;
-			} else {
-				return false;
-			}
-
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	@Override
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 
 	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
@@ -209,7 +179,7 @@ public class UserDAOImpl implements UserDAO {
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 
 		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
+		List<FlightsInfo> list = new ArrayList<FlightsInfo>();
 		while (resultSet.next()) {
 			FlightsInfo bean = new FlightsInfo();
 			bean.setFlightId(resultSet.getInt("flightid"));
@@ -217,18 +187,18 @@ public class UserDAOImpl implements UserDAO {
 			bean.setSource(resultSet.getString("source"));
 			bean.setDestination(resultSet.getString("destination"));
 		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatsbooked"));
-			//bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			//bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
-			//bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			//bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
-         	l.add(bean);
-         	return l;
+			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
+			bean.setArrivalTime(resultSet.getTime("timeofarrival").toLocalTime());
+			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
+			bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
+         	list.add(bean);
+         	return list;
 		}
-		if(l.isEmpty()) {
+		if(list.isEmpty()) {
 			return null;
 		}
 		else {
-		return l;
+		return list;
 		}
 		
 	} catch (Exception e) {
@@ -250,31 +220,66 @@ public class UserDAOImpl implements UserDAO {
 		return null;
 	}
 
+	
+
 	@Override
-	public UserInfo authenticateUser(String email, String password) {
-		String query = "select * from userinfo where emailid=? and password=? and role='user'";
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo) {
+		int userId = requestInfo.getTicketid();
 
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, password);
-		ResultSet resultSet = preparedStatement.executeQuery();
-		if (resultSet.next()) {
-			UserInfo bean = new UserInfo();
-			bean.setId(resultSet.getInt("id"));
-			bean.setUsername(resultSet.getString("name"));
-			bean.setEmailId(resultSet.getString("emailid"));
-			bean.setPassword(resultSet.getString("password"));
-			bean.setPhoneNumber(resultSet.getString("phonenumber"));
-			return bean;
-		} else {
-			return null;
+		try (Connection conn = JDBCUtility.getConnection();
+				PreparedStatement getFlightPstmt = conn.prepareStatement(JDBCUtility.getQuery("getFlight"));)
+			
+				{
+			getFlightPstmt.setInt(1,requestInfo.getFlightid());
+
+			try (ResultSet getReqSet = getFlightPstmt.executeQuery();) {
+				while (getReqSet.next()) {
+					int bookFlightId = getReqSet.getInt("flight_id");
+
+					if (requestInfo.getFlightid() == bookFlightId) {
+
+						try {
+							Connection conne = JDBCUtility.getConnection();
+							PreparedStatement getUserPstmt = conne.prepareStatement(JDBCUtility.getQuery("getUser"));
+							getUserPstmt.setInt(1, requestInfo.getUid());
+							try (ResultSet getUser = getUserPstmt.executeQuery();) {
+								while (getUser.next()) {
+									int user = getUser.getInt("id");
+
+									if (userId == user) {
+
+										try {
+											Connection conn1 = JDBCUtility.getConnection();
+											PreparedStatement getRequestPstmt = conn1
+													.prepareStatement(JDBCUtility.getQuery("requestBooked"));
+											getRequestPstmt.setInt(1, requestInfo.getTicketid());
+											getRequestPstmt.setInt(2,requestInfo.getUid());
+											getRequestPstmt.setInt(3, requestInfo.getFlightid());
+											getRequestPstmt.setInt(4, requestInfo.getNoOfSeatsToBeBooked());
+
+											getRequestPstmt.executeUpdate();
+											return requestInfo;
+
+										} catch (Exception e) {
+											throw new AirLineReservationSystemException("Can't request flight");
+										}
+
+									}
+								}
+							}
+						} catch (Exception e) {
+							throw new AirLineReservationSystemException(e.getMessage());
+						}
+					}
+				}
+			}
+		} catch (AirLineReservationSystemException e) {
+			throw new AirLineReservationSystemException(e.getMessage());
+		} catch (Exception e) {
+			throw new AirLineReservationSystemException(e.getMessage());
 		}
-
-	} catch (Exception e) {
-		e.printStackTrace();
 		return null;
-	}
+
 	}
 
 }

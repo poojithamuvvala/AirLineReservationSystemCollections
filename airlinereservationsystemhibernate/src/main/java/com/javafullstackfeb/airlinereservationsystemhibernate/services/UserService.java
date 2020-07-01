@@ -19,5 +19,5 @@ public interface UserService {
 
 	public UserInfo authenticateUser(String email, String password);
 
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo);
+	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats);
 }
