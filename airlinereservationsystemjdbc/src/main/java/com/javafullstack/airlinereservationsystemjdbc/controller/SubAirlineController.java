@@ -66,7 +66,7 @@ public class SubAirlineController {
 									"********************** WELCOME TO AIRLINE RESERVATION SYSTEMS ADMIN PAGE********************");
 							LOGGER.info("PRESS 1, TO ADMIN REGISTERATION");
 							LOGGER.info("PRESS 2, TO ADMIN LOGIN");
-							LOGGER.info("PRESS 3, TO View all flights");
+							LOGGER.info("PRESS 3, TO EXIT");
 							int choice = scanner.nextInt();
 							switch (choice) {
 
@@ -160,19 +160,17 @@ public class SubAirlineController {
 										LOGGER.info("Enter Destination : ");
 										flightDestination = scanner.next();
 
-										LOGGER.info("Enter No.of seat Available in the Flight : ");
+										LOGGER.info("Enter No.of seats Booked in the Flight : ");
 										noOfSeatsBooked = scanner.nextInt();
 										
 										LOGGER.info("Enter Capacity in the Flight : ");
 										capacity = scanner.nextInt();
 
 										LOGGER.info("Enter the departure Time : ");
-										departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
-												scanner.nextInt());
+										departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt());
 
 										LOGGER.info("Enter the Arrival Time : ");
-										departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
-												scanner.nextInt());
+										departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt());
 
 										LOGGER.info("Enter the departure date : ");
 										departureDate = LocalDate.of(scanner.nextInt(), scanner.nextInt(),
@@ -285,6 +283,7 @@ public class SubAirlineController {
 					} else {
 						LOGGER.info("Invalid");
 					}
+						
 					}catch (Exception e) {
 						LOGGER.info(e.getMessage());
 					}
@@ -293,6 +292,10 @@ public class SubAirlineController {
 					}
 					break;
 				}
+				
+							case3:
+								airLineOperations();
+
 						
 					}catch (Exception e) {
 						LOGGER.info(e.getMessage());
@@ -368,7 +371,7 @@ public class SubAirlineController {
 													"===========================================================================");
 											
 											LOGGER.info("PRESS 1,TO BOOK TICKET");
-											LOGGER.info("PRESS 6,TO LOGOUT");
+											LOGGER.info("PRESS 2,TO LOGOUT");
 											LOGGER.info(
 													"===========================================================================");
 											int choice2 = scanner.nextInt();
@@ -403,7 +406,7 @@ public class SubAirlineController {
 													LOGGER.info(e.getMessage());
 												}
 												break;
-											case 6:
+											case 2:
 												airLineOperations();
 
 											default:
@@ -427,21 +430,24 @@ public class SubAirlineController {
 							}
 					} while(true);
 				case 3:
-					AdminService service2=new AdminServiceImpl();
-					try {
-						List<UserInfo> info2 = service2.viewAllUsers();
+					LOGGER.info(
+							"********************** VIEW ALL FLIGHTS ********************");
+						try {
+						List<FlightsInfo> info = userservice.getAllFlightDetails();
 						LOGGER.info(
 								"===========================================================================");
 
-						for (UserInfo userBean : info2) {
-							if (userBean != null) {
-								LOGGER.info(userBean);
+						
+						for (FlightsInfo flightBean : info) {
+							if (flightBean != null) {
+								LOGGER.info(flightBean);
 							} else {
-								LOGGER.info("No Bookings are available");
+								LOGGER.info(
+										"No Flight are available in the Flight Details");
 							}
 						}
 						} catch (Exception e) {
-                             LOGGER.info(e.getMessage());
+							 LOGGER.info(e.getMessage());
 						}
 						break;
 						

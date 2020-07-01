@@ -2,6 +2,8 @@ package com.javafullstack.airlinereservationsystemhibernate.factory;
 
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.AdminDAOImpl;
+import com.javafullstackfeb.airlinereservationsystemhibernate.dao.UserDAO;
+import com.javafullstackfeb.airlinereservationsystemhibernate.dao.UserDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminServiceImpl;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.UserService;
@@ -17,8 +19,8 @@ public class AirLineFactory {
 		return dao;
 	}
 	
-	public static AdminDAO getUserDAOImplInstance() {
-	      AdminDAO dao=new  AdminDAOImpl();
+	public static UserDAO getUserDAOImplInstance() {
+	      UserDAO dao=new UserDAOImpl();
 	      return dao;
 	}
 	

@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
 import com.javafullstack.airlinereservationsystemhibernate.utility.JDBCUtility;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.TicketRequestInfo;
@@ -17,179 +23,116 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<FlightsInfo> searchFlightByName(String flightName) {
-		ResultSet resultSet = null;
-		String query = "select * from flightsinfo where flightName=?";
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
-		while (resultSet.next()) {
-			FlightsInfo bean = new FlightsInfo();
-			bean.setFlightId(resultSet.getInt("flightid"));
-			bean.setFlightName(resultSet.getString("flightname"));
-			bean.setSource(resultSet.getString("source"));
-			bean.setDestination(resultSet.getString("destination"));
-		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatavailable"));
-			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			bean.setArrivalTime(resultSet.getTime("arrivaltime").toLocalTime());
-			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			bean.setDepartureTime(resultSet.getTime("departuretime").toLocalTime());
-         
-			l.add(bean);
-			return l;
-		}
-		if(l.isEmpty()) {
-			return null;
-		}
-		else {
-		return l;
-		}
-		
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	finally {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
+		EntityTransaction transaction = null;
 
 		try {
-			if (resultSet != null) {
-				resultSet.close();
+			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			manager = entityManagerFactory.createEntityManager();
+			String jpql = "Select e from EmployeeBean e where flightName=:name";
+			Query query = manager.createQuery(jpql);
+			  query.setParameter("name", flightName);
+			List<FlightsInfo> recordList = query.getResultList();
+			for (int i = 0; i < recordList.size()-1; i++) {
+				recordList.get(i);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			manager.close();
+			entityManagerFactory.close();
+			return recordList;
+			
+		
+		}catch (Exception e) {
 			e.printStackTrace();
+			transaction.rollback();
+			
 		}
-	}
+
 		return null;
 	}
 
 	@Override
 	public List<FlightsInfo> searchFlightBySource(String source) {
-		ResultSet resultSet = null;
-		String query = "select * from flightsinfo where source=?";
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
-		while (resultSet.next()) {
-			FlightsInfo bean = new FlightsInfo();
-			bean.setFlightId(resultSet.getInt("flightid"));
-			bean.setFlightName(resultSet.getString("flightname"));
-			bean.setSource(resultSet.getString("source"));
-			bean.setDestination(resultSet.getString("destination"));
-		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatavailable"));
-			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			bean.setArrivalTime(resultSet.getTime("arrivaltime").toLocalTime());
-			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			bean.setDepartureTime(resultSet.getTime("departuretime").toLocalTime());
-         
-			
-			l.add(bean);
-		}
-		if(l.isEmpty()) {
-			return null;
-		}
-		else {
-		return l;
-		}
-		
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	finally {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
+		EntityTransaction transaction = null;
 
 		try {
-			if (resultSet != null) {
-				resultSet.close();
+			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			manager = entityManagerFactory.createEntityManager();
+			String jpql = "Select f from FlightsInfo f where source=:name";
+			Query query = manager.createQuery(jpql);
+			  query.setParameter("name",source);
+			List<FlightsInfo> recordList = query.getResultList();
+			for (int i = 0; i < recordList.size()-1; i++) {
+				recordList.get(i);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			manager.close();
+			entityManagerFactory.close();
+			return recordList;
+			
+		
+		}catch (Exception e) {
 			e.printStackTrace();
+			transaction.rollback();
+			
 		}
-	}
+
 		return null;
 	}
 
 	@Override
 	public List<FlightsInfo> searchFlightByDestination(String destination) {
-		ResultSet resultSet = null;
-		String query = "select * from flightsinfo where destination=?";
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
-		while (resultSet.next()) {
-			FlightsInfo bean = new FlightsInfo();
-			bean.setFlightId(resultSet.getInt("flightid"));
-			bean.setFlightName(resultSet.getString("flightname"));
-			bean.setSource(resultSet.getString("source"));
-			bean.setDestination(resultSet.getString("destination"));
-		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatavailable"));
-			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			bean.setArrivalTime(resultSet.getTime("arrivaltime").toLocalTime());
-			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			bean.setDepartureTime(resultSet.getTime("departuretime").toLocalTime());
-         
-			
-			l.add(bean);
-		}
-		if(l.isEmpty()) {
-			return null;
-		}
-		else {
-		return l;
-		}
-		
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	finally {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
+		EntityTransaction transaction = null;
 
 		try {
-			if (resultSet != null) {
-				resultSet.close();
+			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			manager = entityManagerFactory.createEntityManager();
+			String jpql = "Select f from FlightsInfo f where destination=:name";
+			Query query = manager.createQuery(jpql);
+			  query.setParameter("name",  destination);
+			List<FlightsInfo> recordList = query.getResultList();
+			for (int i = 0; i < recordList.size()-1; i++) {
+				recordList.get(i);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			manager.close();
+			entityManagerFactory.close();
+			return recordList;
+			
+		
+		}catch (Exception e) {
 			e.printStackTrace();
+			transaction.rollback();
+			
 		}
-	}
+
 		return null;
 	}
 
 	@Override
 	public boolean registerUser(UserInfo usersInfo) {
-		String query = "insert into userinfo values(?,?,?,?,?,?)";
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
 
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-			
-			preparedStatement.setInt(1, usersInfo.getId());
-			preparedStatement.setString(2, usersInfo.getUsername());
-			preparedStatement.setString(3, usersInfo.getEmailId());
-			preparedStatement.setString(4, usersInfo.getPassword());
-			preparedStatement.setString(5, usersInfo.getPhoneNumber());
-			preparedStatement.setString(6, usersInfo.getRole());
-			int n=preparedStatement.executeUpdate(); 
-			if(n!=0) {
-				return true;
-			} else {
-				return false;
-			}
-
+		try {
+		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		manager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction=manager.getTransaction();
+        transaction.begin();
+        manager.persist(usersInfo);
+        transaction.commit();
+        System.out.println("Record saved");
+        manager.close();
+		entityManagerFactory.close();
+        return true;
 		} catch (Exception e) {
-			
 			e.printStackTrace();
+            
 		}
+
+		
 		return false;
 	}
 
@@ -201,79 +144,55 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
-		ResultSet resultSet = null;
-		String query = "select * from flightsinfo";
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
-		resultSet = preparedStatement.executeQuery();
-		List<FlightsInfo> l = new ArrayList<FlightsInfo>();
-		while (resultSet.next()) {
-			FlightsInfo bean = new FlightsInfo();
-			bean.setFlightId(resultSet.getInt("flightid"));
-			bean.setFlightName(resultSet.getString("flightname"));
-			bean.setSource(resultSet.getString("source"));
-			bean.setDestination(resultSet.getString("destination"));
-		    bean.setNoOfSeatsBooked(resultSet.getInt("noofseatavailable"));
-			bean.setDateOfArrival(resultSet.getDate("dateofarrival").toLocalDate());
-			bean.setArrivalTime(resultSet.getTime("arrivaltime").toLocalTime());
-			bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
-			bean.setDepartureTime(resultSet.getTime("departuretime").toLocalTime());
-         
-			
-			l.add(bean);
-		}
-		if(l.isEmpty()) {
-			return null;
-		}
-		else {
-		return l;
-		}
-		
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	finally {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
+		EntityTransaction transaction = null;
 
 		try {
-			if (resultSet != null) {
-				resultSet.close();
+			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			manager = entityManagerFactory.createEntityManager();
+			String jpql = "Select f from FlightsInfo f";
+			Query query = manager.createQuery(jpql);
+			List<FlightsInfo> recordList = query.getResultList();
+			for (int i = 0; i < recordList.size()-1; i++) {
+				recordList.get(i);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			manager.close();
+			entityManagerFactory.close();
+			return recordList;
+			
+		
+		}catch (Exception e) {
 			e.printStackTrace();
+			transaction.rollback();
+			
 		}
-	}
+
 		return null;
 	}
 
 	@Override
 	public UserInfo authenticateUser(String email, String password) {
-		String query = "select * from userinfo where emailid=? and password=? and role='user'";
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager manager = null;
 
-		try (Connection connection = JDBCUtility.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, password);
-		ResultSet resultSet = preparedStatement.executeQuery();
-		if (resultSet.next()) {
-			UserInfo bean = new UserInfo();
-			bean.setId(resultSet.getInt("id"));
-			bean.setUsername(resultSet.getString("name"));
-			bean.setEmailId(resultSet.getString("emailid"));
-			bean.setPassword(resultSet.getString("password"));
-			bean.setPhoneNumber(resultSet.getString("phonenumber"));
-			return bean;
-		} else {
-			return null;
-		}
-
-	} catch (Exception e) {
-		e.printStackTrace();
+		try {
+		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		manager = entityManagerFactory.createEntityManager();
+	    String jpql="select u from UserInfo  u where  u.emailId=:email and u.password=:password";
+	       Query query =manager.createQuery(jpql);
+	       query.setParameter("email", email);
+			query.setParameter("password", password);
+			UserInfo  record=(UserInfo)query.getSingleResult();
+	        System.out.println("Record saved");
+	        manager.close();
+			entityManagerFactory.close();
+	        return record;
+			} catch (Exception e) {
+				e.printStackTrace();
+	            
+			}
 		return null;
-	}
 	}
 
 }

@@ -426,21 +426,24 @@ public class SubAirlineController {
 							}
 					} while(true);
 				case 3:
-					AdminService service2=new AdminServiceImpl();
-					try {
-						List<UserInfo> info2 = service2.viewAllUsers();
+					LOGGER.info(
+							"********************** VIEW ALL FLIGHTS ********************");
+						try {
+						List<FlightsInfo> info = userservice.getAllFlightDetails();
 						LOGGER.info(
 								"===========================================================================");
 
-						for (UserInfo userBean : info2) {
-							if (userBean != null) {
-								LOGGER.info(userBean);
+						
+						for (FlightsInfo flightBean : info) {
+							if (flightBean != null) {
+								LOGGER.info(flightBean);
 							} else {
-								LOGGER.info("No Bookings are available");
+								LOGGER.info(
+										"No Flight are available in the Flight Details");
 							}
 						}
 						} catch (Exception e) {
-                             LOGGER.info(e.getMessage());
+							 LOGGER.info(e.getMessage());
 						}
 						break;
 						

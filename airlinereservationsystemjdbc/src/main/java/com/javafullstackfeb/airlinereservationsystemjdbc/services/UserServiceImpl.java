@@ -15,9 +15,21 @@ public class UserServiceImpl implements UserService {
 	Validation validation=new Validation();
 	@Override
 	public boolean registerUser(UserInfo usersInfo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
+		if (validation.validateId(usersInfo.getId())) {
+			if (validation.validateName(usersInfo.getUsername())) {
+				if (validation.validateMobile(usersInfo.getPhoneNumber())) {
+					if (validation.validateEmail(usersInfo.getEmailId())) {
+						if (validation.validatePassword(usersInfo.getPassword())) {
+							return dao.registerUser(usersInfo);
+						}
+					}
+				}
+			}
+		}
+             return false;
+		}
+
 
 	@Override
 	public List<FlightsInfo> searchBySource(String source) {
@@ -31,26 +43,42 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<FlightsInfo> searchByName(String flightName) {
-		// TODO Auto-generated method stub
+		if (validation.validateName(flightName)) {
+			return dao.searchFlightBySource(flightName);
+		} else {
+			System.out.println("Invalid Source");
+		}
 		return null;
 	}
 
 	@Override
 	public List<FlightsInfo> searchByDestination(String destination) {
-		// TODO Auto-generated method stub
+		if (validation.validateName(destination)) {
+			return dao.searchFlightByDestination(destination);
+		} else {
+			System.out.println("Invalid Source");
+		}
 		return null;
 	}
 
 	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		
+			return dao.getAllFlightDetails();
+		
 	}
 
 	@Override
 	public UserInfo authenticateUser(String email, String password) {
-		// TODO Auto-generated method stub
+		if (validation.validateEmail(email)) {
+			if (validation.validatePassword(password)) {
+				return dao.authenticateUser(email, password);
+			}
+
+		}
+
 		return null;
+
 	}
 
 	@Override
