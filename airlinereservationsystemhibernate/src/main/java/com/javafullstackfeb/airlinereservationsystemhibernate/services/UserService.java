@@ -13,11 +13,15 @@ public interface UserService {
 
 	public List<FlightsInfo> searchByName(String flightName);
 
-	public List<FlightsInfo> searchByDestination(String destination);
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source,String destination);
 
 	public List<FlightsInfo> getAllFlightDetails();
 
 	public UserInfo authenticateUser(String email, String password);
 
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats);
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
+
+	public boolean cancelTicket(int bookingId);
+
+	
 }

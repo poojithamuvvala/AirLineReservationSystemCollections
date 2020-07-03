@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 
 public interface UserDAO {
 
@@ -12,15 +11,14 @@ public interface UserDAO {
 
 	public List<FlightsInfo> searchFlightBySource(String source);
 
-	public List<FlightsInfo> searchFlightByDestination(String destination);
-
-
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination);
 	
 	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
 	
 	public List<FlightsInfo> getAllFlightDetails();
 
 	
+	public boolean cancelTicket(int bookingId);
 
 	
 	

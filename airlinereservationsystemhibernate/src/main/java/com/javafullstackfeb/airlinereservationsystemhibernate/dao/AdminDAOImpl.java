@@ -12,13 +12,13 @@ import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
 
 public class AdminDAOImpl implements AdminDAO {
-	
+	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");;
 	public UserInfo authenticateAdmin(String email, String password) {
-		EntityManagerFactory entityManagerFactory = null;
+		
 		EntityManager manager = null;
 
 		try {
-		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		
 		manager = entityManagerFactory.createEntityManager();
 	    String jpql="select u from UserInfo  u where  u.emailId=:email and u.password=:password ";
 	       Query query =manager.createQuery(jpql);
@@ -27,7 +27,7 @@ public class AdminDAOImpl implements AdminDAO {
 			UserInfo  record=(UserInfo)query.getSingleResult();
 	        System.out.println("Record saved");
 	        manager.close();
-			entityManagerFactory.close();
+		
 	        return record;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -37,11 +37,11 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public boolean registerAdmin(UserInfo newAdmin) {
-		EntityManagerFactory entityManagerFactory = null;
+		
 		EntityManager manager = null;
 
 		try {
-		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		
 		manager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction=manager.getTransaction();
         transaction.begin();
@@ -49,7 +49,7 @@ public class AdminDAOImpl implements AdminDAO {
         transaction.commit();
         System.out.println("Record saved");
         manager.close();
-		entityManagerFactory.close();
+		
         return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,11 +61,10 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public boolean addFlight(FlightsInfo flightInfo) {
-		EntityManagerFactory entityManagerFactory = null;
 		EntityManager manager = null;
 
 		try {
-		entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		
 		manager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction=manager.getTransaction();
         transaction.begin();
@@ -73,7 +72,7 @@ public class AdminDAOImpl implements AdminDAO {
         transaction.commit();
         System.out.println("Record saved");
         manager.close();
-		entityManagerFactory.close();
+		
         return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -85,11 +84,11 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 	public boolean cancelFlight(int id) {
 		
-		EntityManagerFactory entityManagerFactory = null;
+		
 		EntityManager entityManager = null;
 		EntityTransaction entityTransaction = null;
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			
 			entityManager = entityManagerFactory.createEntityManager();
 			entityTransaction = entityManager.getTransaction();
 			entityTransaction.begin();
@@ -98,7 +97,7 @@ public class AdminDAOImpl implements AdminDAO {
 			System.out.println("record is successfully deleted!!!");
 			entityTransaction.commit();
 			entityManager.close();
-			entityManagerFactory.close();
+			
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -111,7 +110,7 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public List<UserInfo> viewAllUsers() {
-		EntityManagerFactory entityManagerFactory = null;
+		
 		EntityManager manager = null;
 		
 
@@ -125,7 +124,7 @@ public class AdminDAOImpl implements AdminDAO {
 				recordList.get(i);
 			}
 			manager.close();
-			entityManagerFactory.close();
+		
 			return recordList;
 			
 		

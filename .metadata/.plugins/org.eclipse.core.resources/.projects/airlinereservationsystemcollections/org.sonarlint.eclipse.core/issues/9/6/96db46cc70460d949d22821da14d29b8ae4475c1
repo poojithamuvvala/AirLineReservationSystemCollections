@@ -1,34 +1,13 @@
 
-^
-java:S1168["+Return an empty collection instead of null.(¥¹ï8¡ø‹ß¯.HúNRMAJORZ
+_
+java:S1168r"+Return an empty collection instead of null.(¥¹ï8Ê®Ş¯.H‘ÑRMAJORZ
 CODE_SMELL
-g
-java:S1066"/Merge this if statement with the enclosing one.( ³ô´şÿÿÿÿ8ÙÎêŞ¯.HûNRMAJORZ
+_
+java:S1168|"+Return an empty collection instead of null.(¥¹ï8®•§Ü¯.H”ÑRMAJORZ
 CODE_SMELL
-^
-java:S1168e"+Return an empty collection instead of null.(¥¹ï8Ê®Ş¯.HüNRMAJORZ
+_
+java:S1168h"+Return an empty collection instead of null.(¥¹ï8¡ø‹ß¯.HÑRMAJORZ
 CODE_SMELL
-^
-java:S1168Q"+Return an empty collection instead of null.(¥¹ï8®•§Ü¯.HıNRMAJORZ
-CODE_SMELL
-g
-java:S1066!"/Merge this if statement with the enclosing one.(åı øûÿÿÿÿ8ËÄï¯.HşNRMAJORZ
-CODE_SMELL
-g
-java:S1066""/Merge this if statement with the enclosing one.(Øö€ˆøÿÿÿÿ8ËÄï¯.HÿNRMAJORZ
-CODE_SMELL
-g
-java:S1066#"/Merge this if statement with the enclosing one.(ÁùÜ¯ûÿÿÿÿ8ËÄï¯.H€ORMAJORZ
-CODE_SMELL
-b
-java:S1066$"/Merge this if statement with the enclosing one.(şğÓì8ËÄï¯.HORMAJORZ
-CODE_SMELL
-g
-java:S10662"/Merge this if statement with the enclosing one.(ºº†‘şÿÿÿÿ8—·÷›°.H‚ORMAJORZ
-CODE_SMELL
-b
-java:S10663"/Merge this if statement with the enclosing one.(˜ÈŠª8—·÷›°.HƒORMAJORZ
-CODE_SMELL
-g
-java:S10664"/Merge this if statement with the enclosing one.(±Ê‹ëøÿÿÿÿ8—·÷›°.H„ORMAJORZ
+‰
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¡åÓÕ8äø™š±.HÆÑRCRITICALZ
 CODE_SMELL

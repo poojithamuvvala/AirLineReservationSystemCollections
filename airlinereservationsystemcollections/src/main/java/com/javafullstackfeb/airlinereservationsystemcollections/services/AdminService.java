@@ -10,8 +10,6 @@ import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
 public interface AdminService {
 	public AdminInfo authenticateAdmin(String email, String password);
 
-	public boolean registerAdmin(AdminInfo adminInfo);
-
 	public boolean addFlight(FlightsInfo flightInfo);
 
 	public boolean cancelFlight(int id);
@@ -27,5 +25,7 @@ public interface AdminService {
 	public List<UsersInfo> viewAllUsers();
 
 	public List<BookingsInfo> viewAllBookings();
+
+	public boolean registerAdmin(AdminInfo bean);
 
 }

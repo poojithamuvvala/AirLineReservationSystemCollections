@@ -10,22 +10,23 @@ import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
+import com.javafullstackfeb.airlinereservationsystemjdbc.validation.ValidationImpl;
 
 public class AdminServiceImpl implements AdminService {
 
 	AdminDAO dao = AirLineFactory.getAdminDAOimplInstance();
-	Validation validation = new Validation();
+	Validation validation = AirLineFactory.getValidationImpl();
 
 	public UserInfo authenticateAdmin(String email, String password) {
 		if (validation.validateEmail(email)) {
 			if (validation.validatePassword(password)) {
 				return dao.authenticateAdmin(email, password);
 			} else {
-				throw new AirLineReservationSystemException("Invalid emailId");
+				throw new AirLineReservationSystemException("Invalid password");
 			}
 
 		}else {
-			throw new AirLineReservationSystemException("Invalid passowrd");
+			throw new AirLineReservationSystemException("Invalid emailId");
 		}
 
 	

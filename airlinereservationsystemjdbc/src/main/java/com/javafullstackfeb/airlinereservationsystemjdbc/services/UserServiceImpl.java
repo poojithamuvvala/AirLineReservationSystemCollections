@@ -10,11 +10,8 @@ import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
 
 public class UserServiceImpl implements UserService {
 
-	UserDAO dao=AirLineFactory.getUserDAOImplInstance();
-	Validation validation=new Validation();
-	
-	
-
+	UserDAO dao = AirLineFactory.getUserDAOImplInstance();
+	Validation validation = AirLineFactory.getValidationImpl();
 
 	@Override
 	public List<FlightsInfo> searchBySource(String source) {
@@ -37,9 +34,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<FlightsInfo> searchByDestination(String destination) {
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source,String destination) {
 		if (validation.validateName(destination)) {
-			return dao.searchFlightByDestination(destination);
+			return dao.searchFlightBySourceAndDestination(source,destination);
 		} else {
 			System.out.println("Invalid Source");
 		}
@@ -48,18 +45,23 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
-		
-			return dao.getAllFlightDetails();
-		
-	}
 
-	
+		return dao.getAllFlightDetails();
+
+	}
 
 	@Override
 	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo) {
-		
+
 		return dao.bookTicket(requestInfo);
 	}
 
-	
+	@Override
+	public boolean cancelTicket(int bookingId) {
+		if (validation.validateFlightId(bookingId)) {
+			return dao.cancelTicket(bookingId);
+		}
+		return false;
+	}
+
 }

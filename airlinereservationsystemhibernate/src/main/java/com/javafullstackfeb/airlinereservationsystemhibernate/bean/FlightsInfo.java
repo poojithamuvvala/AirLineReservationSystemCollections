@@ -26,7 +26,7 @@ public class FlightsInfo implements Serializable {
 	private String source;
 	@Column
 	private String destination;
-	@Column(name="dataofdeparture")
+	@Column(name="dateofdeparture")
 	private LocalDate dateOfDeparture;
 	@Column(name="dateofarrival")
 	private LocalDate dateOfArrival;

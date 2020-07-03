@@ -8,6 +8,8 @@ import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminServ
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminServiceImpl;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.UserService;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.UserServiceImpl;
+import com.javafullstackfeb.airlinereservationsystemhibernate.validation.Validation;
+import com.javafullstackfeb.airlinereservationsystemhibernate.validation.ValidationImpl;
 
 public class AirLineFactory {
  
@@ -32,5 +34,10 @@ public class AirLineFactory {
 	public static UserService getUserServiceImplInstance() {
 	       UserService service=new UserServiceImpl();
 	       return service;
+	}
+	
+	public static Validation getValidationImpl() {
+		Validation validation=new ValidationImpl();
+		return validation;
 	}
 }

@@ -16,5 +16,6 @@ public class UsersInfo implements Serializable {
 	private LocalDate dateOfBirth;
 	private String address;
 	private String phoneNumber;
+	private String role;
 
 }

@@ -10,6 +10,8 @@ import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminServiceImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.UserService;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.UserServiceImpl;
+import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
+import com.javafullstackfeb.airlinereservationsystemjdbc.validation.ValidationImpl;
 
 public class AirLineFactory {
  
@@ -34,5 +36,10 @@ public class AirLineFactory {
 	public static UserService getUserServiceImplInstance() {
 	       UserService service=new UserServiceImpl();
 	       return service;
+	}
+	
+	public static Validation getValidationImpl() {
+		Validation validation=new ValidationImpl();
+		return validation;
 	}
 }

@@ -13,5 +13,5 @@ public class AdminInfo implements Serializable {
 	@ToString.Exclude
 	private String password;
 	private String phoneNumber;
-
+	private String role;
 }
