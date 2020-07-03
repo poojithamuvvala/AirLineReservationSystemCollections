@@ -7,17 +7,16 @@ import com.javafullstackfeb.airlinereservationsystemspring.bean.TicketRequestInf
 import com.javafullstackfeb.airlinereservationsystemspring.bean.UserInfo;
 
 public interface UserService {
-	public boolean registerUser(UserInfo usersInfo);
-
 	public List<FlightsInfo> searchBySource(String source);
 
 	public List<FlightsInfo> searchByName(String flightName);
 
-	public List<FlightsInfo> searchByDestination(String destination);
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination);
 
 	public List<FlightsInfo> getAllFlightDetails();
 
-	public UserInfo authenticateUser(String email, String password);
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
 
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats);
+	public boolean cancelTicket(int bookingId);
+
 }

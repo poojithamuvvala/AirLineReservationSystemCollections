@@ -6,9 +6,9 @@ import com.javafullstackfeb.airlinereservationsystemspring.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemspring.bean.UserInfo;
 
 public interface AdminService {
-	public UserInfo authenticateAdmin(String email, String password);
+	public UserInfo authenticate(String email, String password);
 
-	public boolean registerAdmin(UserInfo adminInfo);
+	public boolean newRegistration(UserInfo adminInfo);
 
 	public boolean addFlight(FlightsInfo flightInfo);
 

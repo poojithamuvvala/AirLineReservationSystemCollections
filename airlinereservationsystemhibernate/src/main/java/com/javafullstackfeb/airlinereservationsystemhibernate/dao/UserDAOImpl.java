@@ -104,7 +104,7 @@ public class UserDAOImpl implements UserDAO {
 		EntityManager manager = null;
 
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			
 			manager = entityManagerFactory.createEntityManager();
 			EntityTransaction transaction = manager.getTransaction();
 			transaction.begin();
@@ -224,26 +224,25 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean cancelTicket(int id) {
+	public boolean cancelTicket(int bookingId) {
 		EntityManager entityManager = null;
 		EntityTransaction entityTransaction = null;
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
 			entityManager = entityManagerFactory.createEntityManager();
 			entityTransaction = entityManager.getTransaction();
 			entityTransaction.begin();
-	          TicketRequestInfo requestInfo = entityManager.find(TicketRequestInfo.class, id);
+	        TicketRequestInfo requestInfo = entityManager.find(TicketRequestInfo.class, bookingId);
 			entityManager.remove(requestInfo);
 			System.out.println("record is successfully deleted!!!");
-			entityTransaction.commit();
+			//entityTransaction.commit();
 			entityManager.close();
 			
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new AirLineReservationSystemException("Ticket Not Cancelled");
 			
 		}
-		return false;
+		
 		
 	}
 

@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @JsonRootName("flightResponse")
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-public class FlightResponse {
+public class AirLineResponse {
     private boolean error;
     private String message;
     private List<Object> data;

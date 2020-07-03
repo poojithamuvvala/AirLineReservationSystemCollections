@@ -12,32 +12,27 @@ import com.javafullstackfeb.airlinereservationsystemcollections.bean.BookingsInf
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.services.AdminService;
-import com.javafullstackfeb.airlinereservationsystemcollections.services.UserService;
 
 import lombok.extern.log4j.Log4j;
+
 @Log4j
 public class AdminController {
-	
-       public static void adminOperations() {
-    	   int checkId = 0;
-   		int capacity = 0;
-   		String checkName = null;
-   		String checkMobileno = null;
-   		String checkEmail = null;
-   		String checkPassword = null;
-   		int flightId = 0;
-   		String flightName = null;
-   		String flightSource = null;
-   		String flightDestination = null;
-   		LocalDate departureDate = null;
-   		LocalDate arrivalDate = null;
-   		LocalTime departureTime = null;
-   		LocalTime arrivalTime = null;
-    	   Scanner scanner=new Scanner(System.in);
-    	 	 AdminService service1=AirLineFactory.getAdminServiceImplInstance();
-    	   log.info(
-					"********************** WELCOME TO ADMIN LOGIN FORM ********************");
-			try {
+
+	public static void adminOperations() {
+
+		int capacity = 0;
+		int flightId = 0;
+		String flightName = null;
+		String flightSource = null;
+		String flightDestination = null;
+		LocalDate departureDate = null;
+		LocalDate arrivalDate = null;
+		LocalTime departureTime = null;
+		LocalTime arrivalTime = null;
+		Scanner scanner = new Scanner(System.in);
+		AdminService service1 = AirLineFactory.getAdminServiceImplInstance();
+		log.info("********************** WELCOME TO ADMIN LOGIN FORM ********************");
+		try {
 			log.info("Enter registered email to login : ");
 			String email = scanner.next();
 			log.info("Enter registered Password to login : ");
@@ -47,12 +42,11 @@ public class AdminController {
 				AdminInfo authBean = service1.authenticateAdmin(email, password);
 				if (authBean != null) {
 					log.info("You have logged in successfully");
-					
+
 					log.info("Now you can perform the following operations:-");
 					do {
 						try {
-							log.info(
-									"===========================================================================");
+							log.info("===========================================================================");
 							log.info("PRESS 1, TO ADD FLIGHTS");
 							log.info("PRESS 2, TO SEARCH FLIGHT BY SOURCE");
 							log.info("PRESS 3, TO  SEARCH FLIGHT BY DESTINATION");
@@ -62,194 +56,183 @@ public class AdminController {
 							log.info("PRESS 7, TO VIEW ALL BOOKINGS");
 							log.info("PRESS 8, TO VIEW ALL USERS");
 							log.info("PRESS 9, TO LOGOUT");
-							log.info(
-									"===========================================================================");
+							log.info("===========================================================================");
 							int choice1 = scanner.nextInt();
 							switch (choice1) {
 							case 1:
-								log.info(
-										"********************** ADD FLIGHT ********************");
-                               try {
-								log.info("Enter FlightID to add : ");
-								flightId = scanner.nextInt();
-
-								log.info("Enter FlightName : ");
-								flightName = scanner.next();
-
-								log.info("Enter Source : ");
-								flightSource = scanner.next();
-
-								log.info("Enter Destination : ");
-								flightDestination = scanner.next();
-
-								log.info("Enter No.of seat Available in the Flight : ");
-								capacity = scanner.nextInt();
-
-								log.info("Enter the departure Time : ");
-								departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
-										scanner.nextInt());
-
-								log.info("Enter the Arrival Time : ");
-								departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
-										scanner.nextInt());
-
-								log.info("Enter the departure date : ");
-								departureDate = LocalDate.of(scanner.nextInt(), scanner.nextInt(),
-										scanner.nextInt());
-
-								log.info("Enter the arrival date : ");
-								arrivalDate = LocalDate.of(scanner.nextInt(), scanner.nextInt(),
-										scanner.nextInt());
-
-								FlightsInfo bean1 = new FlightsInfo();
-								bean1.setFlightId(flightId);
-								bean1.setFlightName(flightName);
-								bean1.setSource(flightSource);
-								bean1.setDestination(flightDestination);
-								bean1.setCapacity(capacity);
-								bean1.setArrivalTime(arrivalTime);
-								bean1.setDepartureTime(departureTime);
-								bean1.setDateOfArrival(arrivalDate);
-								bean1.setDateOfDeparture(departureDate);
-								boolean check2 = service1.addFlight(bean1);
+								log.info("********************** ADD FLIGHT ********************");
 								try {
-								if (check2) {
-									log.info("Flight added to repository with id : " + flightId);
-								} else {
-									log.info("Flight already exist of id = " + flightId);
-								} 
-								} catch (InputMismatchException e) {
-									log.info("Input MisMatch Exception");
+									log.info("Enter FlightID to add : ");
+									flightId = scanner.nextInt();
+
+									log.info("Enter FlightName : ");
+									flightName = scanner.next();
+
+									log.info("Enter Source : ");
+									flightSource = scanner.next();
+
+									log.info("Enter Destination : ");
+									flightDestination = scanner.next();
+
+									log.info("Enter No.of seat Available in the Flight : ");
+									capacity = scanner.nextInt();
+
+									log.info("Enter the departure Time : ");
+									departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
+											scanner.nextInt());
+
+									log.info("Enter the Arrival Time : ");
+									departureTime = LocalTime.of(scanner.nextInt(), scanner.nextInt(),
+											scanner.nextInt());
+
+									log.info("Enter the departure date : ");
+									departureDate = LocalDate.of(scanner.nextInt(), scanner.nextInt(),
+											scanner.nextInt());
+
+									log.info("Enter the arrival date : ");
+									arrivalDate = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+
+									FlightsInfo bean1 = new FlightsInfo();
+									bean1.setFlightId(flightId);
+									bean1.setFlightName(flightName);
+									bean1.setSource(flightSource);
+									bean1.setDestination(flightDestination);
+									bean1.setCapacity(capacity);
+									bean1.setArrivalTime(arrivalTime);
+									bean1.setDepartureTime(departureTime);
+									bean1.setDateOfArrival(arrivalDate);
+									bean1.setDateOfDeparture(departureDate);
+									boolean check2 = service1.addFlight(bean1);
+									try {
+										if (check2) {
+											log.info("Flight added to repository with id : " + flightId);
+										} else {
+											log.info("Flight already exist of id = " + flightId);
+										}
+									} catch (InputMismatchException e) {
+										log.info("Input MisMatch Exception");
+									} catch (Exception e) {
+										log.info(e.getMessage());
+									}
 								} catch (Exception e) {
 									log.info(e.getMessage());
-								}
-                               } catch (Exception e) {
-                               	log.info(e.getMessage());
 								}
 								break;
 							case 2:
-								log.info(
-										"********************** SEARCH FLIGHT BY SOURCE ********************");
+								log.info("********************** SEARCH FLIGHT BY SOURCE ********************");
 								try {
-								log.info("Search Flight Details by Source : ");
-								String source = scanner.next();
-								try {
-								List<FlightsInfo> flightSource1 = service1.searchFlightBySource(source);
-								log.info(
-										"===========================================================================");
+									log.info("Search Flight Details by Source : ");
+									String source = scanner.next();
+									try {
+										List<FlightsInfo> flightSource1 = service1.searchFlightBySource(source);
+										log.info(
+												"===========================================================================");
 
-								for (FlightsInfo flightBean : flightSource1) {
-									if (flightBean != null) {
-										log.info(flightBean);
-									} else {
-										log.info("No Flights are available with this Source");
+										for (FlightsInfo flightBean : flightSource1) {
+											if (flightBean != null) {
+												log.info(flightBean);
+											} else {
+												log.info("No Flights are available with this Source");
+											}
+										}
+									} catch (InputMismatchException e) {
+										log.info("Input Mismatch Exception");
+									} catch (Exception e) {
+										log.info(e.getMessage());
 									}
-								}
-								} catch (InputMismatchException e) {
-									log.info("Input Mismatch Exception");
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								}
-								
+
 								} catch (Exception e) {
 									log.info(e.getMessage());
 								}
 								break;
 							case 3:
-								log.info(
-										"********************** SEARCH FLIGHT BY DESTINATION ********************");
+								log.info("********************** SEARCH FLIGHT BY DESTINATION ********************");
 								try {
-								log.info("Search flight by Destination : ");
-								String destination = scanner.next();
-								try {
-								List<FlightsInfo> flightDestination1 = service1.searchFlightByDestination(destination);
-										
-								log.info(
-										"===========================================================================");
-								for (FlightsInfo flightBean : flightDestination1) {
-									if (flightBean != null) {
-										log.info(flightBean);
-									} else {
+									log.info("Search flight by Destination : ");
+									String destination = scanner.next();
+									try {
+										List<FlightsInfo> flightDestination1 = service1
+												.searchFlightByDestination(destination);
+
 										log.info(
-												"No Flights are available with this Destination");
+												"===========================================================================");
+										for (FlightsInfo flightBean : flightDestination1) {
+											if (flightBean != null) {
+												log.info(flightBean);
+											} else {
+												log.info("No Flights are available with this Destination");
+											}
+										}
+									} catch (InputMismatchException e) {
+										log.info("Input Mismatch Exception");
+									} catch (Exception e) {
+										log.info(e.getMessage());
 									}
-								}
-								} catch (InputMismatchException e) {
-									log.info("Input Mismatch Exception");
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								} 
 								} catch (Exception e) {
 									log.info(e.getMessage());
 								}
 								break;
 							case 4:
-								log.info(
-										"********************** SEARCH FLIGHT BY NAME ********************");
+								log.info("********************** SEARCH FLIGHT BY NAME ********************");
 								try {
-								log.info(" SEARCH FLIGHT BY NAME : ");
-								String name = scanner.next();
-								try {
-								List<FlightsInfo> fname = service1.searchFlightByName(name);
-								log.info(
-										"===========================================================================");
-
-								for (FlightsInfo flightBean : fname) {
-									if (flightBean != null) {
-										log.info(flightBean);
-									} else {
+									log.info(" SEARCH FLIGHT BY NAME : ");
+									String name = scanner.next();
+									try {
+										List<FlightsInfo> fname = service1.searchFlightByName(name);
 										log.info(
-												"No Flights are available with this Flight Name");
+												"===========================================================================");
+
+										for (FlightsInfo flightBean : fname) {
+											if (flightBean != null) {
+												log.info(flightBean);
+											} else {
+												log.info("No Flights are available with this Flight Name");
+											}
+										}
+									} catch (InputMismatchException e) {
+										log.info("InputMismatch exception");
+									} catch (Exception e) {
+										log.info(e.getMessage());
 									}
-								}
-								} catch (InputMismatchException e) {
-									log.info("InputMismatch exception");
 								} catch (Exception e) {
 									log.info(e.getMessage());
-								}
-								} catch (Exception e) {
-                                  log.info(e.getMessage());
 								}
 								break;
 							case 5:
 								try {
-								log.info("Enter FlightId");
-								int flightId3 = scanner.nextInt();
-								if (flightId3 == 0) {
-									log.info("Please Enter the Valid FlightId");
-								} else {
-
-									boolean remove = service1.cancelFlight(flightId3);
-									if (remove) {
-										log.info(
-												"The Flight is removed of Id = " + flightId3);
+									log.info("Enter FlightId");
+									int flightId3 = scanner.nextInt();
+									if (flightId3 == 0) {
+										log.info("Please Enter the Valid FlightId");
 									} else {
-										log.info(
-												"The Flight is not removed of Id = " + flightId3);
+
+										boolean remove = service1.cancelFlight(flightId3);
+										if (remove) {
+											log.info("The Flight is removed of Id = " + flightId3);
+										} else {
+											log.info("The Flight is not removed of Id = " + flightId3);
+										}
 									}
-								}
 								} catch (Exception e) {
-									 log.info(e.getMessage());
+									log.info(e.getMessage());
 								}
 								break;
-							case 6:log.info(
-									"********************** VIEW ALL FLIGHTS ********************");
+							case 6:
+								log.info("********************** VIEW ALL FLIGHTS ********************");
 								try {
-								List<FlightsInfo> info = service1.viewAllFlights();
-								log.info(
-										"===========================================================================");
+									List<FlightsInfo> info = service1.viewAllFlights();
+									log.info(
+											"===========================================================================");
 
-								
-								for (FlightsInfo flightBean : info) {
-									if (flightBean != null) {
-										log.info(flightBean);
-									} else {
-										log.info(
-												"No Flight are available in the Flight Details");
+									for (FlightsInfo flightBean : info) {
+										if (flightBean != null) {
+											log.info(flightBean);
+										} else {
+											log.info("No Flight are available in the Flight Details");
+										}
 									}
-								}
 								} catch (Exception e) {
-									 log.info(e.getMessage());
+									log.info(e.getMessage());
 								}
 								break;
 							case 7:
@@ -267,24 +250,24 @@ public class AdminController {
 								} catch (Exception e) {
 									log.info(e.getMessage());
 								}
-								
+
 								break;
 
 							case 8:
 								try {
-								List<UsersInfo> info2 = service1.viewAllUsers();
-								log.info(
-										"===========================================================================");
+									List<UsersInfo> info2 = service1.viewAllUsers();
+									log.info(
+											"===========================================================================");
 
-								for (UsersInfo userBean : info2) {
-									if (userBean != null) {
-										log.info(userBean);
-									} else {
-										log.info("No Bookings are available");
+									for (UsersInfo userBean : info2) {
+										if (userBean != null) {
+											log.info(userBean);
+										} else {
+											log.info("No Bookings are available");
+										}
 									}
-								}
 								} catch (Exception e) {
-                                    log.info(e.getMessage());
+									log.info(e.getMessage());
 								}
 								break;
 
@@ -304,8 +287,9 @@ public class AdminController {
 			} catch (Exception e) {
 				log.info("Invalid Credentials");
 			}
-			} catch (Exception e) {
-				log.info(e.getMessage());
-			}
-       }
+		} catch (Exception e) {
+			log.info(e.getMessage());
+		}
+		scanner.close();
+	}
 }

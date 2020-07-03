@@ -8,35 +8,43 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javafullstackfeb.airlinereservationsystemspring.bean.FlightResponse;
+import com.javafullstackfeb.airlinereservationsystemspring.bean.AirLineResponse;
 import com.javafullstackfeb.airlinereservationsystemspring.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemspring.services.AdminService;
-import com.javafullstackfeb.airlinereservationsystemspring.services.UserService;
 
 @RestController
-public class LoginController {
-	
+public class AdminRestController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private UserService userService;
 	@PostMapping(path="/addFlight" , 
 			consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
 			produces ={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE} )
-    public void addFlight(FlightsInfo newflightsInfo) {
+    public AirLineResponse addFlight(FlightsInfo newflightsInfo) {
     	boolean isAdded=adminService.addFlight(newflightsInfo);
-    	FlightResponse flightResponse=new FlightResponse();
+    	AirLineResponse flightResponse=new AirLineResponse();
     	if(isAdded) {
     		flightResponse.setMessage("Flight Added Successfully");
     	} else {
-    		flightResponse.setError("Unable To Add a Flight");
+    		flightResponse.setError(true);
+    		flightResponse.setMessage("Flight is Not added");
     	}
+		return flightResponse;
     }
 	
-	@GetMapping(path="/serachFlightBySource/{source}",
+	@GetMapping(path="/viewAllUsers",
 			produces ={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-	public void serachFlightBySource(String source) {
-	    List<FlightsInfo> flightsInfos=  userService.searchBySource(source);
+	public AirLineResponse viewAllUsers(){
+	    List userInfos=  adminService.viewAllUsers();;
+	    AirLineResponse flightResponse=new AirLineResponse();
+	    if(userInfos!=null & !userInfos.isEmpty()) {
+	    	flightResponse.setMessage("All User Infos are:");
+	    	flightResponse.setData(userInfos);
+	    }
+	    else {
+	    	flightResponse.setError(true);
+    		flightResponse.setMessage("Users are not available");
+	    }
+		return flightResponse;
 	}
 }

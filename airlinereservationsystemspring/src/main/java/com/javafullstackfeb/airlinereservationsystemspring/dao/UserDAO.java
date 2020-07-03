@@ -12,17 +12,16 @@ public interface UserDAO {
 
 	public List<FlightsInfo> searchFlightBySource(String source);
 
-	public List<FlightsInfo> searchFlightByDestination(String destination);
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source,String destination);
 
 	public boolean registerUser(UserInfo usersInfo);
 	
-	public TicketRequestInfo bookTicket(UserInfo usersInfo, FlightsInfo flightsInfo, int noOfSeats);
+	public TicketRequestInfo bookTicket(TicketRequestInfo requestInfo);
 	
 	public List<FlightsInfo> getAllFlightDetails();
 
 	public UserInfo authenticateUser(String email, String password);
-
 	
-	
+	public boolean cancelTicket(int id);
 	
 }

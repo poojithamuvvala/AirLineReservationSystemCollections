@@ -12,14 +12,20 @@ import lombok.Data;
 @SuppressWarnings("serial")
 @Data
 @Entity
-@Table(name="bookticket")
+@Table(name="ticketbooking")
 public class TicketRequestInfo implements Serializable{
 
-	private UserInfo userInfo;
-	private FlightsInfo flightInfo;
-	@Id
-	@Column(name="bookingid")
-	private int bookingId;
+		@Id
+	@Column(name = "bookingid")
+	private int ticketid;
+
+	@Column(name = "noofseats")
+	private int noOfSeatsToBeBooked;
+	@Column
+	private int uid;
+
+	@Column(name = "fid")
+	private int flightid;
 
 	
 
