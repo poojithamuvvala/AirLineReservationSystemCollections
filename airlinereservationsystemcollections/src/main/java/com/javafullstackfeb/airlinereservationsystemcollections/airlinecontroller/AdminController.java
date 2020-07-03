@@ -1,4 +1,4 @@
-package com.javafullstackfeb.airlinereservationsystemcollections.controller;
+package com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -12,13 +12,11 @@ import com.javafullstackfeb.airlinereservationsystemcollections.bean.BookingsInf
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.services.AdminService;
-import com.javafullstackfeb.airlinereservationsystemcollections.services.UserService;
 
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class AdminController {
-
 	public static void adminOperations() {
 
 		int capacity = 0;
@@ -41,7 +39,6 @@ public class AdminController {
 			try {
 
 				AdminInfo authBean = service1.authenticateAdmin(email, password);
-				UserService service=AirLineFactory.getUserServiceImplInstance();
 				if (authBean != null) {
 					log.info("You have logged in successfully");
 
@@ -50,14 +47,10 @@ public class AdminController {
 						try {
 							log.info("===========================================================================");
 							log.info("PRESS 1, TO ADD FLIGHTS");
-							log.info("PRESS 2, TO SEARCH FLIGHT BY SOURCE");
-							log.info("PRESS 3, TO  SEARCH FLIGHT BY DESTINATION");
-							log.info("PRESS 4, TO SEARCH FLIGHT BY NAME");
-							log.info("PRESS 5, TO CANCEL FLIGHT");
-							log.info("PRESS 6, TO VIEW ALL FLIGHTS AND ITS DETAILS");
-							log.info("PRESS 7, TO VIEW ALL BOOKINGS");
-							log.info("PRESS 8, TO VIEW ALL USERS");
-							log.info("PRESS 9, TO LOGOUT");
+							log.info("PRESS 2, TO CANCEL FLIGHT");
+							log.info("PRESS 3, TO VIEW ALL BOOKINGS");
+							log.info("PRESS 4, TO VIEW ALL USERS");
+							log.info("PRESS 5, TO LOGOUT");
 							log.info("===========================================================================");
 							int choice1 = scanner.nextInt();
 							switch (choice1) {
@@ -120,87 +113,8 @@ public class AdminController {
 									log.info(e.getMessage());
 								}
 								break;
+							
 							case 2:
-								log.info("********************** SEARCH FLIGHT BY SOURCE ********************");
-								try {
-									log.info("Search Flight Details by Source : ");
-									String source = scanner.next();
-									try {
-										List<FlightsInfo> flightSource1 = service.searchBySource(source);
-										log.info(
-												"===========================================================================");
-
-										for (FlightsInfo flightBean : flightSource1) {
-											if (flightBean != null) {
-												log.info(flightBean);
-											} else {
-												log.info("No Flights are available with this Source");
-											}
-										}
-									} catch (InputMismatchException e) {
-										log.info("Input Mismatch Exception");
-									} catch (Exception e) {
-										log.info(e.getMessage());
-									}
-
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								}
-								break;
-							case 3:
-								log.info("********************** SEARCH FLIGHT BY DESTINATION ********************");
-								try {
-									log.info("Search flight by Destination : ");
-									String destination = scanner.next();
-									try {
-										List<FlightsInfo> flightDestination1 = service
-												.searchByDestination(destination);
-
-										log.info(
-												"===========================================================================");
-										for (FlightsInfo flightBean : flightDestination1) {
-											if (flightBean != null) {
-												log.info(flightBean);
-											} else {
-												log.info("No Flights are available with this Destination");
-											}
-										}
-									} catch (InputMismatchException e) {
-										log.info("Input Mismatch Exception");
-									} catch (Exception e) {
-										log.info(e.getMessage());
-									}
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								}
-								break;
-							case 4:
-								log.info("********************** SEARCH FLIGHT BY NAME ********************");
-								try {
-									log.info(" SEARCH FLIGHT BY NAME : ");
-									String name = scanner.next();
-									try {
-										List<FlightsInfo> fname = service.searchByName(name);
-										log.info(
-												"===========================================================================");
-
-										for (FlightsInfo flightBean : fname) {
-											if (flightBean != null) {
-												log.info(flightBean);
-											} else {
-												log.info("No Flights are available with this Flight Name");
-											}
-										}
-									} catch (InputMismatchException e) {
-										log.info("InputMismatch exception");
-									} catch (Exception e) {
-										log.info(e.getMessage());
-									}
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								}
-								break;
-							case 5:
 								try {
 									log.info("Enter FlightId");
 									int flightId3 = scanner.nextInt();
@@ -219,25 +133,8 @@ public class AdminController {
 									log.info(e.getMessage());
 								}
 								break;
-							case 6:
-								log.info("********************** VIEW ALL FLIGHTS ********************");
-								try {
-									List<FlightsInfo> info = service.getAllFlightDetails();
-									log.info(
-											"===========================================================================");
-
-									for (FlightsInfo flightBean : info) {
-										if (flightBean != null) {
-											log.info(flightBean);
-										} else {
-											log.info("No Flight are available in the Flight Details");
-										}
-									}
-								} catch (Exception e) {
-									log.info(e.getMessage());
-								}
-								break;
-							case 7:
+							
+							case 3:
 								try {
 									List<BookingsInfo> info1 = service1.viewAllBookings();
 									log.info(
@@ -255,7 +152,7 @@ public class AdminController {
 
 								break;
 
-							case 8:
+							case 4:
 								try {
 									List<UsersInfo> info2 = service1.viewAllUsers();
 									log.info(
@@ -273,8 +170,8 @@ public class AdminController {
 								}
 								break;
 
-							case 9:
-								SubAirlineController.airLineOperations();
+							case 5:
+								SubAirLineController.airLineOperations();
 
 							default:
 								log.info("Invalid Choice");

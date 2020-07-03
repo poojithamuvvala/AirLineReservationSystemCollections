@@ -14,14 +14,6 @@ public interface AdminService {
 
 	public boolean cancelFlight(int id);
 
-	public List<FlightsInfo> searchFlightByName(String flightName);
-
-	public List<FlightsInfo> searchFlightBySource(String source);
-
-	public List<FlightsInfo> searchFlightByDestination(String destination);
-
-	public List<FlightsInfo> viewAllFlights();
-
 	public List<UsersInfo> viewAllUsers();
 
 	public List<BookingsInfo> viewAllBookings();

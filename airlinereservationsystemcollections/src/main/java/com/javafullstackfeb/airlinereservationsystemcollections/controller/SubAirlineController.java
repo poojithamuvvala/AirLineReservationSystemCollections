@@ -107,8 +107,6 @@ public class SubAirlineController {
 									log.info(e.getMessage());
 								}
 								
-
-								
 								break;
 
 							case 2:

@@ -1,4 +1,4 @@
-package com.javafullstack.airlinereservationsystemjdbc.utility;
+package com.javafullstackfeb.airlinereservationsystemjdbc.utility;
 
 import java.io.FileInputStream;
 import java.sql.Connection;

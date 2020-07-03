@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
+import com.javafullstackfeb.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.UserService;
 
@@ -53,12 +53,11 @@ public class SubAirLineController {
 			try {
 				flag = false;
 				log.info("**********AIRLINE RESERVATION SYSTEM OPERATIONS*************");
-				log.info("PRESS 1, TO REGISTER");
+				log.info("PRESS 1, TO REGISTER AS USER");
 				log.info("PRESS 2, TO LOGIN");
-				log.info("PRESS 3, TO VIEW ALL FLIGHT DETAILS");
-				log.info("PRESS 4, TO SEARCH FLIGHT BY SOURCE");
-				log.info("PRESS 5, TO SEARCH FLIGHT NAME");
-				log.info("PRESS 6, TO SEARCH BY SOURCE AND DESTINATION");
+				log.info("PRESS 3, TO SEARCH FLIGHT BY SOURCE");
+				log.info("PRESS 4, TO SEARCH FLIGHT NAME");
+				log.info("PRESS 5, TO SEARCH BY SOURCE AND DESTINATION");
 				log.info("Enter your input");
 				int i = scanner.nextInt();
 
@@ -107,40 +106,32 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
 
 				case 2:
 					LoginController.login();
 					break;
+				
 				case 3:
-					log.info("********************** VIEW ALL FLIGHTS ********************");
-					try {
-						List<FlightsInfo> info = userservice.getAllFlightDetails();
-						for (FlightsInfo flightBean : info) {
-							if (flightBean != null) {
-								log.info(flightBean);
-							} else {
-								log.info("No Flight are available in the Flight Details");
-							}
-						}
-					} catch (Exception e) {
-						log.info(e.getMessage());
-					}
-
-					break;
-				case 4:
 
 					log.info("********************** SEARCH FLIGHT BY SOURCE ********************");
 					try {
-						log.info("Search Flight Details by Source : ");
+						log.info(" ENTER THE SOURCE : ");
 						String source = scanner.next();
 						try {
 							List<FlightsInfo> flightSource1 = userservice.searchBySource(source);
-							log.info("===========================================================================");
+							log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s", "flightId", "flightName",
+									"source", "destination", "dateOfDeparture", " dateOfArrival", " arrivalTime", "departureTime",
+									" capacity", " noOfSeatsBooked"));
 
 							for (FlightsInfo flightBean : flightSource1) {
 								if (flightBean != null) {
-									log.info(flightBean);
+									log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+											flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
+											flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
+											flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
+											flightBean.getNoOfSeatsBooked()));
 								} else {
 									log.info("No Flights are available with this Source");
 								}
@@ -154,19 +145,26 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
-				case 5:
+				case 4:
 					log.info("********************** SEARCH FLIGHT BY NAME ********************");
 					try {
-						log.info("Search Flight Details by Name : ");
+						log.info("ENTER THE NAME OF FLIGHT : ");
 						String name = scanner.next();
 						try {
 							List<FlightsInfo> flightname1 = userservice.searchByName(name);
-							log.info("===========================================================================");
+							log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s", "flightId", "flightName",
+									"source", "destination", "dateOfDeparture", " dateOfArrival", " arrivalTime", "departureTime",
+									" capacity", " noOfSeatsBooked"));
 
 							for (FlightsInfo flightBean : flightname1) {
 								if (flightBean != null) {
-									log.info(flightBean);
+									log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+											flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
+											flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
+											flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
+											flightBean.getNoOfSeatsBooked()));
 								} else {
 									log.info("No Flights are available with this Name");
 								}
@@ -180,27 +178,34 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
 
-				case 6:
+				case 5:
 					log.info("********************** SEARCH FLIGHT BY SOURCE AND DESTINATION ********************");
 					try {
-						log.info("Search Flight Details by Source : ");
+						log.info("ENTER THE SOURCE : ");
 						String source = scanner.next();
 
-						log.info("Search Flight Details by Destination : ");
+						log.info("ENTER THE DESTINATION : ");
 						String destination = scanner.next();
 
 						try {
 							List<FlightsInfo> flightname1 = userservice.searchFlightBySourceAndDestination(source,
 									destination);
-							log.info("===========================================================================");
+							log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s", "flightId", "flightName",
+									"source", "destination", "dateOfDeparture", " dateOfArrival", " arrivalTime", "departureTime",
+									" capacity", " noOfSeatsBooked"));
 
 							for (FlightsInfo flightBean : flightname1) {
 								if (flightBean != null) {
-									log.info(flightBean);
+									log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+											flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
+											flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
+											flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
+											flightBean.getNoOfSeatsBooked()));
 								} else {
-									log.info("No Flights are available with this Name");
+									log.info("No Flights are available with this source and destination");
 								}
 							}
 						} catch (InputMismatchException e) {
@@ -212,6 +217,7 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
 
 				default:

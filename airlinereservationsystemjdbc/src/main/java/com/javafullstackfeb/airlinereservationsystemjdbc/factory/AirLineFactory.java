@@ -1,11 +1,9 @@
-package com.javafullstack.airlinereservationsystemjdbc.factory;
+package com.javafullstackfeb.airlinereservationsystemjdbc.factory;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAOImpl;
-import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
-import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAOImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminServiceImpl;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.UserService;

@@ -6,11 +6,11 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemjdbc.services.UserService;
 
@@ -61,8 +61,8 @@ public class LoginController {
 							try {
 								flag=false;
 								log.info(
-										"===========================================================================");
-								log.info("PRESS 1, TO LOGIN");
+										"********************Admin Operations************************");
+								log.info("PRESS 1, TO REGISTER ADMIN");
 								log.info("PRESS 2, TO ADD FLIGHTS");
 								log.info("PRESS 3, TO CANCEL FLIGHT");
 								log.info("PRESS 4, TO VIEW ALL USERS");
@@ -128,7 +128,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Id should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -144,7 +144,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Name should contain only alphabets");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -160,7 +160,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Name should contain only alphabets");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -176,7 +176,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Name should contain only alphabets");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -194,7 +194,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("date should contains only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -210,7 +210,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("date should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -227,7 +227,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Time should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -244,7 +244,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Time should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -261,7 +261,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Capcity should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -278,7 +278,7 @@ public class LoginController {
 											flag = true;
 										} catch (InputMismatchException e) {
 											flag = false;
-											log.error("Id should contains only digits");
+											log.error("Seats should contain only digits");
 											scanner.next();
 										} catch (AirLineReservationSystemException e) {
 											flag = false;
@@ -297,11 +297,11 @@ public class LoginController {
 									bean1.setCapacity(capacity);
 									bean1.setNoOfSeatsBooked(noOfSeatsBooked);
 									boolean check2 = adminService.addFlight(bean1);
-//											
+										
 									if (check2) {
 										log.info("Flight added to repository with id : " + flightId);
 									} else {
-										log.info("Flight already exist of id = " + flightId);
+										log.info("Flight already exist with id = " + flightId);
 									}
 
 									break;
@@ -309,16 +309,16 @@ public class LoginController {
 								case 3:
 									try {
 										log.info("Enter FlightId");
-										int flightId3 = scanner.nextInt();
-										if (flightId3 == 0) {
+										int flightId2 = scanner.nextInt();
+										if (flightId2 == 0) {
 											log.info("Please Enter the Valid FlightId");
 										} else {
 
-											boolean remove = adminService.cancelFlight(flightId3);
+											boolean remove = adminService.cancelFlight(flightId2);
 											if (remove) {
-												log.info("The Flight is removed of Id = " + flightId3);
+												log.info("The Flight is removed with Id = " + flightId2);
 											} else {
-												log.info("The Flight is not removed of Id = " + flightId3);
+												log.info("The Flight is not removed with Id = " + flightId2);
 											}
 										}
 									} catch (Exception e) {
@@ -329,14 +329,15 @@ public class LoginController {
 								case 4:
 									try {
 										List<UserInfo> info2 = adminService.viewAllUsers();
-										log.info(
-												"===========================================================================");
+										log.info(String.format("%-15s %-15s %-15s %-15s  %s", "Id", "UserName", "EmailId",
+												"phoneNumber" , "role"));
 
 										for (UserInfo userBean : info2) {
 											if (userBean != null) {
-												log.info(userBean);
+												log.info(String.format("%-15s %-15s %-15s %-15s %s", "Id", userBean.getId(), userBean.getUsername(),
+														userBean.getPhoneNumber() , userBean.getRole()));
 											} else {
-												log.info("No Bookings are available");
+												log.info("No users are available");
 											}
 										}
 									} catch (Exception e) {
@@ -365,7 +366,7 @@ public class LoginController {
 							try {
 								flag=false;
 								log.info(
-										"===========================================================================");
+										"****************User Operations******************");
 
 								log.info("PRESS 1,TO BOOK TICKET");
 								log.info("PRESS 2,TO CANCEL TICKET");
@@ -434,9 +435,9 @@ public class LoginController {
 											requestInfo.setTicketid(ticketId);
 											boolean remove = userservice.cancelTicket(ticketId);
 											if (remove) {
-												log.info("The Cancel ticket Id = " + ticketId);
+												log.info("The ticket cancelled with Id = " + ticketId);
 											} else {
-												log.info("The Ticked Id is not removed = " + ticketId);
+												log.info("The Ticked not cancelled with Id = " + ticketId);
 											}
 										}
 									} catch (InputMismatchException e) {

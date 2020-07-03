@@ -2,10 +2,10 @@ package com.javafullstackfeb.airlinereservationsystemjdbc.services;
 
 import java.util.List;
 
-import com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.UserDAO;
+import com.javafullstackfeb.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
 
 public class UserServiceImpl implements UserService {

@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javafullstack.airlinereservationsystemjdbc.utility.JDBCUtility;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemjdbc.utility.JDBCUtility;
 
 public class UserDAOImpl implements UserDAO {
 
