@@ -2,12 +2,12 @@ package com.javafullstackfeb.airlinereservationsystemhibernate.services;
 
 import java.util.List;
 
-import com.javafullstack.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.UserDAO;
 import com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.validation.ValidationImpl;
 
 public class UserServiceImpl implements UserService {

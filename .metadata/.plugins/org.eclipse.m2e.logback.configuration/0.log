@@ -16669,3 +16669,11 @@
 2020-07-03 17:00:25,575 [Worker-137: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\main\resources
 2020-07-03 17:00:25,583 [Worker-137: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-07-03 17:00:25,583 [Worker-137: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\test\resources
+2020-07-03 17:08:28,501 [Worker-144: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-03 17:08:28,502 [Worker-144: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\main\resources
+2020-07-03 17:08:28,526 [Worker-144: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-03 17:08:28,526 [Worker-144: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\test\resources
+2020-07-03 17:08:40,224 [Worker-143: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-03 17:08:40,245 [Worker-143: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\main\resources
+2020-07-03 17:08:40,245 [Worker-143: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-03 17:08:40,245 [Worker-143: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\AirLineReservationSystem\airlinereservationsystemhibernate\src\test\resources

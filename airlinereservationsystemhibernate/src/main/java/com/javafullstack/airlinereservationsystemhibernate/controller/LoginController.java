@@ -6,11 +6,11 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.javafullstack.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.UserService;
 

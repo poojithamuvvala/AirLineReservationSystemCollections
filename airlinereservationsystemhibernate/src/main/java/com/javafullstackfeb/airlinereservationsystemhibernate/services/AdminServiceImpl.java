@@ -2,11 +2,11 @@ package com.javafullstackfeb.airlinereservationsystemhibernate.services;
 
 import java.util.List;
 
-import com.javafullstack.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException;
+import com.javafullstackfeb.airlinereservationsystemhibernate.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemhibernate.validation.Validation;
 
 public class AdminServiceImpl implements AdminService {

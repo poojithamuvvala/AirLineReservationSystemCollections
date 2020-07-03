@@ -1,4 +1,4 @@
-package com.javafullstack.airlinereservationsystemhibernate.factory;
+package com.javafullstackfeb.airlinereservationsystemhibernate.factory;
 
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemhibernate.dao.AdminDAOImpl;
