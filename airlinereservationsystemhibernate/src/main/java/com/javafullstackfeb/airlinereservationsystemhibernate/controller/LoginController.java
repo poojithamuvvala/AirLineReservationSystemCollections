@@ -1,4 +1,4 @@
-package com.javafullstack.airlinereservationsystemhibernate.controller;
+package com.javafullstackfeb.airlinereservationsystemhibernate.controller;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

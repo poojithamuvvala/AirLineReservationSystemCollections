@@ -1,4 +1,4 @@
-package com.javafullstack.airlinereservationsystemhibernate.controller;
+package com.javafullstackfeb.airlinereservationsystemhibernate.controller;
 
 import java.util.InputMismatchException;
 import java.util.List;

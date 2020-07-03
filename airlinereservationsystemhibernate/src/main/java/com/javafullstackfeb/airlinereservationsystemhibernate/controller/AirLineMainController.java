@@ -1,4 +1,4 @@
-package com.javafullstack.airlinereservationsystemhibernate.controller;
+package com.javafullstackfeb.airlinereservationsystemhibernate.controller;
 
 public class AirLineMainController {
       public static void main(String[] args) {
