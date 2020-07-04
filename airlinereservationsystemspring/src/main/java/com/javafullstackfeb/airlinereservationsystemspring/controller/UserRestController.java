@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javafullstackfeb.airlinereservationsystemspring.bean.AirLineResponse;
-import com.javafullstackfeb.airlinereservationsystemspring.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemspring.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemspring.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemspring.services.UserService;

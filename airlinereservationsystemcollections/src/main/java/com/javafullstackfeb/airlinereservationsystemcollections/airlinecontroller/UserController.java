@@ -32,7 +32,8 @@ public class UserController {
 										"===========================================================================");
 								
 								log.info("PRESS 1,TO BOOK TICKET");
-								log.info("PRESS 2,TO LOGOUT");
+								log.info("PRESS 2,TO CANCEL TICKET");
+								log.info("PRESS 3,TO LOGOUT");
 								log.info(
 										"===========================================================================");
 								int choice2 = scanner.nextInt();
@@ -51,15 +52,22 @@ public class UserController {
 									flight.setFlightId(flightId2);
 									log.info("Enter No of seats : ");
 									int seats = scanner.nextInt();
+									int ticketId = (int) (Math.random() * 10000);
+									if (ticketId <= 1000) {
+										ticketId = ticketId + 1000;
+									}
 									BookingsInfo bookingStatus = new BookingsInfo();
 									bookingStatus.setNoOfSeatsBooked(seats);
+									bookingStatus.setBookingId(ticketId);
+									bookingStatus.setUserId(userId);
 	                             try {
 									TicketRequestInfo request = service1.booktTicket(user, flight);
+									request.setTicketid(ticketId);
 									log.info("Request placed to admin for booking a ticket");
-									log.info(
-											"<--------------------------------------------------------------------->");
-
-									log.info(request);
+									log.info(String.format("%-10s %-10s %-150s %s ", "TicketId","userId",
+											"UserInfo","FlightInfo"));
+									log.info(String.format("%-10s %-10s %-150s %s ",request.getTicketid(),
+											request.getUserInfo().getUserId(), request.getUserInfo(), request.getFlightInfo()));
 	                             } catch (Exception e) {
 	                             	log.info(e.getMessage());
 									}
@@ -68,14 +76,33 @@ public class UserController {
 										log.info(e.getMessage());
 									}
 									break;
+								
 								case 2:
-								   SubAirLineController.airLineOperations();
+									try {
+										log.info("Enter BookingId");
+										int bookingId = scanner.nextInt();
+										if (bookingId == 0) {
+											log.info("Please Enter the Valid FlightId");
+										} else {
 
+											boolean remove = service1.cancelBooking(bookingId);
+											if (remove) {
+												log.info("The Booking is cancelled of Id = " + bookingId);
+											} else {
+												log.info("The Booking is not cancelled of Id = " + bookingId);
+											}
+										}
+									} catch (Exception e) {
+										log.info(e.getMessage());
+									}
+									break;
+								case 3:
+									   SubAirLineController.airLineOperations();
 								default:
 									break;
 								}
 							} catch (InputMismatchException e) {
-								log.info("Invalid entry please provide only integer");
+								log.info("Invalid entry please enter either 1 or 2");
 								scanner.nextLine();
 							}
 						} while (true);

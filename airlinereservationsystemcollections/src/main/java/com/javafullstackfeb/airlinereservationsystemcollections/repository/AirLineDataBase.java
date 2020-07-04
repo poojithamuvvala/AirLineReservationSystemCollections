@@ -36,6 +36,7 @@ public class AirLineDataBase {
 		usersInfo1.setDateOfBirth(LocalDate.of(1998, 6, 4));
 		usersInfo1.setAddress("Hyderabad");
 		usersInfo1.setPhoneNumber("9553726160");
+		usersInfo1.setRole("user");
 		USERSINFO.add(usersInfo1);
 		
 		UsersInfo usersInfo2=new UsersInfo();
@@ -46,6 +47,7 @@ public class AirLineDataBase {
 		usersInfo2.setDateOfBirth(LocalDate.of(2001, 11, 1));
 		usersInfo2.setAddress("Vizag");
 		usersInfo2.setPhoneNumber("6304341432");
+		usersInfo2.setRole("user");
 		USERSINFO.add(usersInfo2);
 		
 		UsersInfo usersInfo3=new UsersInfo();
@@ -56,6 +58,7 @@ public class AirLineDataBase {
 		usersInfo3.setDateOfBirth(LocalDate.of(1995, 1, 24));
 		usersInfo3.setAddress("Banglore");
 		usersInfo3.setPhoneNumber("8919305263");
+		usersInfo3.setRole("user");
 		USERSINFO.add(usersInfo3);
 		
 		UsersInfo usersInfo4=new UsersInfo();
@@ -66,6 +69,7 @@ public class AirLineDataBase {
 		usersInfo4.setDateOfBirth(LocalDate.of(1994, 6, 14));
 		usersInfo4.setAddress("Vizaywada");
 		usersInfo4.setPhoneNumber("7075331919");
+		usersInfo4.setRole("user");
 		USERSINFO.add(usersInfo4);
 		
 		
@@ -77,6 +81,7 @@ public class AirLineDataBase {
 		usersInfo5.setDateOfBirth(LocalDate.of(1997, 11, 18));
 		usersInfo5.setAddress("Karimnagar");
 		usersInfo5.setPhoneNumber("9059848762");	
+		usersInfo5.setRole("user");
 		USERSINFO.add(usersInfo5);
 		
 		UsersInfo usersInfo6=new UsersInfo();
@@ -87,6 +92,7 @@ public class AirLineDataBase {
 		usersInfo6.setDateOfBirth(LocalDate.of(2000, 4, 13));
 		usersInfo6.setAddress("Chennai");
 		usersInfo6.setPhoneNumber("9491680796");
+		usersInfo6.setRole("user");
 		USERSINFO.add(usersInfo6);
 		
 		UsersInfo usersInfo7=new UsersInfo();
@@ -97,6 +103,7 @@ public class AirLineDataBase {
 		usersInfo7.setDateOfBirth(LocalDate.of(1990, 8, 12));
 		usersInfo7.setAddress("Mumbai");
 		usersInfo7.setPhoneNumber("9295452346");
+		usersInfo7.setRole("user");
 		USERSINFO.add(usersInfo7);
 		
 	

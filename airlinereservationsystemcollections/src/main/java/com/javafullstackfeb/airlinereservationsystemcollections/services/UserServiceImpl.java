@@ -101,9 +101,15 @@ public class UserServiceImpl implements UserService {
 		return dao.booktTicket(usersInfo, flightsInfo);
 	}
 
-	public boolean updateUserInfo(UsersInfo usersInfo) {
+	@Override
+	public boolean cancelBooking(int id) {
+		if (validation.validateFlightId(id)) {
+			return dao.cancelBooking(id);
+		}
+		throw new AirLineReservationSystemException("Invalid Booking Id");
 
-		return dao.updateUserInfo(usersInfo);
 	}
+
+	
 
 }

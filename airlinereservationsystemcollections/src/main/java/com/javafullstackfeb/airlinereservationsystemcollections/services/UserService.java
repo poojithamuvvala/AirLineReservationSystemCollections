@@ -21,6 +21,7 @@ public interface UserService {
 	public UsersInfo authenticateUser(String email, String password);
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo);
+
 	
-	public boolean updateUserInfo(UsersInfo usersInfo);
+	public boolean cancelBooking(int id);
 }

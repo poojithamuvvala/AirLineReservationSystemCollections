@@ -3,6 +3,7 @@ package com.javafullstackfeb.airlinereservationsystemcollections.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.javafullstackfeb.airlinereservationsystemcollections.bean.BookingsInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.TicketRequestInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
@@ -128,20 +129,21 @@ public class UserDAOImpl implements UserDAO {
 				throw new AirLineReservationSystemException("Invalid request or you cannot request that flight");
 	}
 
-	public boolean updateUserInfo( UsersInfo usersInfo1) {
-		for (UsersInfo userInfo : AirLineDataBase.USERSINFO) {
-			
-			if ((userInfo.getEmailId().equalsIgnoreCase(usersInfo1.getEmailId()) && (userInfo.getPassword().equals(usersInfo1.getPassword())))) {
-				userInfo.setPassword(usersInfo1.getPassword());
-				userInfo.setAddress(usersInfo1.getAddress());
-				userInfo.setPhoneNumber(usersInfo1.getPhoneNumber());
-				userInfo.setUserName(usersInfo1.getUserName());
-				return true;
+	
+	@Override
+	public boolean cancelBooking(int id) {
+		boolean cancellationStatus = false;
+		for (int i = 0; i <= AirLineDataBase.BOOKINGSINFO.size() - 1; i++) {
+			BookingsInfo retrivedBookingInfo= AirLineDataBase.BOOKINGSINFO.get(i);
+			int retrivedBookingId=retrivedBookingInfo.getBookingId();
+			if(id==retrivedBookingId) {
+				cancellationStatus=true;
+				AirLineDataBase.BOOKINGSINFO.remove(i);
+				break;
+			}
 			
 		}
-		}
-
-		throw new AirLineReservationSystemException("Password Can't be Changed Due To Invalid Credentials");
+		return cancellationStatus;
 	}
 
 }

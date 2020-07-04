@@ -35,7 +35,7 @@ public class SubAirLineController {
 
 			for (FlightsInfo flightBean : info) {
 				if (flightBean != null) {
-					log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+					log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-19s %-18s %-15s %s",
 							flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
 							flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
 							flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
@@ -101,6 +101,7 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					UserController.userOperations();
 					break;
 				case 2:
 					UserController.userOperations();
@@ -132,17 +133,20 @@ public class SubAirLineController {
 											flightBean.getCapacity(), flightBean.getNoOfSeatsBooked()));
 								} else {
 									log.info("No Flights are available with this Source");
+									
 								}
 							}
 						} catch (InputMismatchException e) {
 							log.info("Input mismatch exception");
 						} catch (Exception e) {
 							log.info(e.getMessage());
+							airLineOperations();
 						}
 
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					
 					break;
 
 				case 5:
@@ -169,6 +173,7 @@ public class SubAirLineController {
 							}
 						}
 					} catch (Exception e) {
+						airLineOperations();
 						log.info(e.getMessage());
 					}
 					break;
@@ -200,6 +205,7 @@ public class SubAirLineController {
 						} catch (InputMismatchException e) {
 							log.info("InputMismatchException");
 						} catch (Exception e) {
+							airLineOperations();
 							log.info(e.getMessage());
 						}
 					} catch (Exception e) {

@@ -124,9 +124,9 @@ public class AdminController {
 
 										boolean remove = service1.cancelFlight(flightId3);
 										if (remove) {
-											log.info("The Flight is removed of Id = " + flightId3);
+											log.info("The Flight is removed with Id = " + flightId3);
 										} else {
-											log.info("The Flight is not removed of Id = " + flightId3);
+											log.info("The Flight is not removed with Id = " + flightId3);
 										}
 									}
 								} catch (Exception e) {
@@ -137,11 +137,19 @@ public class AdminController {
 							case 3:
 								try {
 									List<BookingsInfo> info1 = service1.viewAllBookings();
+									log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s  %-15s %-15s %-15s %-15s %s", "bookingId", "UserId",
+											"flightId", "flightName","NoOfSeatsBooked", "SeatNos","dateOfbooking"," dateOfJourney",
+											   " arrivalTime", "departureTime","source", "destination"));
+
 									log.info(
 											"===========================================================================");
 									for (BookingsInfo bookingBean : info1) {
 										if (bookingBean != null) {
-											log.info(bookingBean);
+											log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s  %-15s %-15s %-15s %-15s %s",
+													bookingBean.getBookingId(), bookingBean.getUserId(), bookingBean.getFlightId(),bookingBean.getFlightName(),
+													bookingBean.getFlightName(),bookingBean.getNoOfSeatsBooked(),bookingBean.getSeatNos(),bookingBean.getDateOfBooking(),
+													bookingBean.getDateOfJourney(), bookingBean.getArrivalTime(),bookingBean.getDepartureTime(),bookingBean.getSource(),
+													bookingBean.getDestination()));
 										} else {
 											log.info("No Bookings are available");
 										}
@@ -155,12 +163,17 @@ public class AdminController {
 							case 4:
 								try {
 									List<UsersInfo> info2 = service1.viewAllUsers();
+									log.info(String.format("%-18s %-18s %-18s %-18s %-18s %s", "UserId","emailId",
+											 "userName","dateOfBirth"," address",
+											   " phoneNumber"));
 									log.info(
 											"===========================================================================");
 
 									for (UsersInfo userBean : info2) {
 										if (userBean != null) {
-											log.info(userBean);
+											log.info(String.format("%-18s %-18s %-18s %-18s %-18s %s",userBean.getUserId(),
+												userBean.getEmailId(),userBean.getUserName(),
+													userBean.getDateOfBirth(),userBean.getAddress(),userBean.getPhoneNumber()));
 										} else {
 											log.info("No Bookings are available");
 										}
@@ -178,13 +191,14 @@ public class AdminController {
 								break;
 							}
 						} catch (InputMismatchException e) {
-							log.info("Invalid entry please provide only integers");
+							log.info("Invalid entry please provide only Integers between 1 to 5");
 							scanner.nextLine();
 						}
 					} while (true);
 				}
 			} catch (Exception e) {
 				log.info("Invalid Credentials");
+				SubAirLineController.airLineOperations();
 			}
 		} catch (Exception e) {
 			log.info(e.getMessage());

@@ -1,13 +1,4 @@
 
-_
-java:S1168r"+Return an empty collection instead of null.(•πÔç8ù ÆﬁØ.Hë—RMAJORZ
-CODE_SMELL
-_
-java:S1168|"+Return an empty collection instead of null.(•πÔç8Æïß‹Ø.Hî—RMAJORZ
-CODE_SMELL
-_
-java:S1168h"+Return an empty collection instead of null.(•πÔç8°¯ãﬂØ.Hè—RMAJORZ
-CODE_SMELL
 â
-java:S3776""RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(°Â”’8‰¯ôö±.H∆—RCRITICALZ
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(°Â”’8‰¯ôö±.HÍÏRCRITICALZ
 CODE_SMELL
