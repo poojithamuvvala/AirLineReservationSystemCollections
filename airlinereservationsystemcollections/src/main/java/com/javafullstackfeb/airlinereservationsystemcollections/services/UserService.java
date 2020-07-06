@@ -22,6 +22,7 @@ public interface UserService {
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo);
 
-	
 	public boolean cancelBooking(int id);
+	
+	List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination);
 }

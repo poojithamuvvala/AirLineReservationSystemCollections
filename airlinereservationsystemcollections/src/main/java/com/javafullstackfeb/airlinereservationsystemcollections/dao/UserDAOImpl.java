@@ -97,53 +97,68 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo) {
-		boolean flag = false, 
-				isRequestExists = false;
-			 TicketRequestInfo requestInfo = new TicketRequestInfo();
-				UsersInfo userInfo = new UsersInfo();
-				FlightsInfo flightInfo2 = new FlightsInfo();
-				for (TicketRequestInfo requestInfo2 : AirLineDataBase.TICKETREQUESTS) {
-					if (flightsInfo.getFlightId() == requestInfo2.getFlightInfo().getFlightId()) {
-						isRequestExists = true;
-					}
-				}
-				if (!isRequestExists) {
-					for (UsersInfo user : AirLineDataBase.USERSINFO) {
-						if (usersInfo.getUserId()== user.getUserId()) {
-							for (FlightsInfo flight1 : AirLineDataBase.FLIGHTSINFO) {
-								if (flight1.getFlightId() == flightsInfo.getFlightId()) {
-									userInfo = user;
-									flightInfo2 = flight1;
-									flag = true;
-								}
-							}
+		boolean flag = false, isRequestExists = false;
+		TicketRequestInfo requestInfo = new TicketRequestInfo();
+		UsersInfo userInfo = new UsersInfo();
+		FlightsInfo flightInfo2 = new FlightsInfo();
+		for (TicketRequestInfo requestInfo2 : AirLineDataBase.TICKETREQUESTS) {
+			if (flightsInfo.getFlightId() == requestInfo2.getFlightInfo().getFlightId()) {
+				isRequestExists = true;
+			}
+		}
+		if (!isRequestExists) {
+			for (UsersInfo user : AirLineDataBase.USERSINFO) {
+				if (usersInfo.getUserId() == user.getUserId()) {
+					for (FlightsInfo flight1 : AirLineDataBase.FLIGHTSINFO) {
+						if (flight1.getFlightId() == flightsInfo.getFlightId()) {
+							userInfo = user;
+							flightInfo2 = flight1;
+							flag = true;
 						}
 					}
-					if (flag == true) {
-						requestInfo.setFlightInfo(flightInfo2);
-						requestInfo.setUserInfo(userInfo);
-						AirLineDataBase.TICKETREQUESTS.add(requestInfo);
-						return requestInfo;
-					}
 				}
-				throw new AirLineReservationSystemException("Invalid request or you cannot request that flight");
+			}
+			if (flag == true) {
+				requestInfo.setFlightInfo(flightInfo2);
+				requestInfo.setUserInfo(userInfo);
+				AirLineDataBase.TICKETREQUESTS.add(requestInfo);
+				return requestInfo;
+			}
+		}
+		throw new AirLineReservationSystemException("Invalid request or you cannot request that flight");
 	}
 
-	
 	@Override
 	public boolean cancelBooking(int id) {
 		boolean cancellationStatus = false;
 		for (int i = 0; i <= AirLineDataBase.BOOKINGSINFO.size() - 1; i++) {
-			BookingsInfo retrivedBookingInfo= AirLineDataBase.BOOKINGSINFO.get(i);
-			int retrivedBookingId=retrivedBookingInfo.getBookingId();
-			if(id==retrivedBookingId) {
-				cancellationStatus=true;
+			BookingsInfo retrivedBookingInfo = AirLineDataBase.BOOKINGSINFO.get(i);
+			int retrivedBookingId = retrivedBookingInfo.getBookingId();
+			if (id == retrivedBookingId) {
+				cancellationStatus = true;
 				AirLineDataBase.BOOKINGSINFO.remove(i);
 				break;
 			}
-			
+
 		}
 		return cancellationStatus;
 	}
 
+	@Override
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination) {
+		List<FlightsInfo> searchList = new ArrayList<FlightsInfo>();
+		for (int i = 0; i <= AirLineDataBase.FLIGHTSINFO.size() - 1; i++) {
+			FlightsInfo retrievedFlight = AirLineDataBase.FLIGHTSINFO.get(i);
+			String retrievedFlightSource = retrievedFlight.getSource();
+			String retrievedFlightDestination = retrievedFlight.getDestination();
+			if (source.equals(retrievedFlightSource) && destination.equals(retrievedFlightDestination)) {
+				searchList.add(retrievedFlight);
+			}
+		}
+		if (searchList.size() == 0) {
+			throw new AirLineReservationSystemException("No flight with given Source and destination found");
+		} else {
+			return searchList;
+		}
+	}
 }

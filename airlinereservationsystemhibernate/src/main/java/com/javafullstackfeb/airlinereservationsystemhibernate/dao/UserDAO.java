@@ -21,7 +21,6 @@ public interface UserDAO {
 	public List<FlightsInfo> getAllFlightDetails();
 
 	public UserInfo authenticateUser(String email, String password);
-
 	
 	public boolean cancelTicket(int id);
 	

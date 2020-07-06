@@ -58,6 +58,7 @@ public class SubAirLineController {
 				log.info("PRESS 4, TO SEARCH FLIGHT BY SOURCE");
 				log.info("PRESS 5, TO SEARCH FLIGHT NAME");
 				log.info("PRESS 6, TO SEARCH BY  DESTINATION");
+				log.info("PRESS 7, TO SEARCH BY SOURCE AND DESTINATION");
 				log.info("Enter your input");
 				int i = scanner.nextInt();
 
@@ -212,6 +213,48 @@ public class SubAirLineController {
 						log.info(e.getMessage());
 					}
 					break;
+					
+				case 7:
+					try {
+						log.info("Search flight by Source : ");
+						String source = scanner.next();
+
+						log.info("Search flight by Destination : ");
+						String destination = scanner.next();
+						try {
+							List<FlightsInfo> flightDestination1 = userService.searchFlightBySourceAndDestination(source, destination);
+
+							log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+									"flightId", "flightName", "source", "destination", "dateOfDeparture",
+									" dateOfArrival", " arrivalTime", "departureTime", " capacity",
+									" noOfSeatsBooked"));
+
+							log.info("===========================================================================");
+							for (FlightsInfo flightBean : flightDestination1) {
+								if (flightBean != null) {
+									log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
+											flightBean.getFlightId(), flightBean.getFlightName(),
+											flightBean.getSource(), flightBean.getDestination(),
+											flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
+											flightBean.getArrivalTime(), flightBean.getDepartureTime(),
+											flightBean.getCapacity(), flightBean.getNoOfSeatsBooked()));
+								} else {
+									log.info("No Flights are available with this Destination");
+								}
+							}
+						} catch (InputMismatchException e) {
+							log.info("InputMismatchException");
+						} catch (Exception e) {
+							airLineOperations();
+							log.info(e.getMessage());
+						}
+					} catch (Exception e) {
+						log.info(e.getMessage());
+					}
+					break;
+					
+					default :
+						airLineOperations();
 				}
 			} catch (InputMismatchException e) {
 				log.info("Invalid choice, Please Enter only Integers between 1 to 5");

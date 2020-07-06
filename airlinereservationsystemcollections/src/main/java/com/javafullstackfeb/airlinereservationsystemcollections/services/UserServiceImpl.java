@@ -110,6 +110,16 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+	@Override
+	public List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination) {
+		if (validation.validateName(source)) {
+			if (validation.validateName(destination)) {
+				return dao.searchFlightBySourceAndDestination(source, destination);
+			}
+		}
+		return null;
+	}
+
 	
 
 }

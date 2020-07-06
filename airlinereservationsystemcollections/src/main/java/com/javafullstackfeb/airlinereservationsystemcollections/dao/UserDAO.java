@@ -7,7 +7,7 @@ import com.javafullstackfeb.airlinereservationsystemcollections.bean.TicketReque
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
 
 public interface UserDAO {
-	
+
 	public boolean registerUser(UsersInfo usersInfo);
 
 	public List<FlightsInfo> searchBySource(String source);
@@ -21,8 +21,9 @@ public interface UserDAO {
 	public UsersInfo authenticateUser(String email, String password);
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo);
-	
-	
-	
+
 	public boolean cancelBooking(int id);
+
+	List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination);
+
 }
