@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirportBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
 import com.javafullstackfeb.airlinereservationsystem.dao.AirlineExecutiveDAO;
 import com.javafullstackfeb.airlinereservationsystem.dao.AirportDAO;
 import com.javafullstackfeb.airlinereservationsystem.dao.FlightDAO;

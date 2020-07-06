@@ -1,4 +1,4 @@
-package com.javafullstackfeb.airlinereservationsystem.beans;
+package com.javafullstackfeb.airlinereservationsystem.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

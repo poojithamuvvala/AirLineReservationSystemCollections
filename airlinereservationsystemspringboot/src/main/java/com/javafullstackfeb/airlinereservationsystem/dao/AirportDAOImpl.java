@@ -8,8 +8,8 @@ import javax.persistence.PersistenceUnit;
 
 import org.springframework.stereotype.Repository;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirportBeans;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 @Repository
 public class AirportDAOImpl implements AirportDAO {

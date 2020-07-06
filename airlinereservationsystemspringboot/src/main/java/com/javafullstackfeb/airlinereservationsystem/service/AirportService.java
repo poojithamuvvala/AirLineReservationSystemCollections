@@ -2,7 +2,7 @@ package com.javafullstackfeb.airlinereservationsystem.service;
 
 import java.util.List;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirportBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
 
 public interface AirportService {
 	

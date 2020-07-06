@@ -10,30 +10,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightBooking;
-import com.javafullstackfeb.airlinereservationsystem.response.BookingResponse;
+import com.javafullstackfeb.airlinereservationsystem.bean.TicketBookingBean;
+import com.javafullstackfeb.airlinereservationsystem.response.TicketBookingResponse;
 import com.javafullstackfeb.airlinereservationsystem.response.FlightResponse;
 import com.javafullstackfeb.airlinereservationsystem.service.FlightService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", allowCredentials = "true")
-public class FlightBookingController {
+public class TicketBookingController {
 
 	@Autowired
 	private FlightService service;
 
 	@PostMapping("/bookFlight")
-	public FlightResponse bookFlight(@RequestBody FlightBooking flightBooking) {
+	public FlightResponse bookFlight(@RequestBody TicketBookingBean ticketBooking) {
 
-		FlightBooking bookinginfo = service.bookFlight(flightBooking);
+		TicketBookingBean bookinginfo = service.bookFlight(ticketBooking);
 		String bookingId = bookinginfo.getBookingId();
 		double totalFare = bookinginfo.getTotalFare();
 
 		FlightResponse response = new FlightResponse();
 		if (bookinginfo != null) {
 			response.setStatusCode(201);
-			response.setMessage("Congratulations!Sir/Mam Flight booked successfully.");
-			response.setDescription("Congratulations! Flight booked successfully. Your BookingId is " + bookingId);
+			response.setMessage("Congratulations!Sir/Mam Flight Ticket booked successfully.");
+			response.setDescription("Congratulations! Flight Ticket booked successfully. Your BookingId is " + bookingId);
 			response.setBookingid(bookingId);
 			response.setTotalFare(totalFare);
 		} else {
@@ -45,10 +45,10 @@ public class FlightBookingController {
 	}
 
 	@GetMapping("/getAllBooking")
-	public BookingResponse getAllBookingInfo(String userId) {
+	public TicketBookingResponse getAllBookingInfo(String userId) {
 		
-		List<FlightBooking> allBookingInfo = service.getAllBooking(userId);
-		BookingResponse response = new BookingResponse();
+		List<TicketBookingBean> allBookingInfo = service.getAllBooking(userId);
+		TicketBookingResponse response = new TicketBookingResponse();
 		if (allBookingInfo != null) {
 			response.setStatusCode(210);
 			response.setMessage("All the flight booking information retrieved successfully.");
@@ -66,9 +66,9 @@ public class FlightBookingController {
 	}// end of getAllBookingInfo()
 
 	@DeleteMapping("/deleteBooking")
-	public BookingResponse deleteBooking(String bookingId) {
+	public TicketBookingResponse deleteBooking(String bookingId) {
 		boolean isDeleted = service.deleteBooking(bookingId);
-		BookingResponse response = new BookingResponse();
+		TicketBookingResponse response = new TicketBookingResponse();
 		if (isDeleted) {
 			response.setStatusCode(201);
 			response.setMessage("Congratulation! Flight booking cancelled successfully. We will refund your payment within 3 working days. ");

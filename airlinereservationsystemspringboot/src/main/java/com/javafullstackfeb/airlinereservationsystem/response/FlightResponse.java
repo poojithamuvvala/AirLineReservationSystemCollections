@@ -2,7 +2,7 @@ package com.javafullstackfeb.airlinereservationsystem.response;
 
 import java.util.List;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 public class FlightResponse {
 	private int statusCode;
@@ -10,8 +10,8 @@ public class FlightResponse {
 	private String description;
 	private String bookingid;
 	private double totalFare;
-	private FlightInformation flightInformation;
-	private List<FlightInformation> searchFlight;
+	private FlightInformationBean flightInformation;
+	private List<FlightInformationBean> searchFlight;
 
 	
 	public double getTotalFare() {
@@ -54,19 +54,19 @@ public class FlightResponse {
 		this.description = description;
 	}
 
-	public FlightInformation getFlightInformation() {
+	public FlightInformationBean getFlightInformation() {
 		return flightInformation;
 	}
 
-	public void setFlightInformation(FlightInformation flightInformation) {
+	public void setFlightInformation(FlightInformationBean flightInformation) {
 		this.flightInformation = flightInformation;
 	}
 
-	public List<FlightInformation> getSearchFlight() {
+	public List<FlightInformationBean> getSearchFlight() {
 		return searchFlight;
 	}
 
-	public void setSearchFlight(List<FlightInformation> searchFlight) {
+	public void setSearchFlight(List<FlightInformationBean> searchFlight) {
 		this.searchFlight = searchFlight;
 	}
 

@@ -1,6 +1,6 @@
 package com.javafullstackfeb.airlinereservationsystem.service;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.UserBean;
+import com.javafullstackfeb.airlinereservationsystem.bean.UserBean;
 
 public interface UserService {
 

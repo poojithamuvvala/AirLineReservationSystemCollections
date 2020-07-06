@@ -1,4 +1,4 @@
-package com.javafullstackfeb.airlinereservationsystem.beans;
+package com.javafullstackfeb.airlinereservationsystem.bean;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;

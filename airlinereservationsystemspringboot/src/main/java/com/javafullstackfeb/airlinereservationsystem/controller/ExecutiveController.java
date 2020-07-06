@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirlineExecutiveBeans;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirlineExecutiveBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 import com.javafullstackfeb.airlinereservationsystem.response.ExecutiveResponse;
 import com.javafullstackfeb.airlinereservationsystem.service.AirlineExecutiveService;
 
@@ -19,7 +19,7 @@ public class ExecutiveController {
 	private AirlineExecutiveService executiveService;
 
 	@PostMapping("/getOccupancy")
-	public ExecutiveResponse getFlight(@RequestBody FlightInformation flightInformation) {
+	public ExecutiveResponse getFlight(@RequestBody FlightInformationBean flightInformation) {
 		String flightNumber = flightInformation.getFlightNumber();
 		AirlineExecutiveBeans executive = executiveService.viewFlightOccupancy(flightNumber);
 		ExecutiveResponse response = new ExecutiveResponse();

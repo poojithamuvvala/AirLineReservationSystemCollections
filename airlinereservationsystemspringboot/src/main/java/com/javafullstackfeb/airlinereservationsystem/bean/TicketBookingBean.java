@@ -1,4 +1,4 @@
-package com.javafullstackfeb.airlinereservationsystem.beans;
+package com.javafullstackfeb.airlinereservationsystem.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name = "flightbooking")
-public class FlightBooking {
+public class TicketBookingBean {
 
 	@Id
 	@Column

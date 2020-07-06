@@ -4,7 +4,7 @@ package com.javafullstackfeb.airlinereservationsystem.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirlineExecutiveBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirlineExecutiveBeans;
 import com.javafullstackfeb.airlinereservationsystem.dao.AirlineExecutiveDAO;
 
 @Service

@@ -7,8 +7,8 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirlineExecutiveBeans;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirlineExecutiveBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 @Repository
 public class AirlineExecutiveDAOImpl implements AirlineExecutiveDAO {
@@ -22,8 +22,8 @@ public class AirlineExecutiveDAOImpl implements AirlineExecutiveDAO {
 
 		AirlineExecutiveBeans executive = new AirlineExecutiveBeans();
 
-		FlightInformation flightInformation = new FlightInformation();
-		flightInformation = manager.find(FlightInformation.class, flightNumber);
+		FlightInformationBean flightInformation = new FlightInformationBean();
+		flightInformation = manager.find(FlightInformationBean.class, flightNumber);
 		int availableFirstClassSeats = flightInformation.getFirstClassSeats();
 		int availableBussinessClassSeats = flightInformation.getBussinessClassSeats();
 

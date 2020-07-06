@@ -1,6 +1,6 @@
 package com.javafullstackfeb.airlinereservationsystem.response;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirlineExecutiveBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirlineExecutiveBeans;
 
 public class ExecutiveResponse {
 	private int status;

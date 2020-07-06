@@ -11,17 +11,17 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightBooking;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.TicketBookingBean;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 @Repository
-public class BookingDAOImpl implements BookingDAO {
+public class TicketBookingDAOImpl implements TicketBookingDAO {
 
 	@PersistenceUnit
 	private EntityManagerFactory emf;
 
 	@Override
-	public FlightBooking bookFlight(FlightBooking flightBooking) {
+	public TicketBookingBean bookFlight(TicketBookingBean flightBooking) {
 
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
@@ -29,7 +29,7 @@ public class BookingDAOImpl implements BookingDAO {
 		//boolean isAdded = false;
 		tx.begin();
 		
-		FlightInformation flightInfo = manager.find(FlightInformation.class, flightBooking.getFlightNo());
+		FlightInformationBean flightInfo = manager.find(FlightInformationBean.class, flightBooking.getFlightNo());
 		
 		int bussinessClassSeats = flightInfo.getBussinessClassSeats();
 		int firstClassSeats = flightInfo.getFirstClassSeats();
@@ -77,21 +77,21 @@ public class BookingDAOImpl implements BookingDAO {
 			// return isAdded;
 
 		}
-		FlightBooking getFlight = manager.find(FlightBooking.class, bookingId);
+		TicketBookingBean getFlight = manager.find(TicketBookingBean.class, bookingId);
 
 		return getFlight;
 	}
 
 
 	@Override
-	public List<FlightBooking> getAllBooking(String userId) {
+	public List<TicketBookingBean> getAllBooking(String userId) {
 		EntityManager manager = emf.createEntityManager();
 
 		String jpql = "from FlightBooking where userId= :userId";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("userId", userId);
 
-		List<FlightBooking> getAllBooking = null;
+		List<TicketBookingBean> getAllBooking = null;
 		try {
 			getAllBooking = query.getResultList();
 
@@ -107,9 +107,9 @@ public class BookingDAOImpl implements BookingDAO {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ars");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-		FlightInformation flightInfo = new FlightInformation();
-		FlightBooking flightBooked = new FlightBooking();
-		flightBooked = entityManager.find(FlightBooking.class, bookingId);
+		FlightInformationBean flightInfo = new FlightInformationBean();
+		TicketBookingBean flightBooked = new TicketBookingBean();
+		flightBooked = entityManager.find(TicketBookingBean.class, bookingId);
 		String flightNo = flightBooked.getFlightNo();
 		int passenger1 = flightBooked.getPassengers();
 		String classType1 = flightBooked.getClassType();
@@ -121,12 +121,12 @@ public class BookingDAOImpl implements BookingDAO {
 		try {
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
-			FlightBooking flightBooking = entityManager.find(FlightBooking.class, bookingId);
+			TicketBookingBean flightBooking = entityManager.find(TicketBookingBean.class, bookingId);
 			entityManager.remove(flightBooking);
 
 			isDeleted = true;
 			if (isDeleted) {
-				flightInfo = entityManager.find(FlightInformation.class, flightNo);
+				flightInfo = entityManager.find(FlightInformationBean.class, flightNo);
 				int firstClass = flightInfo.getFirstClassSeats();
 				System.err.println(firstClass);
 				int bussiness = flightInfo.getBussinessClassSeats();
@@ -153,14 +153,14 @@ public class BookingDAOImpl implements BookingDAO {
 
 
 	@Override
-	public List<FlightBooking> getAllFlightBookings() {
+	public List<TicketBookingBean> getAllFlightBookings() {
 		EntityManager manager = emf.createEntityManager();
 
 		String jpql = "from FlightBooking";
 		Query query = manager.createQuery(jpql);
 		
 
-		List<FlightBooking> getAllBooking = null;
+		List<TicketBookingBean> getAllBooking = null;
 		try {
 			getAllBooking = query.getResultList();
 

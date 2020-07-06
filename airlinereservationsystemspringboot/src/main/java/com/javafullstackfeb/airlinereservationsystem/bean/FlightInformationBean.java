@@ -1,16 +1,14 @@
-package com.javafullstackfeb.airlinereservationsystem.beans;
+package com.javafullstackfeb.airlinereservationsystem.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name = "flight_Info")
-public class FlightInformation {
+public class FlightInformationBean {
 
 	@Id
 	@Column(name = "flightno")

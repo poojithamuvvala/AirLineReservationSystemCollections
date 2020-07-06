@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 import com.javafullstackfeb.airlinereservationsystem.dao.FlightDAO;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +21,7 @@ public class TestFlightDAO {
 	@Test
 	public void addFlightTest() {
 
-		FlightInformation flightInformation = new FlightInformation();
+		FlightInformationBean flightInformation = new FlightInformationBean();
 		flightInformation.setFlightNumber("123ab");
 		flightInformation.setAirline("Indigo");
 		flightInformation.setDepartureTime("11:30 AM");

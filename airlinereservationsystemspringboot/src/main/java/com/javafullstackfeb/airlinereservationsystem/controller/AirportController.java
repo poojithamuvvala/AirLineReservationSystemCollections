@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirportBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
 import com.javafullstackfeb.airlinereservationsystem.response.AirportResponse;
 import com.javafullstackfeb.airlinereservationsystem.service.AirportService;
 

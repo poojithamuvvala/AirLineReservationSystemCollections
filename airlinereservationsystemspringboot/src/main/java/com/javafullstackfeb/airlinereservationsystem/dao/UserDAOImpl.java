@@ -8,7 +8,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.UserBean;
+import com.javafullstackfeb.airlinereservationsystem.bean.UserBean;
 
 @Repository
 public class UserDAOImpl implements UserDAO {

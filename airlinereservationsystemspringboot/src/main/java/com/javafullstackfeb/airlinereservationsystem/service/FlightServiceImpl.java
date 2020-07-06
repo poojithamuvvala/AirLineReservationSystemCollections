@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightBooking;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
-import com.javafullstackfeb.airlinereservationsystem.dao.BookingDAO;
+import com.javafullstackfeb.airlinereservationsystem.bean.TicketBookingBean;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
+import com.javafullstackfeb.airlinereservationsystem.dao.TicketBookingDAO;
 import com.javafullstackfeb.airlinereservationsystem.dao.FlightDAO;
 
 @Service
@@ -16,20 +16,20 @@ public class FlightServiceImpl implements FlightService {
 	private FlightDAO flightdao;
 
 	@Autowired
-	private BookingDAO bookingDao;
+	private TicketBookingDAO bookingDao;
 
 	@Override
-	public FlightInformation getFlight(String flightNumber) {
+	public FlightInformationBean getFlight(String flightNumber) {
 		return flightdao.getFlight(flightNumber);
 	}
 
 	@Override
-	public boolean addFlight(FlightInformation flightInformation) {
+	public boolean addFlight(FlightInformationBean flightInformation) {
 		return flightdao.addFlight(flightInformation);
 	}
 
 	@Override
-	public boolean updateFlight(FlightInformation flightInformation) {
+	public boolean updateFlight(FlightInformationBean flightInformation) {
 		return flightdao.updateFlight(flightInformation);
 	}
 
@@ -39,23 +39,23 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	@Override
-	public List<FlightInformation> search(String departureCity, String arrivalCity, String departureDate) {
+	public List<FlightInformationBean> search(String departureCity, String arrivalCity, String departureDate) {
 
 		return flightdao.search(departureCity, arrivalCity, departureDate);
 	}
 
 	@Override
-	public List<FlightInformation> getAllFlights() {
+	public List<FlightInformationBean> getAllFlights() {
 		return flightdao.getAllFlights();
 	}
 
 	@Override
-	public FlightBooking bookFlight(FlightBooking flightBooking) {
+	public TicketBookingBean bookFlight(TicketBookingBean flightBooking) {
 		return bookingDao.bookFlight(flightBooking);
 	}
 
 	@Override
-	public List<FlightBooking> getAllBooking(String userId) {
+	public List<TicketBookingBean> getAllBooking(String userId) {
 		return bookingDao.getAllBooking(userId);
 	}
 
@@ -65,13 +65,13 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	@Override
-	public List<FlightInformation> searchFlight(String departureCity, String arrivalCity) {
+	public List<FlightInformationBean> searchFlight(String departureCity, String arrivalCity) {
 		// TODO Auto-generated method stub
 		return flightdao.searchFlight(departureCity, arrivalCity);
 	}
 
 	@Override
-	public List<FlightBooking> getAllFlightBookings() {
+	public List<TicketBookingBean> getAllFlightBookings() {
 		return bookingDao.getAllFlightBookings();
 	}
 

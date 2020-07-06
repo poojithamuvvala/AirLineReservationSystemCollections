@@ -11,26 +11,26 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.AirportBeans;
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightInformation;
+import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
+import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 @Repository
-public class FlightDAOJpaImpl implements FlightDAO {
+public class FlightDAOImpl implements FlightDAO {
 
 	@PersistenceUnit
 	private EntityManagerFactory emf;
 	List<AirportBeans> airportList = new ArrayList<AirportBeans>();
 
 	@Override
-	public FlightInformation getFlight(String flightNumber) {
+	public FlightInformationBean getFlight(String flightNumber) {
 		EntityManager manager = emf.createEntityManager();
-		FlightInformation flightInformation = manager.find(FlightInformation.class, flightNumber);
+		FlightInformationBean flightInformation = manager.find(FlightInformationBean.class, flightNumber);
 		manager.close();
 		return flightInformation;
 	}
 
 	@Override
-	public boolean addFlight(FlightInformation flightInformation) {
+	public boolean addFlight(FlightInformationBean flightInformation) {
 
 		getAllAirport();
 		EntityManager manager = emf.createEntityManager();
@@ -68,14 +68,14 @@ public class FlightDAOJpaImpl implements FlightDAO {
 	}
 
 	@Override
-	public boolean updateFlight(FlightInformation flightInformation) {
+	public boolean updateFlight(FlightInformationBean flightInformation) {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 
 		boolean isUpdated = false;
 		try {
 			tx.begin();
-			FlightInformation flightInfo = manager.find(FlightInformation.class, flightInformation.getFlightNumber());
+			FlightInformationBean flightInfo = manager.find(FlightInformationBean.class, flightInformation.getFlightNumber());
 
 			if (flightInfo != null) {
 				if (flightInformation.getDepartureDate() != null && flightInformation.getDepartureTime() != null) {
@@ -112,7 +112,7 @@ public class FlightDAOJpaImpl implements FlightDAO {
 	@Override
 	public boolean deleteFlight(String flightNumber) {
 		EntityManager entityManager = emf.createEntityManager();
-		FlightInformation flightInformation = entityManager.find(FlightInformation.class, flightNumber);
+		FlightInformationBean flightInformation = entityManager.find(FlightInformationBean.class, flightNumber);
 		boolean isDeleted = false;
 
 		try {
@@ -132,14 +132,14 @@ public class FlightDAOJpaImpl implements FlightDAO {
 
 	// Search Flight details...
 	@Override
-	public List<FlightInformation> search(String departureCity, String arrivalCity, String departureDate) {
+	public List<FlightInformationBean> search(String departureCity, String arrivalCity, String departureDate) {
 		EntityManager manager = emf.createEntityManager();
 		String jpql = "from FlightInformation where departureCity = :departure and arrivalCity = :arrival and departureDate= :date";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("departure", departureCity);
 		query.setParameter("arrival", arrivalCity);
 		query.setParameter("date", departureDate);
-		List<FlightInformation> flightList = null;
+		List<FlightInformationBean> flightList = null;
 		try {
 			flightList = query.getResultList();
 		} catch (Exception e) {
@@ -149,12 +149,12 @@ public class FlightDAOJpaImpl implements FlightDAO {
 	}
 
 	@Override
-	public List<FlightInformation> getAllFlights() {
+	public List<FlightInformationBean> getAllFlights() {
 		EntityManager manager = emf.createEntityManager();
 		String jpql = "from FlightInformation";
 		Query query = manager.createQuery(jpql);
 
-		List<FlightInformation> flightList = null;
+		List<FlightInformationBean> flightList = null;
 		try {
 			flightList = query.getResultList();
 
@@ -176,14 +176,14 @@ public class FlightDAOJpaImpl implements FlightDAO {
 	}
 
 	@Override
-	public List<FlightInformation> searchFlight(String departureCity, String arrivalCity) {
+	public List<FlightInformationBean> searchFlight(String departureCity, String arrivalCity) {
 		EntityManager manager = emf.createEntityManager();
 		String jpql = "from FlightInformation where departureCity = :departure and arrivalCity = :arrival";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("departure", departureCity);
 		query.setParameter("arrival", arrivalCity);
 		
-		List<FlightInformation> flightList = null;
+		List<FlightInformationBean> flightList = null;
 		try {
 			flightList = query.getResultList();
 		} catch (Exception e) {

@@ -2,21 +2,21 @@ package com.javafullstackfeb.airlinereservationsystem.response;
 
 import java.util.List;
 
-import com.javafullstackfeb.airlinereservationsystem.beans.FlightBooking;
+import com.javafullstackfeb.airlinereservationsystem.bean.TicketBookingBean;
 
-public class BookingResponse {
+public class TicketBookingResponse {
 	private int statusCode;
 	private String message;
 	private String description;
-	private FlightBooking flightBooking;
-	private List<FlightBooking> searchFlight;
-	private List<FlightBooking> getAllBookingInfo;
+	private TicketBookingBean flightBooking;
+	private List<TicketBookingBean> searchFlight;
+	private List<TicketBookingBean> getAllBookingInfo;
 
-	public List<FlightBooking> getGetAllBookingInfo() {
+	public List<TicketBookingBean> getGetAllBookingInfo() {
 		return getAllBookingInfo;
 	}
 
-	public void setGetAllBookingInfo(List<FlightBooking> getAllBookingInfo) {
+	public void setGetAllBookingInfo(List<TicketBookingBean> getAllBookingInfo) {
 		this.getAllBookingInfo = getAllBookingInfo;
 	}
 
@@ -44,19 +44,19 @@ public class BookingResponse {
 		this.description = description;
 	}
 
-	public FlightBooking getFlightBooking() {
+	public TicketBookingBean getFlightBooking() {
 		return flightBooking;
 	}
 
-	public void setFlightBooking(FlightBooking flightBooking) {
+	public void setFlightBooking(TicketBookingBean flightBooking) {
 		this.flightBooking = flightBooking;
 	}
 
-	public List<FlightBooking> getSearchFlight() {
+	public List<TicketBookingBean> getSearchFlight() {
 		return searchFlight;
 	}
 
-	public void setSearchFlight(List<FlightBooking> searchFlight) {
+	public void setSearchFlight(List<TicketBookingBean> searchFlight) {
 		this.searchFlight = searchFlight;
 	}
 
