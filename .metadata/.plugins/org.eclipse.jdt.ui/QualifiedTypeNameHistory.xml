@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.orm.jpa.LocalEntityManagerFactoryBean"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.services.AdminService"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-<fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.services.UserService"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.beans.FlightsInfo"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
@@ -24,14 +18,12 @@
 <fullyQualifiedTypeName name="com.javafullstack.airlinereservationsystemjdbc.utility.JDBCUtility"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.bean.TicketRequestInfo"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.validation.ValidationImpl"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.validation.Validation"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation"/>
 <fullyQualifiedTypeName name="com.javafullstack.airlinereservationsystemjdbc.factory.AirLineFactory"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.controller.SubAirLineController"/>
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.controller.SubAirLineController"/>
 <fullyQualifiedTypeName name="java.lang.Throwable"/>
@@ -42,22 +34,30 @@
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.controller.SubAirlineController"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceUnit"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.bean.FlightResponse"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemspring.bean.AirLineResponse"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.repository.AirLineDataBase"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.services.AdminService"/>
-<fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller.AirlineMain"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller.AdminController"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.controller.AirLineMainController"/>
-<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller.SubAirLineController"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.validation.Validation"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.exception.AirLineReservationSystemException"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo"/>
 <fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.services.UserService"/>
 <fullyQualifiedTypeName name="com.javafullstack.airlinereservationsystemcollections.factory.AirLineFactory"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.controller.UserLoginOperations"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.controller.SubAirLineController"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.controller.UserLoginOperations"/>
+<fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.repository.AirLineDataBase"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller.SubAirLineController"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemcollections.airlinecontroller.UserController"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
+<fullyQualifiedTypeName name="com.javafullstackfeb.airlinereservationsystemjdbc.controller.AdminSpecificOperations"/>
 </qualifiedTypeNameHistroy>

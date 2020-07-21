@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ public class TicketBookingController {
 	@Autowired
 	private FlightService service;
 
+	@SuppressWarnings("unused")
 	@PostMapping("/bookFlight")
 	public FlightResponse bookFlight(@RequestBody TicketBookingBean ticketBooking) {
 
@@ -44,8 +46,8 @@ public class TicketBookingController {
 		return response;
 	}
 
-	@GetMapping("/getAllBooking")
-	public TicketBookingResponse getAllBookingInfo(String userId) {
+	@GetMapping("/getAllBooking/{userId}")
+	public TicketBookingResponse getAllBookingInfo(@PathVariable String userId) {
 		
 		List<TicketBookingBean> allBookingInfo = service.getAllBooking(userId);
 		TicketBookingResponse response = new TicketBookingResponse();
@@ -63,10 +65,10 @@ public class TicketBookingController {
 		}
 		return response;
 
-	}// end of getAllBookingInfo()
+	}
 
-	@DeleteMapping("/deleteBooking")
-	public TicketBookingResponse deleteBooking(String bookingId) {
+	@DeleteMapping("/deleteBooking/{bookingId}")
+	public TicketBookingResponse deleteBooking(@PathVariable String bookingId) {
 		boolean isDeleted = service.deleteBooking(bookingId);
 		TicketBookingResponse response = new TicketBookingResponse();
 		if (isDeleted) {

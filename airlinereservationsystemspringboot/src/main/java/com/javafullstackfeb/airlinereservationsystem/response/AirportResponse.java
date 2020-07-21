@@ -3,7 +3,6 @@ package com.javafullstackfeb.airlinereservationsystem.response;
 import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
-import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 public class AirportResponse {
 	

@@ -55,7 +55,7 @@ public class UserDAOImpl implements UserDAO {
 			String retrievedFname = retrievedFlightInfo.getFlightName();
 			if (flightName.equalsIgnoreCase(retrievedFname)) {
 				searchListByName.add(retrievedFlightInfo);
-				return searchListByName;
+				
 			}
 		}
 		if (searchListByName.size() == 0) {
@@ -72,7 +72,7 @@ public class UserDAOImpl implements UserDAO {
 			String retrievedDestinationName = retrievedFlightInfo.getDestination();
 			if (destination.equalsIgnoreCase(retrievedDestinationName)) {
 				searchListByDestination.add(retrievedFlightInfo);
-				return searchListByDestination;
+
 			}
 		}
 		if (searchListByDestination.size() == 0) {
@@ -83,17 +83,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public List<FlightsInfo> getAllFlightDetails() {
-		List<FlightsInfo> flightList = new ArrayList<FlightsInfo>();
-		for (FlightsInfo flight : AirLineDataBase.FLIGHTSINFO) {
-			flight.getFlightId();
-			flight.getFlightName();
-			flight.getSource();
-			flight.getDestination();
-			flight.getArrivalTime();
-			flight.getDepartureTime();
-			flightList.add(flight);
-		}
-		return flightList;
+		return AirLineDataBase.FLIGHTSINFO;
 	}
 
 	public TicketRequestInfo booktTicket(UsersInfo usersInfo, FlightsInfo flightsInfo) {

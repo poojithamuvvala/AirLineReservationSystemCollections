@@ -4,12 +4,10 @@ import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
-
 import com.javafullstackfeb.airlinereservationsystemjdbc.dao.AdminDAO;
 import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 import com.javafullstackfeb.airlinereservationsystemjdbc.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemjdbc.validation.Validation;
-import com.javafullstackfeb.airlinereservationsystemjdbc.validation.ValidationImpl;
 
 public class AdminServiceImpl implements AdminService {
 

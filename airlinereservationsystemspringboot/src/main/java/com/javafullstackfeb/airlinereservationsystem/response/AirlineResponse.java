@@ -6,9 +6,7 @@ public class AirlineResponse {
 	private String message;
 	private String role;
 	private String userId;
-	// Getter and Setter
 	
-
 	public String getUserId() {
 		return userId;
 	}

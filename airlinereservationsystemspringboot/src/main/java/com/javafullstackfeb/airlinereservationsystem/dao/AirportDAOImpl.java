@@ -1,4 +1,3 @@
-
 package com.javafullstackfeb.airlinereservationsystem.dao;
 
 import javax.persistence.EntityManager;
@@ -9,7 +8,6 @@ import javax.persistence.PersistenceUnit;
 import org.springframework.stereotype.Repository;
 
 import com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans;
-import com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean;
 
 @Repository
 public class AirportDAOImpl implements AirportDAO {
@@ -36,7 +34,7 @@ public class AirportDAOImpl implements AirportDAO {
 		return isAdded;
 	}
 
-	@Override
+	
 
 	public boolean updateAirport(AirportBeans airport) {
 		EntityManager manager = emf.createEntityManager();

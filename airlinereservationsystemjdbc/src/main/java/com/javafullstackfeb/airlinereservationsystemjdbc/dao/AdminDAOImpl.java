@@ -1,17 +1,14 @@
 package com.javafullstackfeb.airlinereservationsystemjdbc.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemjdbc.bean.UserInfo;
-import com.javafullstackfeb.airlinereservationsystemjdbc.exception.AirLineReservationSystemException;
 import com.javafullstackfeb.airlinereservationsystemjdbc.utility.JDBCUtility;
 
 public class AdminDAOImpl implements AdminDAO {

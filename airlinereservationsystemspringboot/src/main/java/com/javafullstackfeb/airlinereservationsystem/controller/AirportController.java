@@ -62,7 +62,6 @@ public class AirportController {
 	}
 
 	@DeleteMapping("/deleteAirport")
-
 	public AirportResponse deleteAirport(String abbreviation) {
 		boolean isDeleted = service.deleteAirport(abbreviation);
 
@@ -84,4 +83,4 @@ public class AirportController {
 	public boolean updateAirport(@RequestBody AirportBeans airport) {
 		return service.updateAirport(airport);
 	}
-}// end of class
+}

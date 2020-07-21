@@ -1,1 +1,0 @@
-package com.javafullstackfeb.airlinereservationsystemhibernate.exception;

@@ -187,7 +187,7 @@ public class AdminController {
 								SubAirLineController.airLineOperations();
 
 							default:
-								log.info("Invalid Choice");
+								log.info("Invalid entry please provide only Integers between 1 to 5");
 								break;
 							}
 						} catch (InputMismatchException e) {
@@ -198,10 +198,11 @@ public class AdminController {
 				}
 			} catch (Exception e) {
 				log.info("Invalid Credentials");
-				SubAirLineController.airLineOperations();
+				adminOperations();
 			}
 		} catch (Exception e) {
 			log.info(e.getMessage());
+			adminOperations();
 		}
 		scanner.close();
 	}

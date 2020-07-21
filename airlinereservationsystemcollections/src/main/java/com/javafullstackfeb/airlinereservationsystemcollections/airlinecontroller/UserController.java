@@ -17,6 +17,7 @@ public class UserController {
 	    	
 	 	 Scanner scanner=new Scanner(System.in);
 	 	 UserService service1=AirLineFactory.getUserServiceImplInstance();
+	 	log.info("********************** WELCOME TO USER LOGIN FORM ********************");
 	    	 try {
 					log.info("Enter registered email to login : ");
 					String email = scanner.next();
@@ -99,6 +100,8 @@ public class UserController {
 								case 3:
 									   SubAirLineController.airLineOperations();
 								default:
+									log.info("Invalid entry please enter either 1 or 2");
+									
 									break;
 								}
 							} catch (InputMismatchException e) {
@@ -110,10 +113,12 @@ public class UserController {
 						
 					} catch (Exception e) {
 						log.info("Invalid Credentials");
+					    userOperations();
 					}
 				
 				} catch (Exception e) {
 					log.info(e.getMessage());
+					 userOperations();
 				}
 	    	 scanner.close();
 }

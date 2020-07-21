@@ -4,17 +4,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="ars">
-		<class>com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean</class>
+	 	<class>com.javafullstackfeb.airlinereservationsystem.bean.FlightInformationBean</class>
 		<class>com.javafullstackfeb.airlinereservationsystem.bean.AirportBeans</class>
 		<class>com.javafullstackfeb.airlinereservationsystem.bean.TicketBookingBean</class>
 		<class>com.javafullstackfeb.airlinereservationsystem.bean.UserBean</class>
-		<class>com.javafullstackfeb.airlinereservationsystem.bean.AirlineExecutiveBeans</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3307/capg_ars?createDatabaseIfNotExist=true"/>
+				value="jdbc:mysql://localhost:3307/airline_database?createDatabaseIfNotExist=true"/>
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password"
 				value="root" />

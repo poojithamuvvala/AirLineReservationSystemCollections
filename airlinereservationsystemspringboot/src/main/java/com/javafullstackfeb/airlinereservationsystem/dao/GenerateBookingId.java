@@ -3,7 +3,7 @@ package com.javafullstackfeb.airlinereservationsystem.dao;
 public class GenerateBookingId {
 	static String generateBookingId(int n) {
 
-		// chose a Character random from this String
+		// choose a Character random from this String
 		String generateBookingId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789";
 
 		// create StringBuffer size of AlphaNumericString

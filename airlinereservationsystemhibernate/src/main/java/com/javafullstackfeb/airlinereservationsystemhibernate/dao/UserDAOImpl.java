@@ -24,9 +24,10 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			
 			manager = entityManagerFactory.createEntityManager();
-			String jpql = "Select e from EmployeeBean e where flightName=:name";
+			String jpql = "Select f from FlightsInfo f where flightName=:name";
 			Query query = manager.createQuery(jpql);
 			query.setParameter("name", flightName);
+			@SuppressWarnings("unchecked")
 			List<FlightsInfo> recordList = query.getResultList();
 			for (int i = 0; i < recordList.size() - 1; i++) {
 				recordList.get(i);
@@ -54,6 +55,7 @@ public class UserDAOImpl implements UserDAO {
 			String jpql = "Select f from FlightsInfo f where source=:name";
 			Query query = manager.createQuery(jpql);
 			query.setParameter("name", source);
+			@SuppressWarnings("unchecked")
 			List<FlightsInfo> recordList = query.getResultList();
 			for (int i = 0; i < recordList.size() - 1; i++) {
 				recordList.get(i);
@@ -70,6 +72,7 @@ public class UserDAOImpl implements UserDAO {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FlightsInfo> searchFlightBySourceAndDestination(String source, String destination) {
 		
@@ -122,6 +125,7 @@ public class UserDAOImpl implements UserDAO {
 		return false;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FlightsInfo> getAllFlightDetails() {
 		

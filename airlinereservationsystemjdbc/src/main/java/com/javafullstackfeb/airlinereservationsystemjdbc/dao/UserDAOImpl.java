@@ -36,7 +36,7 @@ public class UserDAOImpl implements UserDAO {
 				bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
 				bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
 				listOfFlights.add(bean);
-				return listOfFlights;
+
 
 			}
 			if (listOfFlights.isEmpty()) {
@@ -46,7 +46,7 @@ public class UserDAOImpl implements UserDAO {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -86,7 +86,7 @@ public class UserDAOImpl implements UserDAO {
 				bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
 				bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
 				l.add(bean);
-				return l;
+//				
 			}
 			if (l.isEmpty()) {
 				return null;
@@ -135,8 +135,7 @@ public class UserDAOImpl implements UserDAO {
 				bean.setDateOfDeparture(resultSet.getDate("dateofdeparture").toLocalDate());
 				bean.setDepartureTime(resultSet.getTime("timeofdeparture").toLocalTime());
 				l.add(bean);
-				return l;
-
+				
 			}
 			if (l.isEmpty()) {
 				return null;
@@ -145,7 +144,7 @@ public class UserDAOImpl implements UserDAO {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

@@ -131,10 +131,11 @@ public class FlightDAOImpl implements FlightDAO {
 	}
 
 	// Search Flight details...
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FlightInformationBean> search(String departureCity, String arrivalCity, String departureDate) {
 		EntityManager manager = emf.createEntityManager();
-		String jpql = "from FlightInformation where departureCity = :departure and arrivalCity = :arrival and departureDate= :date";
+		String jpql = "from FlightInformationBean where departureCity = :departure and arrivalCity = :arrival and departureDate= :date";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("departure", departureCity);
 		query.setParameter("arrival", arrivalCity);
@@ -148,10 +149,11 @@ public class FlightDAOImpl implements FlightDAO {
 		return flightList;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FlightInformationBean> getAllFlights() {
 		EntityManager manager = emf.createEntityManager();
-		String jpql = "from FlightInformation";
+		String jpql = "from FlightInformationBean";
 		Query query = manager.createQuery(jpql);
 
 		List<FlightInformationBean> flightList = null;
@@ -165,25 +167,27 @@ public class FlightDAOImpl implements FlightDAO {
 		return flightList;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<AirportBeans> getAllAirport() {
 		EntityManager manager = emf.createEntityManager();
-		EntityTransaction tx = manager.getTransaction();
 		Query query = manager.createQuery("FROM AirportBeans");
 		airportList = query.getResultList();
 
 		return airportList;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FlightInformationBean> searchFlight(String departureCity, String arrivalCity) {
 		EntityManager manager = emf.createEntityManager();
-		String jpql = "from FlightInformation where departureCity = :departure and arrivalCity = :arrival";
+		String jpql = "from FlightInformationBean where departureCity = :departure and arrivalCity = :arrival";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("departure", departureCity);
 		query.setParameter("arrival", arrivalCity);
 		
 		List<FlightInformationBean> flightList = null;
+		
 		try {
 			flightList = query.getResultList();
 		} catch (Exception e) {

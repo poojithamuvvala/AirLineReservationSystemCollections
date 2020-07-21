@@ -26,7 +26,6 @@ public class TicketBookingDAOImpl implements TicketBookingDAO {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 
-		//boolean isAdded = false;
 		tx.begin();
 		
 		FlightInformationBean flightInfo = manager.find(FlightInformationBean.class, flightBooking.getFlightNo());
@@ -83,11 +82,12 @@ public class TicketBookingDAOImpl implements TicketBookingDAO {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<TicketBookingBean> getAllBooking(String userId) {
 		EntityManager manager = emf.createEntityManager();
 
-		String jpql = "from FlightBooking where userId= :userId";
+		String jpql = "from TicketBookingBean where userId= :userId";
 		Query query = manager.createQuery(jpql);
 		query.setParameter("userId", userId);
 
@@ -152,11 +152,12 @@ public class TicketBookingDAOImpl implements TicketBookingDAO {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<TicketBookingBean> getAllFlightBookings() {
 		EntityManager manager = emf.createEntityManager();
 
-		String jpql = "from FlightBooking";
+		String jpql = "from TicketBookingBean";
 		Query query = manager.createQuery(jpql);
 		
 

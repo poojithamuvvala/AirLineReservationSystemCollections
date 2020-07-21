@@ -40,7 +40,7 @@ public class FlightController {
 		}
 		return response;
 
-	}// end of getflight()
+	}
 
 	@DeleteMapping("/deleteFlight")
 
@@ -89,7 +89,6 @@ public class FlightController {
 	public FlightResponse searchFlight(@RequestBody FlightInformationBean flightInformation) {
 		String departureCity = flightInformation.getDepartureCity();
 		String arrivalCity = flightInformation.getArrivalCity();
-		//String departureDate = flightInformation.getDepartureDate();
 		List<FlightInformationBean> searchFlight = service.searchFlight(departureCity, arrivalCity);
 
 		FlightResponse response = new FlightResponse();

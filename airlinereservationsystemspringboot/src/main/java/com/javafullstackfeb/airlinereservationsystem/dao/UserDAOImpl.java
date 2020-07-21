@@ -36,10 +36,9 @@ public class UserDAOImpl implements UserDAO {
 		return isRegistered;
 	}
 
-	//Authentication of all type of users(customer,admin,executive)
+	
 	@Override
 	public UserBean userLogin(String userId, String userPassword) {
-		String role = null;
 		UserBean userBean = null;
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		userBean = entityManager.find(UserBean.class, userId);
@@ -50,15 +49,15 @@ public class UserDAOImpl implements UserDAO {
 				query.setParameter("userId", userId);
 				query.setParameter("password", userPassword);
 				userBean = (UserBean)query.getSingleResult();				
-				//return role = userBean.getUserRole();
+				return userBean;	
 			}
-			return userBean;		
+				
 		}
-		//return "This user not exist";
+		
 		return null;
-	}// end of userLogin()
+	}
 
-	//register the new admin or new executive only by the admin
+	
 	@Override
 	public boolean registerByAdmin(UserBean userBean) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();

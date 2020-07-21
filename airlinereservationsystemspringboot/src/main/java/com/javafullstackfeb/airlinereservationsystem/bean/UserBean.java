@@ -27,8 +27,6 @@ public class UserBean {
 
 	@Column(name = "contact", unique = true)
 	@Positive
-	//@Size(min = 10, max = 10, message = "Entered mobile number must contain 10 digits.")
-	//@Pattern(regexp = "[6-9]{1}[0-9]{9}*")
 	private long userContact;
 
 	@Id
@@ -38,23 +36,13 @@ public class UserBean {
 	private String userId;
 
 	@Column(name = "user_Password")
-	//@Size(min = 8, max = 15, message = "Entered password must be 8-15 characters.")
-	//@Pattern(regexp = ("//w+"))	
-	/*
-	 * (?=.*[a-z]) : This matches the presence of at least one lowercase letter.
-	 * (?=.*d) : This matches the presence of at least one digit i.e. 0-9.
-	 * (?=.*[@#$%]) : This matches the presence of at least one special character.
-	 * ((?=.*[A-Z]) : This matches the presence of at least one capital letter.
-	 * {6,16} : This limits the length of password from minimum 6 letters to maximum
-	 * 16 letters.
-	 */
 	private String userPassword;
 
 	@Column(name = "role")
 	@Pattern(regexp = "[A-Za-z]*")
 	private String userRole;
 
-	// Getter and Setter
+	
 	public String getUserFirstName() {
 		return userFirstName;
 	}

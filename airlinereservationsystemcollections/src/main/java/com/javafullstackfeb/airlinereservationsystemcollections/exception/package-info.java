@@ -1,1 +1,0 @@
-package com.javafullstackfeb.airlinereservationsystemcollections.exception;

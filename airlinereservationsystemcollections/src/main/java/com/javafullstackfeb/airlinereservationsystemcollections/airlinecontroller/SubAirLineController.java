@@ -7,15 +7,15 @@ import java.util.Scanner;
 import com.javafullstack.airlinereservationsystemcollections.factory.AirLineFactory;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemcollections.bean.UsersInfo;
-import com.javafullstackfeb.airlinereservationsystemcollections.repository.AirLineDataBase;
 import com.javafullstackfeb.airlinereservationsystemcollections.services.UserService;
 
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class SubAirLineController {
+
 	public static void airLineOperations() {
-		AirLineDataBase.defaultDatabase();
+		
 		Scanner scanner = new Scanner(System.in);
 		boolean flag = false;
 		int checkId = 0;
@@ -26,32 +26,10 @@ public class SubAirLineController {
 		UserService userService = AirLineFactory.getUserServiceImplInstance();
 
 		log.info("*****************WELCOME TO AIRLINE RESERVATION SYSTEM********************");
-		try {
-			log.info("ALL FLIGHTS AND ITS DETAILS ARE:");
-			List<FlightsInfo> info = userService.getAllFlightDetails();
-			log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s", "flightId", "flightName",
-					"source", "destination", "dateOfDeparture", " dateOfArrival", " arrivalTime", "departureTime",
-					" capacity", " noOfSeatsBooked"));
-
-			for (FlightsInfo flightBean : info) {
-				if (flightBean != null) {
-					log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-19s %-18s %-15s %s",
-							flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
-							flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
-							flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
-							flightBean.getNoOfSeatsBooked()));
-				} else {
-					log.info("No Flight are available in the Flight Details");
-				}
-			}
-		} catch (Exception e) {
-			log.info(e.getMessage());
-		}
-
+		
 		do {
 			try {
 				flag = false;
-				log.info("**********AIRLINE RESERVATION SYSTEM OPERATIONS*************");
 				log.info("PRESS 1, TO REGISTER AS USER");
 				log.info("PRESS 2, TO LOGIN AS USER");
 				log.info("PRESS 3, TO LOGIN AS ADMIN");
@@ -59,6 +37,7 @@ public class SubAirLineController {
 				log.info("PRESS 5, TO SEARCH FLIGHT NAME");
 				log.info("PRESS 6, TO SEARCH BY  DESTINATION");
 				log.info("PRESS 7, TO SEARCH BY SOURCE AND DESTINATION");
+				log.info("PRESS 8, TO VIEW ALL FLIGHTS");
 				log.info("Enter your input");
 				int i = scanner.nextInt();
 
@@ -134,7 +113,7 @@ public class SubAirLineController {
 											flightBean.getCapacity(), flightBean.getNoOfSeatsBooked()));
 								} else {
 									log.info("No Flights are available with this Source");
-									
+
 								}
 							}
 						} catch (InputMismatchException e) {
@@ -147,7 +126,7 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
-					
+					airLineOperations();
 					break;
 
 				case 5:
@@ -177,6 +156,7 @@ public class SubAirLineController {
 						airLineOperations();
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
 				case 6:
 					try {
@@ -212,8 +192,9 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
-					
+
 				case 7:
 					try {
 						log.info("Search flight by Source : ");
@@ -222,7 +203,8 @@ public class SubAirLineController {
 						log.info("Search flight by Destination : ");
 						String destination = scanner.next();
 						try {
-							List<FlightsInfo> flightDestination1 = userService.searchFlightBySourceAndDestination(source, destination);
+							List<FlightsInfo> flightDestination1 = userService
+									.searchFlightBySourceAndDestination(source, destination);
 
 							log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s",
 									"flightId", "flightName", "source", "destination", "dateOfDeparture",
@@ -251,13 +233,39 @@ public class SubAirLineController {
 					} catch (Exception e) {
 						log.info(e.getMessage());
 					}
+					airLineOperations();
 					break;
-					
-					default :
-						airLineOperations();
+				case 8:
+					try {
+						log.info("ALL FLIGHTS AND ITS DETAILS ARE:");
+						List<FlightsInfo> info = userService.getAllFlightDetails();
+						log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %s", "flightId", "flightName",
+								"source", "destination", "dateOfDeparture", "dateOfArrival", " arrivalTime", "departureTime",
+								" capacity", " noOfSeatsBooked"));
+
+						for (FlightsInfo flightBean : info) {
+							if (flightBean != null) {
+								log.info(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-19s %-18s %-15s %s",
+										flightBean.getFlightId(), flightBean.getFlightName(), flightBean.getSource(),
+										flightBean.getDestination(), flightBean.getDateOfDeparture(), flightBean.getDateOfArrival(),
+										flightBean.getArrivalTime(), flightBean.getDepartureTime(), flightBean.getCapacity(),
+										flightBean.getNoOfSeatsBooked()));
+							} else {
+								log.info("No Flight are available in the Flight Details");
+							}
+						}
+					} catch (Exception e) {
+						
+						log.info(e.getMessage());
+					}
+                    airLineOperations();
+                    break;
+				default:
+					airLineOperations();
+					break;
 				}
 			} catch (InputMismatchException e) {
-				log.info("Invalid choice, Please Enter only Integers between 1 to 5");
+				log.info("Invalid choice, Please Enter only Integers between 1 to 8");
 				airLineOperations();
 			} catch (Exception e) {
 				log.info(e.getMessage());

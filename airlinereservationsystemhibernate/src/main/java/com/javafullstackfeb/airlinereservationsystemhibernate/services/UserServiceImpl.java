@@ -24,13 +24,14 @@ public class UserServiceImpl implements UserService {
 						if (validation.validatePassword(usersInfo.getPassword())) {
 							return dao.registerUser(usersInfo);
 						} else {
-							throw new com.javafullstackfeb.airlinereservationsystemhibernate.exception.AirLineReservationSystemException(
-									"Invalid Id! Id should exactly contain 3 digits");
+							throw new AirLineReservationSystemException(
+									"Password should contain atleast 5 characters ,one uppercase,one lowercase,one number,one special symbol(@#$%) ");
 						}
 
 					} else {
 						throw new AirLineReservationSystemException(
-								"Invalid Name! Name should have atleast 4 characters or more than 4 characters");
+								"Enter proper email such that it should consist of numbers and alphabets and @ symbol");
+						
 					}
 				} else {
 					throw new AirLineReservationSystemException(
@@ -38,12 +39,13 @@ public class UserServiceImpl implements UserService {
 				}
 			} else {
 				throw new AirLineReservationSystemException(
-						"Enter proper email such that it should consist of numbers and alphabets and @ symbol");
+						"Invalid Name! Name should have atleast 4 characters or more than 4 characters");
 			}
 
 		} else {
 			throw new AirLineReservationSystemException(
-					"Password should contain atleast 5 characters ,one uppercase,one lowercase,one number,one special symbol(@#$%) ");
+					"Invalid Id! Id should exactly contain 3 digits");
+			
 		}
 
 	}
@@ -61,9 +63,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<FlightsInfo> searchByName(String flightName) {
 		if (validation.validateName(flightName)) {
-			return dao.searchFlightBySource(flightName);
+			return dao.searchFlightByName(flightName);
 		} else {
-			System.out.println("Invalid Source");
+			System.out.println("Invalid Name");
 		}
 		return null;
 	}

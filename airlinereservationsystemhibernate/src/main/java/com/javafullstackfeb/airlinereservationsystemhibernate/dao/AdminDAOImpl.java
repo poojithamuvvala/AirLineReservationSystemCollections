@@ -119,6 +119,7 @@ public class AdminDAOImpl implements AdminDAO {
 			manager = entityManagerFactory.createEntityManager();
 			String jpql = "Select u from UserInfo u";
 			Query query = manager.createQuery(jpql);
+			@SuppressWarnings("unchecked")
 			List<UserInfo> recordList = query.getResultList();
 			for (int i = 0; i < recordList.size()-1; i++) {
 				recordList.get(i);

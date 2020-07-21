@@ -7,7 +7,6 @@ import java.util.Scanner;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.FlightsInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.bean.UserInfo;
 import com.javafullstackfeb.airlinereservationsystemhibernate.factory.AirLineFactory;
-import com.javafullstackfeb.airlinereservationsystemhibernate.services.AdminService;
 import com.javafullstackfeb.airlinereservationsystemhibernate.services.UserService;
 
 import lombok.extern.log4j.Log4j;
@@ -28,7 +27,7 @@ public class SubAirLineController {
 		Scanner scanner = new Scanner(System.in);
 		boolean flag = false;
 		UserService userservice = AirLineFactory.getUserServiceImplInstance();
-		AdminService adminService=AirLineFactory.getAdminServiceImplInstance();
+		
 		
 		log.info("*****************WELCOME TO AIRLINE RESERVATION SYSTEM********************");
 		
@@ -95,7 +94,7 @@ public class SubAirLineController {
 						bean.setPhoneNumber(checkMobileno);
 						bean.setRole("user");
 						try {
-							boolean check = adminService.registerAdmin(bean);
+							boolean check = userservice.registerUser(bean);
 							if (check) {
 								log.info("You have registered Successfully");
 							} else {
@@ -114,7 +113,7 @@ public class SubAirLineController {
 					break;
                      
 				case 2:
-					LoginController.login();
+					AdminSpecificOperations.login();
 					break;
 				
 				case 3:

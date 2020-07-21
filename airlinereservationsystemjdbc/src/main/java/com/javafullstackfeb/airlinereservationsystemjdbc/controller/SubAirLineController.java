@@ -110,7 +110,7 @@ public class SubAirLineController {
 					break;
 
 				case 2:
-					LoginController.login();
+					AdminSpecificOperations.login();
 					break;
 				
 				case 3:
@@ -173,6 +173,7 @@ public class SubAirLineController {
 							log.info("Input Mismatch Exception");
 						} catch (Exception e) {
 							log.info(e.getMessage());
+							
 						}
 
 					} catch (Exception e) {

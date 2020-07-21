@@ -16,33 +16,26 @@ public class TicketBookingBean {
 	private String bookingId;
 
 	@Column
-	//@Size(min = 6, message = "Entered userId must contain minimum of 6 characters.")
-	//@Pattern(regexp = "{A-Za-z0-9}*")
 	private String userId;
 
 	@Column
 	@NotEmpty(message = "This field is required")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String firstName;
 
 	@Column
 	@NotEmpty(message = "This field is required")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String lastName;
 
 	@Column(name = "flightno")
 	@NotEmpty(message = "This field is required")
-	//@Pattern(regexp = "{A-Z0-9}*")
 	private String flightNo;
 
 	@Column(name = "arrival_city")
 	@NotEmpty(message = "This field is required")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String arrivalCity;
 
 	@Column(name = "departure_city")
 	@NotEmpty(message = "This field is required")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String departureCity;
 
 	@Column(name = "dep_date")

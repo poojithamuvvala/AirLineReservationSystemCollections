@@ -63,11 +63,6 @@ public class UserController {
 			response.setMessage("Success");
 			response.setRole(role);	
 			response.setUserId(getUserId);
-		}else if(role.equals("exe")) {
-			response.setStatus(200);
-			response.setMessage("Success");
-			response.setRole(role);
-			response.setUserId(getUserId);
 		}else {
 			response.setStatus(400);
 			response.setMessage("Failed");

@@ -7,24 +7,20 @@ import javax.persistence.Table;
 import javax.validation.constraints.Positive;
 
 @Entity
-@Table(name = "flight_Info")
+@Table(name = "flight_info")
 public class FlightInformationBean {
 
 	@Id
 	@Column(name = "flightno")
-	//@Pattern(regexp = "{A-Z0-9}*")
-	private String flightNumber; // Each flight has a unique flight number.
+	private String flightNumber;
 
 	@Column(name = "departure_city")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String departureCity;
 
 	@Column(name = "arrival_city")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String arrivalCity;
 
 	@Column(name = "airline")
-	//@Pattern(regexp = "{A-Za-z}*")
 	private String airline;
 
 	@Column(name = "dep_date")
@@ -151,6 +147,6 @@ public class FlightInformationBean {
 		this.bussinessClassFare = bussinessClassFare;
 	}
 
-//getters and setters
+
 
 }

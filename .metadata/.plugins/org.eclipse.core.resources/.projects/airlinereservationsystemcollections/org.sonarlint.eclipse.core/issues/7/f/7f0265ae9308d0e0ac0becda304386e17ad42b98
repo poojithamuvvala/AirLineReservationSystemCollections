@@ -1,44 +1,44 @@
 
 x
-java:S1192X"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦èH¨êRCRITICALZ
-CODE_SMELL
-w
-java:S1192k"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™H©êRCRITICALZ
+java:S1192]"HDefine a constant instead of duplicating this literal "Chennai" 4 times.(ø¼¦èH’‘RCRITICALZ
 CODE_SMELL
 T
-java:S2386"Make this member "protected".(²›úÖ8üŠºü®.HªêRMINORZVULNERABILITY
+java:S2386"Make this member "protected".(ĞÑßı8üŠºü®.H“‘RMINORZVULNERABILITY
+†
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃH”‘RMINORZ
+CODE_SMELL
+†
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖH•‘RMINORZ
+CODE_SMELL
 v
-java:S1192/"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞH«êRCRITICALZ
-CODE_SMELL
-†
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²”ÈÃH¬êRMINORZ
+java:S11920"FDefine a constant instead of duplicating this literal "Vizag" 4 times.(»ğÍĞH–‘RCRITICALZ
 CODE_SMELL
 T
-java:S2386"Make this member "protected".(²”ÈÃ8üŠºü®.H­êRMINORZVULNERABILITY
-Y
-java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8üŠºü®.H®êRMINORZVULNERABILITY
-†
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßıH¯êRMINORZ
-CODE_SMELL
-‹
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿH°êRMINORZ
-CODE_SMELL
-‹
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿH±êRMINORZ
-CODE_SMELL
-Y
-java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8üŠºü®.H²êRMINORZVULNERABILITY
-T
-java:S2386"Make this member "protected".(ĞÑßı8üŠºü®.H³êRMINORZVULNERABILITY
+java:S2386"Make this member "protected".(²”ÈÃ8üŠºü®.H—‘RMINORZVULNERABILITY
 z
-java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜH´êRCRITICALZ
+java:S1192%"JDefine a constant instead of duplicating this literal "Hyderabad" 9 times.(à™çÜH˜‘RCRITICALZ
+CODE_SMELL
+Y
+java:S2386"Make this member "protected".(°Í¨¦ûÿÿÿÿ8üŠºü®.H™‘RMINORZVULNERABILITY
+l
+java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿHš‘RMAJORZ
+CODE_SMELL
+T
+java:S2386"Make this member "protected".(²›úÖ8üŠºü®.H›‘RMINORZVULNERABILITY
+w
+java:S1192r"GDefine a constant instead of duplicating this literal "Indigo" 6 times.(Âøì™Hœ‘RCRITICALZ
+CODE_SMELL
+‹
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°Í¨¦ûÿÿÿÿH‘RMINORZ
+CODE_SMELL
+‹
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¾æØüÿÿÿÿH‘RMINORZ
 CODE_SMELL
 †
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²›úÖHµêRMINORZ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÑßıHŸ‘RMINORZ
 CODE_SMELL
+Y
+java:S2386"Make this member "protected".(Ç¾æØüÿÿÿÿ8üŠºü®.H ‘RMINORZVULNERABILITY
 ~
-java:S11929"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿH¶êRCRITICALZ
-CODE_SMELL
-l
-java:S1118":Add a private constructor to hide the implicit public one.(™Œ‰©şÿÿÿÿH·êRMAJORZ
+java:S1192;"IDefine a constant instead of duplicating this literal "Banglore" 3 times.(¦“èòøÿÿÿÿH¡‘RCRITICALZ
 CODE_SMELL
